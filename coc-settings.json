@@ -1,0 +1,9 @@
+{
+    "diagnostic.displayByAle": true,
+    "python.autoComplete.addBrackets": true,
+    "python.jediEnabled": true,
+    "python.jediPath": "/Users/QadisChaudhry/.local/lib/python3.8/site-packages",
+    "python.linting.enabled": false,
+    "coc.preferences.formatOnType": false,
+    "coc.source.vimtex.enable": true
+}
