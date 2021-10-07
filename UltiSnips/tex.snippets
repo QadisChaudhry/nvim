@@ -15,6 +15,7 @@ snippet ltemplate "Lab template" b
 \documentclass[12pt]{article}
 \usepackage{indentfirst}
 \usepackage{amsmath}
+\usepackage{multicol}
 \setlength{\jot}{2ex}
 \usepackage{mathrsfs}
 \usepackage{graphicx}
@@ -22,6 +23,7 @@ snippet ltemplate "Lab template" b
 \usepackage{booktabs}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{fancyhdr}
+\usepackage{enumitem}
 \usepackage [autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 \renewcommand{\baselinestretch}{1.0}
@@ -42,6 +44,7 @@ snippet template "Basic template" b
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \usepackage{amsmath}
+\usepackage{multicol}
 \setlength{\jot}{2ex}
 \usepackage{mathrsfs}
 \usepackage{graphicx}
@@ -76,6 +79,14 @@ snippet ... "ldots" iA
 \ldots
 endsnippet
 
+snippet par "paragraph" bA
+\par $0
+endsnippet
+
+snippet vv "verbatim" iA
+\verb+$1+ $0
+endsnippet
+
 snippet sec "section*" bA
 \section*{$1}$0
 endsnippet
@@ -95,11 +106,6 @@ endsnippet
 context "math()"
 snippet box "boxed" iA
 \boxed{$1}$0
-endsnippet
-
-context "math()"
-snippet text "text" iA
-\text{$1}$0
 endsnippet
 
 context "math()"
@@ -197,7 +203,7 @@ endsnippet
 
 snippet dm "Math" wA
 \[
-${1:${VISUAL}}
+	${1:${VISUAL}}
 \]
 endsnippet
 
