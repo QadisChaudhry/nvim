@@ -42,7 +42,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
@@ -182,6 +181,7 @@ let g:which_key_map['k'] = [':wincmd k', 'win up']
 
 let g:which_key_map[','] = [':Startify', 'start screen']
 let g:which_key_map['q'] = [':wqa', 'write and quit all']
+let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
 
 let g:which_key_map.v = {
