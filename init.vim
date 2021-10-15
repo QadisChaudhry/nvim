@@ -42,6 +42,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
