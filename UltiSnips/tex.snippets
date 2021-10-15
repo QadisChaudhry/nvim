@@ -24,7 +24,7 @@ snippet ltemplate "Lab template" b
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage [autostyle, english = american]{csquotes}
+\usepackage[autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 \renewcommand{\baselinestretch}{1.0}
 \newcommand{\objects}[2]{%
@@ -57,7 +57,7 @@ snippet template "Basic template" b
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
-\usepackage [autostyle, english = american]{csquotes}
+\usepackage[autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 \renewcommand{\baselinestretch}{1.0}
 \newcommand{\objects}[2]{%
@@ -84,7 +84,7 @@ snippet par "paragraph" bA
 endsnippet
 
 snippet vv "verbatim" iA
-\verb+$1+ $0
+\verb+$0+
 endsnippet
 
 snippet sec "section*" bA
@@ -544,7 +544,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|phi|theta|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|phi|theta|tau|int)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 

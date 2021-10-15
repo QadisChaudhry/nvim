@@ -42,7 +42,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
@@ -96,7 +96,8 @@ nnoremap Q <Nop>
 
 nnoremap n nzz
 nnoremap N Nzz
-""""""""""""""""""""""""""""""""""coc"""""""""""""""""""""""""""""""""""""
+
+"coc
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -107,7 +108,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-""""""""""""""""""""""""""""""""""coc"""""""""""""""""""""""""""""""""""""
+"coc
+
 let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer
         \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
