@@ -23,7 +23,8 @@ set cursorline
 set scrolloff=8
 set updatetime=50
 set cmdheight=1
-au FileType tex setlocal spell textwidth=80 fo+=t
+    au FileType tex setlocal spell wrap linebreak nolist
+" au FileType tex setlocal spell textwidth=80 fo+=t
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -96,6 +97,18 @@ nnoremap Q <Nop>
 
 nnoremap n nzz
 nnoremap N Nzz
+
+nnoremap Y y$
+
+nnoremap <C-j> gj
+nnoremap <C-k> gk
+vnoremap <C-j> gj
+vnoremap <C-k> gk
+
+vnoremap > >gv
+vnoremap < <gv
+nnoremap > <S-v>><esc>
+nnoremap < <S-v><<esc>
 
 "coc
 inoremap <silent><expr> <TAB>

@@ -198,7 +198,7 @@ endsnippet
 # `
 
 snippet mk "Math" wA
-$$1$$0
+$ $1 $$0
 endsnippet
 
 snippet dm "Math" wA
@@ -532,8 +532,32 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|tan|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
-\\`!p snip.rv = match.group(1)`
+snippet sin "sine" wA
+\sin
+endsnippet
+
+priority 100
+context "math()"
+snippet cos "cosine" wA
+\cos
+endsnippet
+
+priority 100
+context "math()"
+snippet tan "tangent" wA
+\tan
+endsnippet
+
+priority 100
+context "math()"
+snippet ln "natural log" wA
+\ln
+endsnippet
+
+priority 100
+context "math()"
+snippet cos "cosine" wA
+\cos
 endsnippet
 
 priority 300
@@ -544,8 +568,32 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|phi|theta|tau|int)' "ln" rwA
-\\`!p snip.rv = match.group(1)`
+snippet pi "pi" wA
+\pi
+endsnippet
+
+priority 200
+context "math()"
+snippet phi "phi" wA
+\phi
+endsnippet
+
+priority 200
+context "math()"
+snippet tau "tau" wA
+\tau
+endsnippet
+
+priority 200
+context "math()"
+snippet theta "theta" wA
+\theta
+endsnippet
+
+priority 200
+context "math()"
+snippet int "int" wA
+\int
 endsnippet
 
 
