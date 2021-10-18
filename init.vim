@@ -20,10 +20,11 @@ set encoding=utf-8
 set signcolumn=yes
 set colorcolumn=120
 set cursorline
+set scroll=10
 set scrolloff=8
 set updatetime=50
 set cmdheight=1
-    au FileType tex setlocal spell wrap linebreak nolist
+    au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 call plug#begin('~/.config/nvim/plugged')
@@ -44,6 +45,7 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -76,6 +78,8 @@ endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 let mapleader = " "
 noremap <leader>e :Lex <bar> :vertical resize 30<cr>
 noremap <leader>t :tabedit <bar> :Ranger<cr>
@@ -100,15 +104,19 @@ nnoremap N Nzz
 
 nnoremap Y y$
 
-nnoremap <C-j> gj
-nnoremap <C-k> gk
-vnoremap <C-j> gj
-vnoremap <C-k> gk
-
 vnoremap > >gv
 vnoremap < <gv
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
+
+vnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Left> h
+vnoremap <Right> l
+nnoremap <Up> gk
+nnoremap <Down> gj
+nnoremap <Left> h
+nnoremap <Right> l
 
 "coc
 inoremap <silent><expr> <TAB>
