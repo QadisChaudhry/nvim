@@ -43,16 +43,16 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'unblevable/quick-scope'
+Plug 'gabrielelana/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
 colorscheme gruvbox
 set background=dark
 
-let g:ranger_map_keys = 0
+let g:mkdp_browser = 'safari'
 
 let g:netrw_banner = 0
 let g:python_highlight_all = 1
@@ -78,11 +78,11 @@ endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:markdown_enable_mappings = 0
 
 let mapleader = " "
 noremap <leader>e :Lex <bar> :vertical resize 30<cr>
-noremap <leader>t :tabedit <bar> :Ranger<cr>
+noremap <leader>t :tabedit <bar> :Explore <cr><bar> :CtrlP ~<cr>
 
 nnoremap <leader>c :Commentary<cr>
 vnoremap <leader>c :Commentary<cr>
@@ -205,6 +205,14 @@ let g:which_key_map[','] = [':Startify', 'start screen']
 let g:which_key_map['q'] = [':wqa', 'write and quit all']
 let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
+let g:which_key_map['p'] = [':CtrlP ~', 'fuzzy finder']
+
+let g:which_key_map['s'] = [':call markdown#SwitchStatus()<cr>', 'select item']
+let g:which_key_map.m = {
+\ 'name': '+markdown',
+\ 'p': ['<Plug>MarkdownPreview', 'Preview'],
+\ 'k': ['<Plug>MarkdownPreviewStop', 'Stop Preview'],
+\ }
 
 let g:which_key_map.v = {
 \ 'name': '+vimtex',
@@ -214,22 +222,10 @@ let g:which_key_map.v = {
 \ 'k': [':VimtexClean', 'kill aux'],
 \ }
 
-let g:which_key_map.p = {
-\ 'name': '+explorer',
-\ 'v': [':Ranger', 'directory explorer'],
-\ }
-
 let g:which_key_map.f = {
 \ 'name' : '+fold',
 \ 'f' : [ 'zf%', 'fold lines'],
 \ 'd' : [ 'zd', 'unfold lines'],
-\ }
-
-let g:which_key_map.s = {
-\ 'name' : '+suround',
-\ 's' : [ '<Plug>Ysurround', 'surround'],
-\ 'c' : [ '<Plug>Csurround', 'change'],
-\ 'd' : [ '<Plug>Dsurround', 'delete'],
 \ }
 
 let g:which_key_map.e = 'tree explorer'
