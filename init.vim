@@ -25,7 +25,8 @@ set scroll=10
 set scrolloff=8
 set updatetime=50
 set cmdheight=1
-    au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
+
+au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 call plug#begin('~/.config/nvim/plugged')
