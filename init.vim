@@ -1,6 +1,7 @@
 syntax on
 
 set showcmd
+set path+=**
 set belloff=all
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -82,7 +83,7 @@ let g:markdown_enable_mappings = 0
 
 let mapleader = " "
 noremap <leader>e :Lex <bar> :vertical resize 30<cr>
-noremap <leader>t :tabedit <bar> :Explore <cr><bar> :CtrlP ~<cr>
+noremap <leader>t :tabedit <bar> :Startify<cr>
 
 nnoremap <leader>c :Commentary<cr>
 vnoremap <leader>c :Commentary<cr>
@@ -162,10 +163,12 @@ let g:UltiSnipsExpandTrigger = '<c-space>'
 let g:UltiSnipsJumpForwardTrigger = '<c-space>'
 
 let g:startify_lists = [
-          \ { 'type': 'sessions',  'header': ['   Sessions']            },
-          \ { 'type': 'files',     'header': ['   Files']               },
-          \ { 'type': 'dir',       'header': ['   Current Directory']   },
+          \ { 'type': 'bookmarks',  'header': ['   Bookmarks']            },
+          \ { 'type': 'files',      'header': ['   Files']               },
+          \ { 'type': 'dir',        'header': ['   Current Directory']   },
           \ ]
+
+let g:startify_bookmarks = ['~/TODO.md', '~/.config/nvim/init.vim']
 
 let g:startify_session_autoload = 1
 let g:startify_session_delete_buffers = 1
@@ -210,8 +213,7 @@ let g:which_key_map['p'] = [':CtrlP ~', 'fuzzy finder']
 let g:which_key_map['s'] = [':call markdown#SwitchStatus()<cr>', 'select item']
 let g:which_key_map.m = {
 \ 'name': '+markdown',
-\ 'p': ['<Plug>MarkdownPreview', 'Preview'],
-\ 'k': ['<Plug>MarkdownPreviewStop', 'Stop Preview'],
+\ 'p': ['<Plug>MarkdownPreviewToggle', 'Preview']
 \ }
 
 let g:which_key_map.v = {
