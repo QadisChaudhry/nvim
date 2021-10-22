@@ -8,12 +8,14 @@ vnoremap <leader>c :Commentary<cr>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-c> <Esc>
 
+nnoremap <C-h> :execute "help " . expand("<cword>")<cr>
+
+tnoremap <C-t> <C-\><C-n>:FloatermToggle<cr>
+
 nmap - <Plug>NetrwBrowseUpDir
 
 xnoremap K :move '<-2<cr>gv-gv
 xnoremap J :move '>+1<cr>gv-gv
-
-nnoremap <C-h> :execute "help " . expand("<cword>")<cr>
 
 nnoremap Q <Nop>
 

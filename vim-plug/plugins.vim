@@ -13,9 +13,10 @@ Plug 'mhinz/vim-startify'
 Plug 'liuchengxu/vim-which-key'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'gabrielelana/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'mhinz/vim-signify'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()

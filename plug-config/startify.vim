@@ -6,7 +6,8 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [
             \ {'a': '~/TODO.md'},
-            \ {'b': '~/.config/nvim/init.vim'}
+            \ {'b': '~/.config/nvim/init.vim'},
+            \ {'c': '~/keyboard_layout'}
             \ ]
 
 let g:startify_session_autoload = 1

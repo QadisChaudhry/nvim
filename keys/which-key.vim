@@ -27,7 +27,6 @@ let g:which_key_map[','] = [':Startify', 'start screen']
 let g:which_key_map['q'] = [':wqa', 'write and quit all']
 let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
-let g:which_key_map['p'] = [':CtrlP ~', 'fuzzy finder']
 
 let g:which_key_map['s'] = [':call markdown#SwitchStatus()<cr>', 'select item']
 let g:which_key_map.m = {
@@ -41,6 +40,14 @@ let g:which_key_map.v = {
 \ 'c': [':VimtexCompile', 'compile'],
 \ 'v': [':VimtexView', 'view'],
 \ 'k': [':VimtexClean', 'kill aux'],
+\ }
+
+let g:which_key_map.i = {
+\ 'name': '+terminal',
+\ 't': [':FloatermToggle', 'terminal'],
+\ 'g': [':FloatermNew lazygit', 'git'],
+\ 'f': [':FloatermNew fzf', 'fzf'],
+\ 'p': [':FloatermNew ipython', 'python'],
 \ }
 
 let g:which_key_map.f = {
