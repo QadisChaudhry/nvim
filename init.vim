@@ -15,5 +15,4 @@ source $HOME/.config/nvim/plug-config/ale.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/startify.vim
-source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
