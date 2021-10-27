@@ -118,7 +118,7 @@ snippet table "Table environment" b
 	\centering
 	\begin{tabular}{${5:c}}
 		\toprule
-		$0${5/((?<=.)c|l|r)|./(?1: & )/g}
+		$0${5/((?<=.)c|l|r)|./(?1: & )/g} \\\
 		\bottomrule
 	\end{tabular}
 \end{table}

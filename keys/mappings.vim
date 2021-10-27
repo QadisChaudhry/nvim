@@ -17,15 +17,13 @@ nmap - <Plug>NetrwBrowseUpDir
 xnoremap K :move '<-2<cr>gv-gv
 xnoremap J :move '>+1<cr>gv-gv
 
-nnoremap Q <Nop>
+nnoremap Q @@
 
 nnoremap n nzz
 nnoremap N Nzz
 
 nnoremap Y y$
 
-vnoremap > >gv
-vnoremap < <gv
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
 
