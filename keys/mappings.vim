@@ -5,6 +5,9 @@ noremap <leader>t :tabedit <bar> :Startify<cr>
 nnoremap <leader>c :Commentary<cr>
 vnoremap <leader>c :Commentary<cr>
 
+nnoremap <leader>y :%w !pbcopy<cr><cr>
+vnoremap <leader>y :w !pbcopy<cr><cr>
+
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-c> <Esc>
 
@@ -26,6 +29,9 @@ nnoremap Y y$
 
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
+
+nnoremap { {zz
+nnoremap } }zz
 
 vnoremap <Up> gk
 vnoremap <Down> gj

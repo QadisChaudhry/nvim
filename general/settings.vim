@@ -27,6 +27,7 @@ set updatetime=50
 set cmdheight=1
 
 au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
+au FileType md setlocal spell wrap linebreak nolist colorcolumn=0
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 colorscheme gruvbox

@@ -59,5 +59,6 @@ let g:which_key_map.f = {
 let g:which_key_map.e = 'tree explorer'
 let g:which_key_map.t = 'new tab'
 let g:which_key_map.c = 'comment line'
+let g:which_key_map.y = 'copy file contents'
 
 call which_key#register('<Space>', "g:which_key_map")
