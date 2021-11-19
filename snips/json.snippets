@@ -1,38 +1,38 @@
 priority -50
 
-snippet s "String" b
+snippet s "String" bA
 "${1:key}": "${0:value}",
 endsnippet
 
-snippet n "Number" b
+snippet n "Number" bA
 "${1:key}": ${0:value},
 endsnippet
 
-snippet a "Array" b
+snippet a "Array" bA
 [
 	${VISUAL}$0
 ],
 endsnippet
 
-snippet na "Named array" b
+snippet na "Named array" bA
 "${1:key}": [
 	${VISUAL}$0
 ],
 endsnippet
 
-snippet o "Object" b
+snippet o "Object" bA
 {
 	${VISUAL}$0
 },
 endsnippet
 
-snippet no "Named object" b
+snippet no "Named object" bA
 "${1:key}": {
 	${VISUAL}$0
 },
 endsnippet
 
-snippet null "Null" b
+snippet null "Null" bA
 "${0:key}": null,
 endsnippet
 
@@ -46,6 +46,6 @@ def compB(t, opts):
 	return "(" + '|'.join(opts) + ')'
 endglobal
 
-snippet b "Bool" b
+snippet b "Bool" bA
 "${1:key}": $2`!p snip.rv=compB(t[2], ['true', 'false'])`,
 endsnippet
