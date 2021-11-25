@@ -2,7 +2,7 @@ nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 set timeoutlen=250
 
-let g:which_key_map =  {}
+let g:which_key_map = {}
 let g:which_key_sep = '→'
 
 let g:which_key_use_floating_win = 0

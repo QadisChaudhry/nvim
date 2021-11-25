@@ -27,11 +27,15 @@ nnoremap N Nzz
 
 nnoremap Y y$
 
+nnoremap p "0p
+nnoremap P "0P
+nnoremap dp ""p
+nnoremap dP ""P
+
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
 
-nnoremap { {zz
-nnoremap } }zz
+nnoremap <C-s> :%sm /
 
 vnoremap <Up> gk
 vnoremap <Down> gj
