@@ -24,22 +24,26 @@ let g:which_key_map['j'] = [':wincmd j', 'win down']
 let g:which_key_map['k'] = [':wincmd k', 'win up']
 
 let g:which_key_map[','] = [':Startify', 'start screen']
-let g:which_key_map['q'] = [':wqa', 'write and quit all']
 let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
 
-let g:which_key_map['s'] = [':call markdown#SwitchStatus()<cr>', 'select item']
 let g:which_key_map.m = {
 \ 'name': '+markdown',
-\ 'p': ['<Plug>MarkdownPreviewToggle', 'Preview']
+\ 'p': ['<Plug>MarkdownPreviewToggle', 'preview'],
+\ 's': [':call markdown#SwitchStatus()<cr>', 'select item']
 \ }
 
-let g:which_key_map.v = {
-\ 'name': '+vimtex',
+let g:which_key_map.l = {
+\ 'name': '+latex',
 \ 'e': [':VimtexErrors', 'errors'],
 \ 'c': [':VimtexCompile', 'compile'],
 \ 'v': [':VimtexView', 'view'],
 \ 'k': [':VimtexClean', 'kill aux'],
+\ 't': {
+\ 'name' : '+templates',
+\ 'l' : ['iltemplate', 'Lab Template'],
+\ 'h' : ['iltemplate', 'HW Template']
+\ }
 \ }
 
 let g:which_key_map.i = {
@@ -56,7 +60,6 @@ let g:which_key_map.f = {
 \ 'd' : [ 'zd', 'unfold lines'],
 \ }
 
-let g:which_key_map.e = 'tree explorer'
 let g:which_key_map.t = 'new tab'
 let g:which_key_map.c = 'comment line'
 let g:which_key_map.y = 'copy file contents'

@@ -1,17 +1,19 @@
 let mapleader = " "
-noremap <leader>e :Lex <bar> :vertical resize 30<cr>
 noremap <leader>t :tabedit <bar> :Startify<cr>
 
 nnoremap <leader>c :Commentary<cr>
 vnoremap <leader>c :Commentary<cr>
 
 nnoremap <leader>y :%w !pbcopy<cr><cr>
-vnoremap <leader>y :w !pbcopy<cr><cr>
+vnoremap <leader>y "*y<cr><cr>
+
+" nnoremap <leader>tl :read ~/templates/Lab Template.txt<cr>kdd18jf}i
+" nnoremap <leader>th :read ~/templates/HW Template.txt<cr>kdd13jf}i
 
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-c> <Esc>
 
-nnoremap <C-h> :execute "help " . expand("<cword>")<cr>
+nnoremap <C-h> :execute 'help ' . expand("<cword>")<cr>
 
 tnoremap <C-t> <C-\><C-n>:FloatermToggle<cr>
 
@@ -31,6 +33,10 @@ nnoremap p "0p
 nnoremap P "0P
 nnoremap dp ""p
 nnoremap dP ""P
+vnoremap p "0p
+vnoremap P "0P
+vnoremap dp ""p
+vnoremap dP ""P
 
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>

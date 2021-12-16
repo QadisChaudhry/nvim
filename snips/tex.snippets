@@ -11,7 +11,7 @@ def env(name):
 
 endglobal
 
-snippet ltemplate "Lab template" b
+snippet ltemplate "Lab template" bA
 \documentclass[12pt]{article}
 \usepackage{indentfirst}
 \usepackage{amsmath}
@@ -22,6 +22,7 @@ snippet ltemplate "Lab template" b
 \usepackage{wrapfig}
 \usepackage{booktabs}
 \usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
 \usepackage[autostyle, english = american]{csquotes}
@@ -39,7 +40,7 @@ snippet ltemplate "Lab template" b
 \end{document}
 endsnippet
 
-snippet template "Basic template" b
+snippet template "Basic template" bA
 \documentclass[12pt]{article}
 \usepackage{indentfirst}
 \usepackage{enumitem}
@@ -51,6 +52,7 @@ snippet template "Basic template" b
 \usepackage{wrapfig}
 \usepackage{booktabs}
 \usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[R]{$1}
@@ -84,7 +86,13 @@ snippet par "paragraph" bA
 endsnippet
 
 snippet vv "verbatim" iA
-\verb+$0+
+\verb~$0~
+endsnippet
+
+snippet VV "verbatim" bA
+\begin{Verbatim}
+	$0
+\end{Verbatim}
 endsnippet
 
 snippet sec "section*" bA
@@ -111,6 +119,12 @@ endsnippet
 context "math()"
 snippet deg "degrees" iA
 ^{\circ}
+endsnippet
+
+snippet center "center" bA
+\begin{center}
+	$0
+\end{center}
 endsnippet
 
 snippet table "Table environment" b
