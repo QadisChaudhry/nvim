@@ -11,7 +11,7 @@ def env(name):
 
 endglobal
 
-snippet ltemplate "Lab template" bA
+snippet template1 "Template1" bA
 \documentclass[12pt]{article}
 \usepackage{indentfirst}
 \usepackage{amsmath}
@@ -40,7 +40,48 @@ snippet ltemplate "Lab template" bA
 \end{document}
 endsnippet
 
-snippet template "Basic template" bA
+snippet template2 "Template2" bA
+\documentclass[12pt]{article}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{multicol}
+\setlength{\jot}{2ex}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\renewcommand{\baselinestretch}{1.0}
+\newcommand{\objects}[2]{%
+  \leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
+}
+\begin{document}
+\maketitle
+    \begin{titlepage}
+        \begin{center}
+            \textbf{Qadis Chaudhry} \\
+            \vspace{0.2cm}
+            202001055 \\
+            \vfill
+            \textbf{${1:assignment name}} \\
+            \vspace{0.2cm}
+            ${2:due date} \\
+            \vfill
+            ${3:class name and code} \\
+            \vspace{0.2cm}
+            ${4:semester}
+        \end{center}
+    \end{titlepage}
+	$0
+\end{document}
+endsnippet
+
+snippet template3 "Template3" bA
 \documentclass[12pt]{article}
 \usepackage{indentfirst}
 \usepackage{enumitem}
@@ -114,6 +155,11 @@ endsnippet
 context "math()"
 snippet box "boxed" iA
 \boxed{$1}$0
+endsnippet
+
+context "math()"
+snippet eval "evaluate" iA
+\Big|_{$1}^{$2}$0
 endsnippet
 
 context "math()"
@@ -730,6 +776,16 @@ snippet tt "text" iA
 endsnippet
 
 context "math()"
+snippet tb "text bold" iA
+\textbf{$1}$0
+endsnippet
+
+context "math()"
+snippet ti "text italic" iA
+\textit{$1}$0
+endsnippet
+
+context "math()"
 snippet case "cases" wA
 \begin{cases}
 	$1
@@ -773,6 +829,12 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])vec" "vec" riA
+\vec{`!p snip.rv=match.group(1)`}
 endsnippet
 
 snippet letw "let omega" iA

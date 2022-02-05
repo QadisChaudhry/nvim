@@ -21,7 +21,7 @@ set encoding=utf-8
 set signcolumn=yes
 set colorcolumn=120
 set cursorline
-set scroll=10
+set scroll=5
 set scrolloff=8
 set updatetime=50
 set cmdheight=1
@@ -30,6 +30,8 @@ au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
 au FileType md setlocal spell wrap linebreak nolist colorcolumn=0
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
+set termguicolors
+" colorscheme nord
 colorscheme gruvbox
 set background=dark
 

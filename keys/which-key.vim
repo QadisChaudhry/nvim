@@ -18,14 +18,11 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 signcolumn=no noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 signcolumn=yes showmode ruler
 
-let g:which_key_map['h'] = [':wincmd h', 'win left']
-let g:which_key_map['l'] = [':wincmd l', 'win right']
-let g:which_key_map['j'] = [':wincmd j', 'win down']
-let g:which_key_map['k'] = [':wincmd k', 'win up']
-
 let g:which_key_map[','] = [':Startify', 'start screen']
 let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
+
+let g:which_key_map['e'] = [':Lex | vertical resize 35', 'file explorer']
 
 let g:which_key_map.m = {
 \ 'name': '+markdown',
@@ -41,8 +38,9 @@ let g:which_key_map.l = {
 \ 'k': [':VimtexClean', 'kill aux'],
 \ 't': {
 \ 'name' : '+templates',
-\ 'l' : ['iltemplate', 'Lab Template'],
-\ 'h' : ['iltemplate', 'HW Template']
+\ '1' : ['itemplate1', 'With Title'],
+\ '2' : ['itemplate2', 'With Title Page'],
+\ '3' : ['itemplate3', 'Basic Template']
 \ }
 \ }
 

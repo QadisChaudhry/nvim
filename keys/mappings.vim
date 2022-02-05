@@ -15,7 +15,7 @@ inoremap <C-c> <Esc>
 
 nnoremap <C-h> :execute 'help ' . expand("<cword>")<cr>
 
-tnoremap <C-t> <C-\><C-n>:FloatermToggle<cr>
+tnoremap <Esc> <C-\><C-n>:FloatermToggle<cr>
 
 nmap - <Plug>NetrwBrowseUpDir
 
