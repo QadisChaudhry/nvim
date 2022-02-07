@@ -22,7 +22,8 @@ let g:which_key_map[','] = [':Startify', 'start screen']
 let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
 
-let g:which_key_map['e'] = [':Lex | vertical resize 35', 'file explorer']
+" let g:which_key_map['e'] = [':Lex | vertical resize 35', 'file explorer']
+let g:which_key_map['e'] = [':NvimTreeToggle', 'file explorer']
 
 let g:which_key_map.m = {
 \ 'name': '+markdown',
@@ -46,10 +47,10 @@ let g:which_key_map.l = {
 
 let g:which_key_map.i = {
 \ 'name': '+terminal',
-\ 't': [':FloatermToggle', 'terminal'],
-\ 'g': [':FloatermNew lazygit', 'git'],
+\ 't': [':ToggleTerm', 'terminal'],
 \ 'f': [':Telescope find_files', 'find files'],
-\ 'p': [':FloatermNew ipython', 'python'],
+\ 'g': 'git',
+\ 'p': 'python'
 \ }
 
 let g:which_key_map.f = {
