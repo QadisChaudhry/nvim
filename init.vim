@@ -15,7 +15,11 @@ source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/startify.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
-source $HOME/.config/nvim/plug-config/treesitter.lua
-source $HOME/.config/nvim/plug-config/telescope.lua
-source $HOME/.config/nvim/plug-config/lualine.lua
-source $HOME/.config/nvim/plug-config/cmp.lua
+
+lua << EOF
+require("user.treesitter")
+require("user.telescope")
+require("user.lualine")
+require("user.cmp")
+require("user.lsp")
+EOF
