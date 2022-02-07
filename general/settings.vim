@@ -36,3 +36,11 @@ colorscheme gruvbox
 set background=dark
 
 let g:netrw_banner = 0
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+au BufWritePre * call TrimWhitespace()

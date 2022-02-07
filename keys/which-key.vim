@@ -48,7 +48,7 @@ let g:which_key_map.i = {
 \ 'name': '+terminal',
 \ 't': [':FloatermToggle', 'terminal'],
 \ 'g': [':FloatermNew lazygit', 'git'],
-\ 'f': [':FloatermNew fzf', 'fzf'],
+\ 'f': [':Telescope find_files', 'find files'],
 \ 'p': [':FloatermNew ipython', 'python'],
 \ }
 

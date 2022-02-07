@@ -250,18 +250,19 @@ snippet iff "iff" Ai
 \iff
 endsnippet
 
-# `!p
-# if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-# 	snip.rv = ' '
-# else:
-# 	snip.rv = ''
-# `
-
-snippet lm "Math" wA
-$ $1 $$0
+# snippet lm "Math" wA
+# $ $1 $$0
+# endsnippet
+snippet lm "Line Math" wA
+$ ${1} $`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
 endsnippet
 
-snippet dm "Math" wA
+snippet dm "Display Math" wA
 \[
 	${1:${VISUAL}}
 \]
@@ -831,9 +832,7 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
-priority 100
-context "math()"
-snippet "([a-zA-Z])vec" "vec" riA
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet
 

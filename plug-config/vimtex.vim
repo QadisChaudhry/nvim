@@ -24,8 +24,9 @@ let g:tex_flavor = "latex"
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_quickfix_mode = 0
 let g:vimtex_compiler_progname = 'nvr'
+" set conceallevel=1
 
 let g:UltiSnipsExpandTrigger = '<c-space>'
-let g:UltiSnipsJumpForwardTrigger = '<c-space>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
