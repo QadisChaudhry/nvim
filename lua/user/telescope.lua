@@ -1,5 +1,10 @@
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+  return
+end
+
 local actions = require('telescope.actions')
-require('telescope').setup{
+telescope.setup{
     defaults = {
         layout_strategy = 'vertical',
         layout_config = { height = 0.95 },
@@ -13,4 +18,4 @@ require('telescope').setup{
     }
 }
 
-require('telescope').load_extension('fzy_native')
+telescope.load_extension('fzy_native')

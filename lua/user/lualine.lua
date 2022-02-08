@@ -1,10 +1,15 @@
-require('lualine').setup {
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+    return
+end
+
+lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'auto',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
-        disabled_filetypes = { "NvimTree" },
+        disabled_filetypes = {},
         always_divide_middle = true,
     },
     sections = {
@@ -24,5 +29,5 @@ require('lualine').setup {
         lualine_z = {}
     },
     tabline = {},
-    extensions = {}
+    extensions = { "nvim-tree", "toggleterm" }
 }

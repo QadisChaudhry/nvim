@@ -7,17 +7,12 @@ vnoremap <leader>c :Commentary<cr>
 nnoremap <leader>y :%w !pbcopy<cr><cr>
 vnoremap <leader>y "*y<cr><cr>
 
-" nnoremap <leader>tl :read ~/templates/Lab Template.txt<cr>kdd18jf}i
-" nnoremap <leader>th :read ~/templates/HW Template.txt<cr>kdd13jf}i
-
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-c> <Esc>
 
 nnoremap <C-h> :execute 'help ' . expand("<cword>")<cr>
 
 tnoremap <Esc> <C-\><C-n>:ToggleTerm<cr>
-
-nmap - <Plug>NetrwBrowseUpDir
 
 xnoremap K :move '<-2<cr>gv-gv
 xnoremap J :move '>+1<cr>gv-gv

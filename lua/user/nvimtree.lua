@@ -40,7 +40,7 @@ nvim_tree.setup {
     },
     auto_close = true,
     open_on_tab = false,
-    hijack_cursor = true,
+    hijack_cursor = false,
     update_cwd = true,
     update_to_buf_dir = {
         enable = true,
@@ -79,8 +79,8 @@ nvim_tree.setup {
             custom_only = false,
             list = {
                 { key = { "<CR>", "o" }, cb = tree_cb "edit" },
-                { key = "h", cb = tree_cb "close_node" },
                 { key = "t", cb = tree_cb "tabnew" },
+                { key = "c", cb = tree_cb "cd" },
             },
         },
         number = false,

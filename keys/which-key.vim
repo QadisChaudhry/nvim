@@ -22,7 +22,6 @@ let g:which_key_map[','] = [':Startify', 'start screen']
 let g:which_key_map['w'] = [':w', 'write file']
 let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
 
-" let g:which_key_map['e'] = [':Lex | vertical resize 35', 'file explorer']
 let g:which_key_map['e'] = [':NvimTreeToggle', 'file explorer']
 
 let g:which_key_map.m = {
