@@ -47,3 +47,6 @@ vnoremap <Left> h
 vnoremap <Right> l
 nnoremap <Left> h
 nnoremap <Right> l
+
+nnoremap <leader>fs :lua require("user.telescope").school()<cr>
+nnoremap <leader>fv :lua require("user.telescope").vrc()<cr>

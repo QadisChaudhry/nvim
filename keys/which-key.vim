@@ -47,15 +47,15 @@ let g:which_key_map.l = {
 let g:which_key_map.i = {
 \ 'name': '+terminal',
 \ 't': [':ToggleTerm', 'terminal'],
-\ 'f': [':Telescope find_files', 'find files'],
 \ 'g': 'git',
 \ 'p': 'python'
 \ }
 
 let g:which_key_map.f = {
-\ 'name' : '+fold',
-\ 'f' : [ 'zf%', 'fold lines'],
-\ 'd' : [ 'zd', 'unfold lines'],
+\ 'name' : '+files',
+\ 'f' : [':Telescope find_files', 'find files'],
+\ 's' : 'school files',
+\ 'v' : 'vim config'
 \ }
 
 let g:which_key_map.t = 'new tab'
