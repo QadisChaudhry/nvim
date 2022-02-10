@@ -55,7 +55,8 @@ let g:which_key_map.f = {
 \ 'name' : '+files',
 \ 'f' : [':Telescope find_files', 'find files'],
 \ 's' : 'school files',
-\ 'v' : 'vim config'
+\ 'v' : 'vim config',
+\ 'p' : 'projects'
 \ }
 
 let g:which_key_map.t = 'new tab'

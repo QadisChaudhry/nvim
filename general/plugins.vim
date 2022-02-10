@@ -39,4 +39,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'akinsho/toggleterm.nvim'
 
+Plug 'alvarosevilla95/luatab.nvim'
+
 call plug#end()

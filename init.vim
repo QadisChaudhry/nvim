@@ -25,4 +25,5 @@ require("user.lsp")
 require("user.autopairs")
 require("user.nvimtree")
 require("user.toggleterm")
+require("user.luatab")
 EOF

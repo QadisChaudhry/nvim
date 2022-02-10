@@ -9,7 +9,7 @@ local builtin = require('telescope.builtin')
 telescope.setup{
     defaults = {
         layout_strategy = 'vertical',
-        -- layout_config = { height = 0.95 },
+        layout_config = { preview_cutoff = 30 },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         mappings = {
             i = {
@@ -33,7 +33,19 @@ M.school = function ()
     builtin.find_files({
         prompt_title = "College Files",
         cwd = "~/Desktop/College/Second Year/Second Semester",
-        telescope.setup{ defaults = { file_ignore_patterns = {"%.pdf", "%.png", "%.log", "%.aux", "%.gz", "%.fdb_latexmk", "%.fls"} } }
+        telescope.setup{
+            defaults = {
+                file_ignore_patterns = {
+                    "%.pdf",
+                    "%.png",
+                    "%.log",
+                    "%.aux",
+                    "%.gz",
+                    "%.fdb_latexmk",
+                    "%.fls"
+                }
+            }
+        }
     })
 end
 
@@ -41,7 +53,30 @@ M.vrc = function ()
     builtin.find_files({
         prompt_title = "Vim Config",
         cwd = "~/.config/nvim/",
-        telescope.setup{ defaults = { file_ignore_patterns = {"plugged", "undodir", "autoload"} } }
+        telescope.setup{
+            defaults = {
+                file_ignore_patterns = {
+                    "plugged",
+                    "undodir",
+                    "autoload"
+                }
+            }
+        }
+    })
+end
+
+M.proj = function ()
+    builtin.find_files({
+        prompt_title = "Projects",
+        cwd = "~/Projects/",
+        telescope.setup{
+            defaults = {
+                file_ignore_patterns = {
+                    "%.DS_Store",
+                    "%/__pycache__"
+                }
+            }
+        }
     })
 end
 

@@ -34,6 +34,7 @@ set termguicolors
 " colorscheme nord
 colorscheme gruvbox
 set background=dark
+hi Normal ctermbg=NONE guibg=NONE
 
 let g:netrw_banner = 0
 

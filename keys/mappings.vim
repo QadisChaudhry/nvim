@@ -50,3 +50,4 @@ nnoremap <Right> l
 
 nnoremap <leader>fs :lua require("user.telescope").school()<cr>
 nnoremap <leader>fv :lua require("user.telescope").vrc()<cr>
+nnoremap <leader>fp :lua require("user.telescope").proj()<cr>
