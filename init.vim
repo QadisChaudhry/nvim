@@ -14,7 +14,6 @@ source $HOME/.config/nvim/plug-config/airline.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/startify.vim
-" source $HOME/.config/nvim/plug-config/floaterm.vim
 
 lua << EOF
 require("user.treesitter")
