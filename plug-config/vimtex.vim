@@ -27,6 +27,6 @@ let g:vimtex_compiler_progname = 'nvr'
 " set conceallevel=1
 
 let g:UltiSnipsExpandTrigger = '<c-space>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = ',,'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]

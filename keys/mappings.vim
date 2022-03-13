@@ -24,14 +24,14 @@ nnoremap N Nzz
 
 nnoremap Y y$
 
-nnoremap p "0p
-nnoremap P "0P
-nnoremap dp ""p
-nnoremap dP ""P
-vnoremap p "0p
-vnoremap P "0P
-vnoremap dp ""p
-vnoremap dP ""P
+" nnoremap p "0p
+" nnoremap P "0P
+" nnoremap dp ""p
+" nnoremap dP ""P
+" vnoremap p "0p
+" vnoremap P "0P
+" vnoremap dp ""p
+" vnoremap dP ""P
 
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>

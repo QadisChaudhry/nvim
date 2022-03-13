@@ -9,7 +9,7 @@ source $HOME/.config/nvim/keys/which-key.vim
 " Plugins
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
-" source $HOME/.config/nvim/plug-config/airline.vim
+source $HOME/.config/nvim/plug-config/airline.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
@@ -19,7 +19,7 @@ source $HOME/.config/nvim/plug-config/startify.vim
 lua << EOF
 require("user.treesitter")
 require("user.telescope")
-require("user.lualine")
+-- require("user.lualine")
 require("user.cmp")
 require("user.lsp")
 require("user.autopairs")

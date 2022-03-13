@@ -61,7 +61,6 @@ snippet template2 "Template2" bA
   \leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
 }
 \begin{document}
-\maketitle
     \begin{titlepage}
         \begin{center}
             \textbf{Qadis Chaudhry} \\
@@ -127,7 +126,7 @@ snippet par "paragraph" bA
 endsnippet
 
 snippet vv "verbatim" iA
-\verb~$0~
+\verb~$1~$0
 endsnippet
 
 snippet VV "verbatim" bA
@@ -187,7 +186,7 @@ endsnippet
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
 	\centering
-	${2:\includegraphics[width=0.8\textwidth]{$3}}
+	${2:\includegraphics[width=0.8\textwidth]{./$3}}
 	\caption{${4:$3}}
 	\label{fig:${5:${3/\W+/-/g}}}
 \end{figure}
@@ -197,11 +196,11 @@ snippet hfig "Horizontal figure" b
 \begin{figure}[${1:htpb}]
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{$2}
+		\includegraphics[width=0.8\textwidth]{./$2}
 	\end{minipage}
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{$3}
+		\includegraphics[width=0.8\textwidth]{./$3}
 	\end{minipage}
 	\caption{$4}
 \end{figure}
@@ -210,8 +209,8 @@ endsnippet
 snippet vfig "Vertical figure" b
 \begin{center}
 	\objects
-		{\includegraphics[width=0.8\textwidth]{$1}}
-		{\includegraphics[width=0.8\textwidth]{$2}}
+		{\includegraphics[width=0.8\textwidth]{./$1}}
+		{\includegraphics[width=0.8\textwidth]{./$2}}
 \end{center}
 endsnippet
 
@@ -436,7 +435,7 @@ snippet prod "product" w
 \prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
 endsnippet
 
-snippet part "d/dx" w
+snippet del "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
@@ -782,11 +781,6 @@ snippet tb "text bold" iA
 endsnippet
 
 context "math()"
-snippet ti "text italic" iA
-\textit{$1}$0
-endsnippet
-
-context "math()"
 snippet case "cases" wA
 \begin{cases}
 	$1
@@ -823,17 +817,17 @@ endsnippet
 priority 10
 context "math()"
 snippet "hat" "hat" riA
-\hat{$1}$0
+\hat{$1}\,$0
 endsnippet
 
 priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`}
+\hat{`!p snip.rv=match.group(1)`}\,
 endsnippet
 
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
-\vec{`!p snip.rv=match.group(1)`}
+\vec{`!p snip.rv=match.group(1)`}\,
 endsnippet
 
 snippet letw "let omega" iA

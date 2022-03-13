@@ -42,7 +42,8 @@ M.school = function ()
                     "%.aux",
                     "%.gz",
                     "%.fdb_latexmk",
-                    "%.fls"
+                    "%.fls",
+                    "%.class"
                 }
             }
         }
