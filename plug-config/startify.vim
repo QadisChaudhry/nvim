@@ -6,10 +6,9 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [
             \ {'a': '~/TODO.md'},
-            \ {'b': '~/.config/nvim/init.vim'},
-            \ {'c': '~/.config/nvim/snips/tex.snippets'},
-            \ {'d': '~/planck_layout'},
-            \ {'e': '~/crkbd_layout'}
+            \ {'b': '~/.config/nvim/snips/tex.snippets'},
+            \ {'c': '~/planck_layout'},
+            \ {'d': '~/crkbd_layout'}
             \ ]
 
 let g:startify_session_autoload = 1

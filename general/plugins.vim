@@ -2,8 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'shaunsingh/nord.nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 " Plug 'w0rp/ale'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
@@ -39,5 +39,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/toggleterm.nvim'
 
 Plug 'alvarosevilla95/luatab.nvim'
+
+Plug 'AckslD/nvim-neoclip.lua'
+
+Plug 'akinsho/bufferline.nvim'
 
 call plug#end()

@@ -1,8 +1,7 @@
 let mapleader = " "
-noremap <leader>t :tabedit <bar> :Startify<cr>
 
-nnoremap <leader>c :Commentary<cr>
-vnoremap <leader>c :Commentary<cr>
+nnoremap <leader>/ :Commentary<cr>
+vnoremap <leader>/ :Commentary<cr>
 
 nnoremap <leader>y :%w !pbcopy<cr><cr>
 vnoremap <leader>y "*y<cr><cr>
@@ -51,3 +50,5 @@ nnoremap <Right> l
 nnoremap <leader>fs :lua require("user.telescope").school()<cr>
 nnoremap <leader>fv :lua require("user.telescope").vrc()<cr>
 nnoremap <leader>fp :lua require("user.telescope").proj()<cr>
+
+nnoremap <leader>c :lua require("telescope").extensions.neoclip.default({ on_complete = { function() vim.cmd"stopinsert" end } })<cr><cr>

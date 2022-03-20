@@ -214,8 +214,8 @@ endsnippet
 
 snippet if "if" b
 if ($1)`!p nl(snip)`{
-	$0${VISUAL}
-}
+	$2${VISUAL}
+}$0
 endsnippet
 
 snippet imt "import junit_framework_TestCase;"  b
@@ -430,7 +430,7 @@ snippet th "throw" b
 throw new $0
 endsnippet
 
-snippet wh "while" b
+snippet while "while" b
 while ($1)`!p nl(snip)`{
 	$0
 }

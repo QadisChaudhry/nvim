@@ -24,6 +24,8 @@ let g:which_key_map['r'] = [':source $MYVIMRC', 'reload config']
 
 let g:which_key_map['e'] = [':NvimTreeToggle', 'file explorer']
 
+let g:which_key_map['v'] = [':Telescope lsp_document_symbols', 'variables']
+
 let g:which_key_map.m = {
 \ 'name': '+markdown',
 \ 'p': ['<Plug>MarkdownPreviewToggle', 'preview'],
@@ -53,14 +55,23 @@ let g:which_key_map.i = {
 
 let g:which_key_map.f = {
 \ 'name' : '+files',
-\ 'f' : [':Telescope find_files', 'find files'],
+\ 'o' : [':Telescope oldfiles', 'recent files'],
+\ 'g' : [':Telescope live_grep', 'grep'],
 \ 's' : 'school files',
 \ 'v' : 'vim config',
 \ 'p' : 'projects'
 \ }
 
-let g:which_key_map.t = 'new tab'
-let g:which_key_map.c = 'comment line'
+let g:which_key_map.b = {
+\ 'name' : '+buffers',
+\ 'n' : [':bnext', 'next buffer'],
+\ 'p' : [':bprevious', 'previous buffer'],
+\ 'q' : [':bdelete', 'close buffer'],
+\ 's' : [':Telescope buffers', 'search buffers'],
+\ }
+
+let g:which_key_map['/'] = 'comment line'
 let g:which_key_map.y = 'copy file contents'
+let g:which_key_map.c = 'clipboard'
 
 call which_key#register('<Space>', "g:which_key_map")

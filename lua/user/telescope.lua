@@ -5,12 +5,13 @@ end
 
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
+local sorters = require('telescope.sorters')
 
 telescope.setup{
     defaults = {
         layout_strategy = 'vertical',
         layout_config = { preview_cutoff = 30 },
-        file_sorter = require('telescope.sorters').get_fzy_sorter,
+        file_sorter = sorters.get_fzy_sorter,
         mappings = {
             i = {
                 ["<esc>"] = actions.close,
@@ -26,6 +27,7 @@ telescope.setup{
 }
 
 telescope.load_extension('fzy_native')
+telescope.load_extension('neoclip')
 
 local M = {}
 

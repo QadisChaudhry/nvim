@@ -19,7 +19,6 @@ set undofile
 set incsearch
 set encoding=utf-8
 set signcolumn=yes
-set colorcolumn=120
 set cursorline
 set scroll=5
 set scrolloff=8
