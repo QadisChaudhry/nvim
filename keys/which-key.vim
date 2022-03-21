@@ -66,7 +66,7 @@ let g:which_key_map.b = {
 \ 'name' : '+buffers',
 \ 'n' : [':bnext', 'next buffer'],
 \ 'p' : [':bprevious', 'previous buffer'],
-\ 'q' : [':bdelete', 'close buffer'],
+\ 'q' : [':bdelete!', 'close buffer'],
 \ 's' : [':Telescope buffers', 'search buffers'],
 \ }
 

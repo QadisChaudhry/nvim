@@ -9,7 +9,7 @@ Plug 'shaunsingh/nord.nvim'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
-Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'gabrielelana/vim-markdown'
@@ -38,10 +38,10 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'akinsho/toggleterm.nvim'
 
-Plug 'alvarosevilla95/luatab.nvim'
-
 Plug 'AckslD/nvim-neoclip.lua'
 
 Plug 'akinsho/bufferline.nvim'
+
+Plug 'folke/which-key.nvim'
 
 call plug#end()

@@ -33,11 +33,7 @@ function _LAZYGIT_TOGGLE()
     lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>ig", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
-
 local python = Terminal:new({ cmd = "ipython", hidden = true })
 function _PYTHON_TOGGLE()
     python:toggle()
 end
-
-vim.api.nvim_set_keymap("n", "<leader>ip", "<cmd>lua _PYTHON_TOGGLE()<CR>", {noremap = true, silent = true})

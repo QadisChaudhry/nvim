@@ -141,7 +141,7 @@ ins_left {
         removed = { fg = colors.red },
         },
         cond = conditions.hide_in_width,
-        padding = { left = 2, right = 1 },
+        padding = { left = 1, right = 1 },
     }
 
 -- ins_left {
@@ -180,7 +180,7 @@ ins_right {
 ins_right {
     status.treesitter_status,
     color = { fg = colors.green },
-    padding = { left = 1, right = 0 },
+    padding = { left = 1, right = 1 },
     cond = conditions.hide_in_width,
 }
 

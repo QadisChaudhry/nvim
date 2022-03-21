@@ -3,8 +3,8 @@ source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 
 " Keymaps
-source $HOME/.config/nvim/keys/mappings.vim
-source $HOME/.config/nvim/keys/which-key.vim
+" source $HOME/.config/nvim/keys/mappings.vim
+" source $HOME/.config/nvim/keys/which-key.vim
 
 " Plugins
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
@@ -23,8 +23,10 @@ require("user.lsp")
 require("user.autopairs")
 require("user.nvimtree")
 require("user.toggleterm")
--- require("user.luatab")
 require("user.neoclip")
-require("user.lualine.lualine")
 require("user.bufferline")
+require("user.lualine.lualine")
+
+require("user.keys.mappings")
+require("user.keys.which-key")
 EOF
