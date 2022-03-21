@@ -28,19 +28,20 @@ map("n", "<leader>ig", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
 map("n", "<leader>ip", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts)
 map("t", "<esc>", "<C-\\><C-n>:ToggleTerm<cr>", opts)
 
--- Files
-map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", opts)
-map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-map("n", "<leader>fs", "<cmd>lua require('user.telescope').school()<cr>", opts)
-map("n", "<leader>fv", "<cmd>lua require('user.telescope').vrc()<cr>", opts)
-map("n", "<leader>fp", "<cmd>lua require('user.telescope').proj()<cr>", opts)
+-- Search
+map("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", opts)
+map("n", "<leader>sw", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", opts)
+map("n", "<leader>sb", "<cmd>Telescope buffers<cr>", opts)
+map("n", "<leader>sv", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+map("n", "<leader>ss", "<cmd>lua require('user.telescope').school()<cr>", opts)
+map("n", "<leader>sc", "<cmd>lua require('user.telescope').vrc()<cr>", opts)
+map("n", "<leader>sp", "<cmd>lua require('user.telescope').proj()<cr>", opts)
 
 -- Buffers
 map("n", "<leader>bn", "<cmd>bnext<cr>", opts)
 map("n", "<leader>bp", "<cmd>bprevious<cr>", opts)
 map("n", "<leader>bq", "<cmd>bdelete!<cr>", opts)
-map("n", "<leader>bs", "<cmd>Telescope buffers<cr>", opts)
 
 -- Clipboard
 -- map("n", "<leader>c", "<cmd>lua require('telescope').extensions.neoclip.default({ on_complete = { function() vim.cmd('stopinsert') end } })<cr><cr>", opts)
@@ -54,7 +55,6 @@ map("n", "<leader>,", "<cmd>Startify<cr>", opts)
 map("n", "<leader>w", "<cmd>w<cr>", opts)
 map("n", "<leader>r", "<cmd>source $MYVIMRC<cr>", opts)
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
-map("n", "<leader>v", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 
 map("n", "Q", "@@", opts)
 map("n", "n", "nzz", opts)

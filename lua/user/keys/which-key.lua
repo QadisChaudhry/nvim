@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 vim.opt.timeoutlen = 250
+vim.cmd("hi WhichKeyFloat ctermbg=BLACK")
 
 local setup = {
     plugins = {
@@ -71,7 +72,6 @@ local mappings = {
     ["w"] = { "Write File" },
     ["r"] = { "Reload Config" },
     ["e"] = { "Explorer" },
-    ["v"] = { "Variables" },
     ["c"] = { "Clipboard" },
 
     m = {
@@ -82,10 +82,10 @@ local mappings = {
 
     l = {
         name = "Latex",
-        c = { "Code Action" },
-        e = { "Format" },
-        v = { "Info" },
-        k = { "Installer Info" },
+        c = { "Compile" },
+        e = { "Errors" },
+        v = { "View" },
+        k = { "Kill Auxiliary" },
         t = {
             name = "Templates",
             ["1"] = { "With Title" },
@@ -101,13 +101,15 @@ local mappings = {
         p = { "Python" },
     },
 
-    f = {
-        name = "Files",
-        o = { "Recent Files" },
+    s = {
+        name = "Search",
+        r = { "Recent Files" },
         w = { "Find Word" },
-        h = { "Help Pages" },
+        h = { "Help Tags" },
+        b = { "Buffers" },
+        v = { "Variables" },
         s = { "School" },
-        v = { "Vim Config" },
+        c = { "Vim Config" },
         p = { "Projects" },
     },
 
@@ -116,7 +118,6 @@ local mappings = {
         n = { "Next Buffer" },
         p = { "Previous Buffer" },
         q = { "Close Buffer" },
-        s = { "Search Buffers" },
     },
 }
 
