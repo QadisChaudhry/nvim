@@ -20,6 +20,8 @@ function! UpdateSkim(status)
     endif
 endfunction
 
+let g:vimtex_mappings_enabled = 0
+
 let g:tex_flavor = "latex"
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_quickfix_mode = 0

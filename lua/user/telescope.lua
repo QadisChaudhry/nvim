@@ -17,6 +17,7 @@ telescope.setup{
                 ["<esc>"] = actions.close,
             },
         },
+        path_display = { "smart" }
     },
     extensions = {
         fzy_native = {

@@ -21,20 +21,6 @@ local colors = {
     red = "#cc241d",
 }
 
-local conditions = {
-    buffer_not_empty = function()
-    return vim.fn.empty(vim.fn.expand "%:t") ~= 1
-    end,
-    hide_in_width = function()
-        return vim.fn.winwidth(0) > 80
-    end,
-    check_git_workspace = function()
-        local filepath = vim.fn.expand "%:p:h"
-        local gitdir = vim.fn.finddir(".git", filepath .. ";")
-        return gitdir and #gitdir > 0 and #gitdir < #filepath
-    end,
-}
-
 local function cols()
     return {
         normal = {
@@ -64,6 +50,20 @@ local function cols()
         },
     }
 end
+
+local conditions = {
+    buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand "%:t") ~= 1
+    end,
+    hide_in_width = function()
+        return vim.fn.winwidth(0) > 80
+    end,
+    check_git_workspace = function()
+        local filepath = vim.fn.expand "%:p:h"
+        local gitdir = vim.fn.finddir(".git", filepath .. ";")
+        return gitdir and #gitdir > 0 and #gitdir < #filepath
+    end,
+}
 
 local config = {
     options = {
@@ -119,17 +119,11 @@ ins_left {
     padding = { left = 1, right = 1 },
 }
 
--- ins_left {
---     function()
---         return tostring(require("nvim-web-devicons").get_icon(vim.bo.filetype))
---     end
--- }
-
 ins_left {
     "%t %m",
     cond = conditions.buffer_not_empty,
     color = { fg = colors.orange, gui = "bold" },
-    padding = { left = 1, right = 0 },
+    padding = { left = 1, right = 1 },
 }
 
 ins_left {
@@ -160,6 +154,34 @@ ins_left {
     function()
         return "%="
     end,
+}
+
+local compile_status = function()
+    if vim.bo.filetype == "tex" then
+        -- Status: not started or stopped
+        if vim.b.vimtex["compiler"]["status"] == -1 or vim.b.vimtex["compiler"]["status"] == 0 then
+            return ""
+        end
+
+        -- Status: running
+        if vim.b.vimtex["compiler"]["status"] == 1 then
+            return "(⋯)"
+            -- Status: compile success
+        elseif vim.b.vimtex["compiler"]["status"] == 2 then
+            return "(✓)"
+            -- Status: compile failed
+        elseif vim.b.vimtex["compiler"]["status"] == 3 then
+            return "(✗)"
+        end
+    else
+        return ""
+    end
+end
+
+ins_right {
+    compile_status,
+    color = { fg = colors.orange, gui = "bold" },
+    padding = { left = 0, right = 2 },
 }
 
 ins_right {

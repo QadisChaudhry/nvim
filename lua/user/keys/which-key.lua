@@ -8,7 +8,7 @@ vim.cmd("hi WhichKeyFloat ctermbg=BLACK")
 
 local setup = {
     plugins = {
-        marks = true,
+        marks = false,
         registers = true,
         spelling = {
             enabled = true,
