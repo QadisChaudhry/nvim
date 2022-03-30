@@ -5,11 +5,6 @@ if not cmp_status_ok then
     return
 end
 
-local cmp_nvim_ultisnips_status_ok, ultisnips = pcall(require, "cmp_nvim_ultisnips")
-if not cmp_nvim_ultisnips_status_ok then
-    return
-end
-
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -52,7 +47,7 @@ cmp.setup {
     },
     mapping = {
         -- ["<C-k>"] = cmp.mapping.select_prev_item(),
-		-- ["<C-j>"] = cmp.mapping.select_next_item(),
+        -- ["<C-j>"] = cmp.mapping.select_next_item(),
         -- ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         -- ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -88,7 +83,7 @@ cmp.setup {
     sources = cmp.config.sources {
         { name = 'ultisnips' },
         { name = 'nvim_lsp' },
-        { name = 'buffer', option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } },
+        -- { name = 'buffer', option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } },
         { name = 'path' }
     },
     formatting = {
@@ -114,8 +109,8 @@ cmp.setup {
     },
 }
 
-cmp.setup.cmdline('/', {
-    sources = {
-        { name = 'buffer' }
-    }
-})
+-- cmp.setup.cmdline('/', {
+--     sources = {
+--         { name = 'buffer' }
+--     }
+-- })

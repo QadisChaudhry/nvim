@@ -28,6 +28,11 @@ let g:vimtex_quickfix_mode = 0
 let g:vimtex_compiler_progname = 'nvr'
 " set conceallevel=1
 
+let g:vimtex_quickfix_ignore_filters = [
+      \ '\headheight is too small (12.0pt)',
+      \ 'csquotes Warning: No multilingual support',
+      \]
+
 let g:UltiSnipsExpandTrigger = '<c-space>'
 let g:UltiSnipsJumpForwardTrigger = ',,'
 

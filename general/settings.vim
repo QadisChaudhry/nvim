@@ -30,9 +30,11 @@ au FileType markdown setlocal spell wrap linebreak nolist colorcolumn=0
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 set termguicolors
-" colorscheme nord
-colorscheme gruvbox
 set background=dark
+" colorscheme nord
+" colorscheme gruvbox
+" colorscheme onedark
+colorscheme everforest
 " hi Normal ctermbg=NONE guibg=NONE
 
 let g:netrw_banner = 0

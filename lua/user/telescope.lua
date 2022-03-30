@@ -17,17 +17,11 @@ telescope.setup{
                 ["<esc>"] = actions.close,
             },
         },
-        path_display = { "smart" }
+        -- path_display = { "smart" }
     },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true
-        }
-    }
+    extensions = {}
 }
 
-telescope.load_extension('fzy_native')
 telescope.load_extension('neoclip')
 
 local M = {}

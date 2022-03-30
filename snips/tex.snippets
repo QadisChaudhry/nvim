@@ -11,8 +11,19 @@ def env(name):
 
 endglobal
 
+snippet template "master" bA
+\documentclass[12pt]{report}
+\input{../../preamble.tex}
+\begin{document}
+\tpage{${1:Course Name and Code}}{${2:Semester}}
+	\input{$0}
+	\clearpage
+\end{document}
+endsnippet
+
 snippet template1 "Template1" bA
 \documentclass[12pt]{article}
+\setlength{\headheight}{15.0pt}
 \usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage{multicol}
@@ -25,8 +36,6 @@ snippet template1 "Template1" bA
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage[autostyle, english = american]{csquotes}
-\MakeOuterQuote{"}
 \renewcommand{\baselinestretch}{1.0}
 \newcommand{\objects}[2]{%
   \leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
@@ -42,6 +51,7 @@ endsnippet
 
 snippet template2 "Template2" bA
 \documentclass[12pt]{article}
+\setlength{\headheight}{15.0pt}
 \usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage{multicol}
@@ -54,8 +64,6 @@ snippet template2 "Template2" bA
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage[autostyle, english = american]{csquotes}
-\MakeOuterQuote{"}
 \renewcommand{\baselinestretch}{1.0}
 \newcommand{\objects}[2]{%
   \leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
@@ -82,6 +90,7 @@ endsnippet
 
 snippet template3 "Template3" bA
 \documentclass[12pt]{article}
+\setlength{\headheight}{15.0pt}
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \usepackage{amsmath}
@@ -95,12 +104,11 @@ snippet template3 "Template3" bA
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead[R]{$1}
+\fancyhead[L]{$1}
+\fancyhead[R]{$2}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
-\usepackage[autostyle, english = american]{csquotes}
-\MakeOuterQuote{"}
 \renewcommand{\baselinestretch}{1.0}
 \newcommand{\objects}[2]{%
   \leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
@@ -108,6 +116,10 @@ snippet template3 "Template3" bA
 \begin{document}
 	$0
 \end{document}
+endsnippet
+
+snippet lec "lecture" bA
+\lecture{${1:Number}}{${2:Date}}{${3:Title}}$0
 endsnippet
 
 snippet beg "begin{} / end{}" bA
@@ -377,6 +389,10 @@ snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
 
+snippet vmat "vmat" iA
+\begin{vmatrix} $1 \end{vmatrix} $0
+endsnippet
+
 context "math()"
 snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
@@ -573,6 +589,16 @@ endsnippet
 context "math()"
 snippet nabl "nabla" iA
 \nabla
+endsnippet
+
+context "math()"
+snippet curl "curl" iA
+\nabla \times $0
+endsnippet
+
+context "math()"
+snippet div "divergence" iA
+\nabla \cdot $0
 endsnippet
 
 context "math()"
@@ -826,6 +852,12 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}\,
 endsnippet
 
+context "math()"
+snippet "([a-zA-Z])nn" "subscript n" riA
+`!p snip.rv=match.group(1)`_{n}
+endsnippet
+
+context "math()"
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}\,
 endsnippet

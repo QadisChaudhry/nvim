@@ -24,5 +24,10 @@ lsp_installer.on_server_ready(function(server)
         opts = vim.tbl_deep_extend("force", jdtls_opts, opts)
     end
 
+    if server.name == "texlab" then
+        local texlab_opts = require("user.lsp.settings.texlab")
+        opts = vim.tbl_deep_extend("force", texlab_opts, opts)
+    end
+
     server:setup(opts)
 end)

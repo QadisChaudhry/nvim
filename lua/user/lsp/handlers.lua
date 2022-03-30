@@ -2,10 +2,10 @@ local M = {}
 
 M.setup = function()
     local signs = {
-        { name = "DiagnosticSignError", text = "~" },
-        { name = "DiagnosticSignWarn", text = "~" },
-        { name = "DiagnosticSignHint", text = "~" },
-        { name = "DiagnosticSignInfo", text = "~" },
+        { name = "DiagnosticSignError", text = "▊" },
+        { name = "DiagnosticSignWarn", text = "▊" },
+        { name = "DiagnosticSignHint", text = "▊" },
+        { name = "DiagnosticSignInfo", text = "▊" },
         -- { name = "DiagnosticSignError", text = "" },
         -- { name = "DiagnosticSignWarn", text = "" },
         -- { name = "DiagnosticSignHint", text = "" },
@@ -21,7 +21,7 @@ M.setup = function()
         signs = {
             active = signs,
         },
-        update_in_insert = false,
+        update_in_insert = true,
         underline = true,
         severity_sort = true,
         float = {

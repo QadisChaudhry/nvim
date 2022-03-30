@@ -16,12 +16,12 @@ local setup = {
         },
         presets = {
             operators = false,
-            motions = true,
-            text_objects = true,
-            windows = true,
-            nav = true,
-            z = true,
-            g = true,
+            motions = false,
+            text_objects = false,
+            windows = false,
+            nav = false,
+            z = false,
+            g = false,
         },
     },
     key_labels = {},
@@ -85,7 +85,7 @@ local mappings = {
         c = { "Compile" },
         e = { "Errors" },
         v = { "View" },
-        k = { "Kill Auxiliary" },
+        k = { "Kill Aux" },
         t = {
             name = "Templates",
             ["1"] = { "With Title" },
@@ -115,8 +115,8 @@ local mappings = {
 
     b = {
         name = "Buffers",
-        n = { "Next Buffer" },
-        p = { "Previous Buffer" },
+        l = { "Next Buffer" },
+        h = { "Previous Buffer" },
         q = { "Close Buffer" },
     },
 }

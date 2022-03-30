@@ -8,15 +8,10 @@ end
 local colors = {
     yellow = "#ecbe7b",
     yellow_1 = "#ff9640",
-    grey = "#7c6f64",
     darkgrey = "#3c3836",
-    white = "#bbc2cf",
     cyan = "#008080",
-    darkblue = "#081633",
     green = "#b8bb26",
     orange = "#d79921",
-    violet = "#b16286",
-    magenta = "#d3869b",
     blue = "#458588",
     red = "#cc241d",
 }
@@ -65,12 +60,20 @@ local conditions = {
     end,
 }
 
+local theme_colors = function ()
+    if vim.g.colors_name == "gruvbox" then
+        return cols()
+    else
+        return "auto"
+    end
+end
+
 local config = {
     options = {
         disabled_filetypes = { "NvimTree", "startify" },
         component_separators = "",
         section_separators = "",
-        theme = cols(),
+        theme = theme_colors()
     },
     sections = {
         lualine_a = {},
@@ -122,7 +125,7 @@ ins_left {
 ins_left {
     "%t %m",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.orange, gui = "bold" },
+    color = { fg = '#a6b0a0', gui = "bold" },
     padding = { left = 1, right = 1 },
 }
 
@@ -135,7 +138,7 @@ ins_left {
         removed = { fg = colors.red },
         },
         cond = conditions.hide_in_width,
-        padding = { left = 1, right = 1 },
+        padding = { left = 0, right = 1 },
     }
 
 -- ins_left {
@@ -160,18 +163,28 @@ local compile_status = function()
     if vim.bo.filetype == "tex" then
         -- Status: not started or stopped
         if vim.b.vimtex["compiler"]["status"] == -1 or vim.b.vimtex["compiler"]["status"] == 0 then
-            return ""
+            -- return ""
+            return "{✗}"
         end
 
+        if vim.b.vimtex["compiler"]["continuous"] == 1 then
+            if vim.b.vimtex["compiler"]["status"] == 1 then
+                return "{⋯}"
+            else
+                return "{✓}"
+            end
+        else
+            return "{✗}"
+
         -- Status: running
-        if vim.b.vimtex["compiler"]["status"] == 1 then
-            return "(⋯)"
-            -- Status: compile success
-        elseif vim.b.vimtex["compiler"]["status"] == 2 then
-            return "(✓)"
-            -- Status: compile failed
-        elseif vim.b.vimtex["compiler"]["status"] == 3 then
-            return "(✗)"
+        -- if vim.b.vimtex["compiler"]["status"] == 1 then
+        --     return "{⋯}"
+            -- -- Status: compile success
+        -- elseif vim.b.vimtex["compiler"]["status"] == 2 then
+            -- return "{✓}"
+            -- -- Status: compile failed
+        -- elseif vim.b.vimtex["compiler"]["status"] == 3 then
+            -- return "{✗}"
         end
     else
         return ""
@@ -180,7 +193,7 @@ end
 
 ins_right {
     compile_status,
-    color = { fg = colors.orange, gui = "bold" },
+    color = { fg = '#a6b0a0', gui = "bold" },
     padding = { left = 0, right = 2 },
 }
 
