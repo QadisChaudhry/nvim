@@ -1,11 +1,10 @@
 local opts = { noremap = true, silent = true }
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
 -- Comment Lines
-map("n", "<leader>/", ":Commentary<cr>", opts)
-map("v", "<leader>/", ":Commentary<cr>", opts)
+map({ "n", "v" }, "<leader>/", ":Commentary<cr>", opts)
 
 -- Markdown
 map("n", "<leader>mp", ":<Plug>MarkdownPreviewToggle<cr>", opts)
@@ -29,6 +28,7 @@ map("n", "<leader>it", ":FloatermToggle<cr>", opts)
 map("n", "<leader>ig", ":FloatermNew lazygit<cr>", opts)
 map("n", "<leader>ip", ":FloatermNew ipython<cr>", opts)
 map("n", "<leader>ir", ":FloatermNew ranger<cr>", opts)
+map("n", "<leader>ik", ":FloatermKill<cr>", opts)
 map("t", "<esc>", "<C-\\><C-n>:FloatermToggle<cr>", opts)
 
 -- Search
@@ -48,8 +48,7 @@ map("n", "<leader>bq", ":bdelete!<cr>", opts)
 
 -- Clipboard
 -- map("n", "<leader>c", ":lua require('telescope').extensions.neoclip.default({ on_complete = { function() vim.cmd('stopinsert') end } })<cr><cr>", opts)
-map("n", "<leader>c", ":Telescope neoclip star<cr>", opts)
-map("v", "<leader>c", ":Telescope neoclip star<cr>", opts)
+map({ "n", "v" }, "<leader>c", ":Telescope neoclip star<cr>", opts)
 
 -- Spelling Correction
 map("i", "<c-l>", "<c-g>u<esc>[s1z=`]a<c-g>u", opts)
@@ -67,10 +66,8 @@ map("n", "Y", "y$", opts)
 map("n", ">", "<s-v>><esc>", opts)
 map("n", "<", "<s-v><<esc>", opts)
 
-map("n", "<UP>", "gk", opts)
-map("v", "<UP>", "gk", opts)
-map("n", "<DOWN>", "gj", opts)
-map("v", "<DOWN>", "gj", opts)
+map({ "n", "v" }, "<UP>", "gk", opts)
+map({ "n", "v" }, "<DOWN>", "gj", opts)
 
 -- map("n", "y", ":%w !pbcopy<cr><cr>", opts)
 -- map("v", "y", ':"*y', opts)

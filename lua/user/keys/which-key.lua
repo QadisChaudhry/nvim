@@ -99,6 +99,8 @@ local mappings = {
         t = { "Terminal" },
         g = { "Git" },
         p = { "Python" },
+        r = { "Ranger" },
+        k = { "Kill Terminal" },
     },
 
     s = {
