@@ -7,8 +7,6 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
             \ {'a': '~/Desktop/College/TODO.md'},
             \ {'b': '~/.config/nvim/snips/tex.snippets'},
-            \ {'c': '~/planck_layout'},
-            \ {'d': '~/crkbd_layout'}
             \ ]
 
 let g:startify_session_autoload = 1

@@ -86,8 +86,16 @@ local mappings = {
         e = { "Errors" },
         v = { "View" },
         k = { "Kill Aux" },
+        s = {
+            name = "Surround",
+            d = { "Delete Env" },
+            t = { "Toggle Delim" },
+            c = { "Change Delim" },
+            f = { "Change Frac" },
+        },
         t = {
             name = "Templates",
+            m = { "Master Template" },
             ["1"] = { "With Title" },
             ["2"] = { "With Title Page" },
             ["3"] = { "Basic Template" },

@@ -20,7 +20,7 @@ function! UpdateSkim(status)
     endif
 endfunction
 
-let g:vimtex_mappings_enabled = 0
+let g:vimtex_mappings_enabled = 1
 
 let g:tex_flavor = "latex"
 let g:vimtex_quickfix_open_on_warning = 0
@@ -33,7 +33,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'csquotes Warning: No multilingual support',
       \]
 
-let g:UltiSnipsExpandTrigger = '<c-space>'
+let g:UltiSnipsExpandTrigger = ',,'
 let g:UltiSnipsJumpForwardTrigger = ',,'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
