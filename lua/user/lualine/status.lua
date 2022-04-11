@@ -50,7 +50,8 @@ function M.treesitter_status()
   if next(vim.treesitter.highlighter.active[b]) then
     return " 綠TS"
   end
-  return ""
+  -- return ""
+  return "  TS"
 end
 
 function M.progress_bar()
