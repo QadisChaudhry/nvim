@@ -11,7 +11,7 @@ def env(name):
 
 endglobal
 
-snippet template "master" bA
+snippet master "master" bA
 \documentclass[12pt]{report}
 \input{../../preamble.tex}
 \begin{document}
@@ -19,6 +19,10 @@ snippet template "master" bA
 	\input{$0}
 	\clearpage
 \end{document}
+endsnippet
+
+snippet pre "preamble" bA
+\input{../../preamble.tex}
 endsnippet
 
 snippet template1 "Template1" bA
@@ -120,6 +124,10 @@ endsnippet
 
 snippet lec "lecture" bA
 \lecture{${1:Number}}{${2:Date}}{${3:Title}}$0
+endsnippet
+
+snippet hw "homework" bA
+\hw{${1:Number}}
 endsnippet
 
 snippet beg "begin{} / end{}" bA
@@ -431,7 +439,7 @@ snippet prod "product" w
 endsnippet
 
 context "math()"
-snippet del "d/dx" wA
+snippet dl "d/dx" wA
 \frac{\partial $1}{\partial ${2:x}} $0
 endsnippet
 
@@ -461,13 +469,13 @@ snippet inv "inverse" iA
 endsnippet
 
 context "math()"
-snippet ss "subscript" iA
+snippet __ "subscript" iA
 _{${1:${VISUAL:}}}
 endsnippet
 
 context "math()"
 snippet "([a-zA-Z])nn" "subscript n" riA
-`!p snip.rv=match.group(1)`_{${1:n}} $0
+`!p snip.rv=match.group(1)`_{${1:n}}
 endsnippet
 
 context "math()"
@@ -531,7 +539,7 @@ snippet "(sin|cos|tan)inv" "trig" riA
 endsnippet
 
 context "math()"
-snippet "(ln|log)" "logarithms" rwA
+snippet "(ln|log)" "logarithms" riA
 \\`!p snip.rv=match.group(1)`
 endsnippet
 
@@ -542,13 +550,13 @@ snippet dint "integral" wA
 endsnippet
 
 context "math()"
-snippet "(pi|phi|tau|omega|theta|(d|D)elta)" "letters" rwA
+snippet "(pi|phi|tau|omega|theta|alpha|beta|gamma|eta|delta|mu|sigma|lambda)" "letters" riA
 \\`!p snip.rv=match.group(1)`
 endsnippet
 
 priority 200
 context "math()"
-snippet int "int" wA
+snippet int "int" iA
 \int
 endsnippet
 
@@ -589,11 +597,11 @@ endsnippet
 
 context "math()"
 snippet tt "text" iA
-\text{$1}$0
+\text{${1:${VISUAL:}}}$0
 endsnippet
 
-snippet tb "text bold" w
-\textbf{$1}$0
+snippet tb "text bold" i
+\textbf{${1:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
@@ -603,33 +611,39 @@ snippet case "cases" wA
 \end{cases}
 endsnippet
 
-priority 10
 context "math()"
-snippet "bar" "bar" riA
-\overline{$1}
+snippet bar "bar" wA
+\overline{${1:${VISUAL:}}}
 endsnippet
 
-priority 100
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
-priority 10
 context "math()"
-snippet "hat" "hat" riA
-\hat{$1}
+snippet hat "hat" wA
+\hat{${1:${VISUAL:}}}
 endsnippet
 
-priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
+snippet vec "vec" wA
+\vec{${1:${VISUAL:}}}
+endsnippet
+
+context "math()"
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet pr "phasor" wA
+\tilde{${1:${VISUAL:}}}
 endsnippet
 
 # vim:ft=snippets

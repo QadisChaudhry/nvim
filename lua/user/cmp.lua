@@ -110,7 +110,10 @@ cmp.setup {
 }
 cmp.setup.filetype({ "tex" }, {
     sources = cmp.config.sources{
-        { name = 'buffer', option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } }
+        { name = 'ultisnips' },
+        { name = 'nvim_lsp' },
+        { name = 'buffer', option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } },
+        { name = 'path' },
     }
 })
 

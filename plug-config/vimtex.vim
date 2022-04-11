@@ -33,7 +33,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'csquotes Warning: No multilingual support',
       \]
 
-let g:UltiSnipsExpandTrigger = ',,'
-let g:UltiSnipsJumpForwardTrigger = ',,'
+let g:UltiSnipsExpandTrigger = '<c-space>'
+let g:UltiSnipsJumpForwardTrigger = ';'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
