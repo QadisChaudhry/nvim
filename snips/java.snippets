@@ -180,7 +180,7 @@ endsnippet
 
 snippet elif "else if"
 else if ($1)`!p nl(snip)`{
-	$0${VISUAL}
+	$0
 }
 endsnippet
 
@@ -214,8 +214,8 @@ endsnippet
 
 snippet if "if" b
 if ($1)`!p nl(snip)`{
-	$2${VISUAL}
-}$0
+	$0
+}
 endsnippet
 
 snippet imt "import junit_framework_TestCase;"  b
