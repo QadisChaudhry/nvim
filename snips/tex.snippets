@@ -14,36 +14,39 @@ endglobal
 snippet master "master" bA
 \documentclass[12pt]{report}
 \input{../../preamble.tex}
+
 \begin{document}
-\tpage{${1:Course Name and Code}}{${2:Semester}}
+	\begin{titlepage}
+		\begin{center}
+			\textbf{Qadis Chaudhry} \\\
+			\vspace{0.2cm}
+			Rutgers University, ECE Major \\\
+			\vfill
+			\textbf{Lecture Notes} \\\
+			\vfill
+			${3:Course Name and Code} \\\
+			\vspace{0.2cm}
+			${4:Semester}
+		\end{center}
+	\end{titlepage}
 	\input{$0}
 	\clearpage
 \end{document}
 endsnippet
 
 snippet pre "preamble" bA
+\documentclass[12pt]{report}
 \input{../../preamble.tex}
+
+\begin{document}
+	$0
+\end{document}
 endsnippet
 
 snippet template1 "Template1" bA
-\documentclass[12pt]{article}
-\setlength{\headheight}{15.0pt}
-\usepackage{indentfirst}
-\usepackage{amsmath}
-\usepackage{multicol}
-\setlength{\jot}{2ex}
-\usepackage{mathrsfs}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{booktabs}
-\usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{fancyvrb}
-\usepackage{fancyhdr}
-\usepackage{enumitem}
-\renewcommand{\baselinestretch}{1.0}
-\newcommand{\objects}[2]{%
-	\leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
-}
+\documentclass[12pt]{report}
+\input{../../preamble.tex}
+
 \title{$1}
 \author{Qadis Chaudhry}
 \date{$2}
@@ -54,72 +57,27 @@ snippet template1 "Template1" bA
 endsnippet
 
 snippet template2 "Template2" bA
-\documentclass[12pt]{article}
-\setlength{\headheight}{15.0pt}
-\usepackage{indentfirst}
-\usepackage{amsmath}
-\usepackage{multicol}
-\setlength{\jot}{2ex}
-\usepackage{mathrsfs}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{booktabs}
-\usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{fancyvrb}
-\usepackage{fancyhdr}
-\usepackage{enumitem}
-\renewcommand{\baselinestretch}{1.0}
-\newcommand{\objects}[2]{%
-	\leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
-}
+\documentclass[12pt]{report}
+\input{../../preamble.tex}
+
 \begin{document}
-	\begin{titlepage}
-		\begin{center}
-			\textbf{Qadis Chaudhry} \\
-			\vspace{0.2cm}
-			202001055 \\
-			\vfill
-			\textbf{${1:assignment name}} \\
-			\vspace{0.2cm}
-			${2:due date} \\
-			\vfill
-			${3:class name and code} \\
-			\vspace{0.2cm}
-			${4:semester}
-		\end{center}
-	\end{titlepage}
+	\tpage{${1:Title}}{${2:Due Date}}{${3:Course Name and Code}}{${4:Semester}}
 	$0
 \end{document}
 endsnippet
 
 snippet template3 "Template3" bA
-\documentclass[12pt]{article}
-\setlength{\headheight}{15.0pt}
-\usepackage{indentfirst}
-\usepackage{enumitem}
-\usepackage{amsmath}
-\usepackage{multicol}
-\setlength{\jot}{2ex}
-\usepackage{mathrsfs}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{booktabs}
-\usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{fancyvrb}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead[L]{$1}
-\fancyhead[R]{$2}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{1pt}
-\renewcommand{\footrulewidth}{1pt}
-\renewcommand{\baselinestretch}{1.0}
-\newcommand{\objects}[2]{%
-	\leavevmode\vbox{\hbox{#1}\nointerlineskip\hbox{#2}}%
-}
+\documentclass[12pt]{report}
+\input{../../preamble.tex}
+\fancyhead[R]{$1}
+
 \begin{document}
 	$0
 \end{document}
+endsnippet
+
+snippet tpage "title page" bA
+	\tpage{${1:Title}}{${2:Due Date}}{${3:Course Name and Code}}{${4:Semester}}
 endsnippet
 
 snippet lec "lecture" bA
@@ -169,6 +127,14 @@ endsnippet
 
 snippet +- "plus-minus" iA
 \pm
+endsnippet
+
+snippet << "much less than" iA
+\ll
+endsnippet
+
+snippet >> "much greater than" iA
+\gg
 endsnippet
 
 context "math()"
@@ -439,7 +405,7 @@ snippet prod "product" w
 endsnippet
 
 context "math()"
-snippet dl "d/dx" wA
+snippet del "d/dx" wA
 \frac{\partial $1}{\partial ${2:x}} $0
 endsnippet
 
@@ -530,17 +496,12 @@ endsnippet
 
 context "math()"
 snippet "(sin|cos|tan)" "trig" riA
-\\`!p snip.rv=match.group(1)` $0
-endsnippet
-
-context "math()"
-snippet "(sin|cos|tan)inv" "trig" riA
-\\`!p snip.rv=match.group(1)`^{-1} $0
+\\`!p snip.rv=match.group(1)`$0
 endsnippet
 
 context "math()"
 snippet "(ln|log)" "logarithms" riA
-\\`!p snip.rv=match.group(1)`
+\\`!p snip.rv=match.group(1)` $0
 endsnippet
 
 priority 300
@@ -550,8 +511,48 @@ snippet dint "integral" wA
 endsnippet
 
 context "math()"
-snippet "(pi|phi|tau|omega|theta|alpha|beta|gamma|eta|delta|mu|sigma|lambda)" "letters" riA
-\\`!p snip.rv=match.group(1)`
+snippet ";(a|A)" "alpha" riA
+\\`!p snip.rv=match.group(1)`lpha$0
+endsnippet
+
+context "math()"
+snippet ";(b|B)" "beta" riA
+\\`!p snip.rv=match.group(1)`eta$0
+endsnippet
+
+context "math()"
+snippet ";(g|G)" "gamma" riA
+\\`!p snip.rv=match.group(1)`amma$0
+endsnippet
+
+context "math()"
+snippet ";(d|D)" "delta" riA
+\\`!p snip.rv=match.group(1)`elta$0
+endsnippet
+
+context "math()"
+snippet ";(t|T)" "theta" riA
+\\`!p snip.rv=match.group(1)`heta$0
+endsnippet
+
+context "math()"
+snippet ";(s|S)" "sigma" riA
+\\`!p snip.rv=match.group(1)`igma$0
+endsnippet
+
+context "math()"
+snippet ";(o|O)" "omega" riA
+\\`!p snip.rv=match.group(1)`mega$0
+endsnippet
+
+context "math()"
+snippet ";(l|L)" "lambda" riA
+\\`!p snip.rv=match.group(1)`ambda$0
+endsnippet
+
+context "math()"
+snippet "(pi|phi|tau|eta|mu)" "letters" riA
+\\`!p snip.rv=match.group(1)`$0
 endsnippet
 
 priority 200

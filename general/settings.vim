@@ -25,6 +25,8 @@ set scrolloff=8
 set updatetime=50
 set cmdheight=1
 set ignorecase
+set smartcase
+set noruler
 
 au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
 au FileType markdown setlocal spell wrap linebreak nolist colorcolumn=0

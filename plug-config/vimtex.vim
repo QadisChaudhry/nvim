@@ -34,6 +34,6 @@ let g:vimtex_quickfix_ignore_filters = [
       \]
 
 let g:UltiSnipsExpandTrigger = '<c-space>'
-let g:UltiSnipsJumpForwardTrigger = ';'
+let g:UltiSnipsJumpForwardTrigger = ",n"
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
