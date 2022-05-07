@@ -73,6 +73,7 @@ local mappings = {
     ["r"] = { "Reload Config" },
     ["e"] = { "Explorer" },
     ["c"] = { "Clipboard" },
+    ["y"] = { "Copy to System" },
 
     m = {
         name = "Markdown",
@@ -86,13 +87,13 @@ local mappings = {
         e = { "Errors" },
         v = { "View" },
         k = { "Kill Aux" },
-        s = {
-            name = "Surround",
-            d = { "Delete Env" },
-            t = { "Toggle Delim" },
-            c = { "Change Delim" },
-            f = { "Change Frac" },
-        },
+        -- s = {
+        --     name = "Surround",
+        --     d = { "Delete Env" },
+        --     t = { "Toggle Delim" },
+        --     c = { "Change Delim" },
+        --     f = { "Change Frac" },
+        -- },
         t = {
             name = "Templates",
             m = { "Master Template" },

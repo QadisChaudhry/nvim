@@ -191,9 +191,24 @@ local compile_status = function()
     end
 end
 
+local function wordcount()
+    if vim.bo.filetype == "tex" then
+        local string = "Words: " .. tostring(vim.fn.wordcount().words)
+        return string
+    else
+        return ""
+    end
+end
+
 ins_right {
     compile_status,
     color = { fg = '#a6b0a0', gui = "bold" },
+    padding = { left = 0, right = 2 },
+}
+
+ins_right {
+    wordcount,
+    color = { gui = "bold" },
     padding = { left = 0, right = 2 },
 }
 

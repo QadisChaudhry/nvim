@@ -28,8 +28,8 @@ set ignorecase
 set smartcase
 set noruler
 
-au FileType tex setlocal spell wrap linebreak nolist colorcolumn=0
-au FileType markdown setlocal spell wrap linebreak nolist colorcolumn=0
+au FileType tex setlocal spell wrap linebreak nolist
+au FileType markdown setlocal spell wrap linebreak nolist
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 set termguicolors
