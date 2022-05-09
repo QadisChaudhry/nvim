@@ -37,3 +37,13 @@ local python = Terminal:new({ cmd = "ipython", hidden = true })
 function _PYTHON_TOGGLE()
     python:toggle()
 end
+
+local ranger = Terminal:new({ cmd = "ranger", hidden = true })
+function _RANGER_TOGGLE()
+    ranger:toggle()
+end
+
+local thokr = Terminal:new({ cmd = "thokr", hidden = true })
+function _THOKR_TOGGLE()
+    thokr:toggle()
+end

@@ -39,8 +39,8 @@ Plug 'windwp/nvim-autopairs'
 
 Plug 'kyazdani42/nvim-tree.lua'
 
-" Plug 'akinsho/toggleterm.nvim'
-Plug 'voldikss/vim-floaterm'
+Plug 'akinsho/toggleterm.nvim'
+" Plug 'voldikss/vim-floaterm'
 
 Plug 'akinsho/bufferline.nvim'
 
