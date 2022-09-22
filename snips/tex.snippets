@@ -155,12 +155,14 @@ endsnippet
 
 snippet table "Table environment" b
 \begin{table}[${1:htpb}]
+	\vspace{-0mm}
 	\centering
 	\begin{tabular}{${5:c}}
 		\toprule
 		$0${5/((?<=.)c|l|r)|./(?1: & )/g} \\\
 		\bottomrule
 	\end{tabular}
+	\vspace{-0mm}
 \end{table}
 endsnippet
 
@@ -508,6 +510,11 @@ priority 300
 context "math()"
 snippet dint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}}\, $0
+endsnippet
+
+context "math()"
+snippet eval "evaluate" wA
+\Big|_{$1}^{$2} $0
 endsnippet
 
 context "math()"

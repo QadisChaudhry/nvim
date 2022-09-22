@@ -30,6 +30,7 @@ set noruler
 
 au FileType tex setlocal spell wrap linebreak nolist
 au FileType markdown setlocal spell wrap linebreak nolist
+au BufEnter *.keymap set ft=c
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 set termguicolors
