@@ -30,4 +30,5 @@ require("user.toggleterm")
 require("user.neoclip")
 require("user.bufferline")
 require("user.lualine.lualine")
+require("user.leap")
 EOF

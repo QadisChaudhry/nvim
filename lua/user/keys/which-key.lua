@@ -4,7 +4,8 @@ if not status_ok then
 end
 
 vim.opt.timeoutlen = 250
-vim.cmd("hi WhichKeyFloat ctermbg=BLACK")
+vim.cmd("hi WhichKeyFloat guifg=#475662")
+vim.cmd("hi WhichKeyBorder guifg=#475662")
 
 local setup = {
     plugins = {

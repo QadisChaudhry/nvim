@@ -103,9 +103,13 @@ cmp.setup {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered()
+    }
+    -- documentation = {
+    --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    -- },
 }
 cmp.setup.filetype({ "tex" }, {
     sources = cmp.config.sources{

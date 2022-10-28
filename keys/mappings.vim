@@ -9,17 +9,17 @@ vnoremap <leader>y "*y<cr><cr>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-c> <Esc>
 
-nnoremap <C-h> :execute 'help ' . expand("<cword>")<cr>
+" nnoremap <C-h> :execute 'help ' . expand("<cword>")<cr>
 
-tnoremap <Esc> <C-\><C-n>:ToggleTerm<cr>
+" tnoremap <Esc> <C-\><C-n>:ToggleTerm<cr>
 
 xnoremap K :move '<-2<cr>gv-gv
 xnoremap J :move '>+1<cr>gv-gv
 
 nnoremap Q @@
 
-nnoremap n nzz
-nnoremap N Nzz
+" nnoremap n nzz
+" nnoremap N Nzz
 
 nnoremap Y y$
 
@@ -34,8 +34,6 @@ nnoremap Y y$
 
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
-
-nnoremap <C-s> :%sm /
 
 vnoremap <Up> gk
 vnoremap <Down> gj

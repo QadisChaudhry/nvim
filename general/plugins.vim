@@ -13,6 +13,7 @@ Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'gabrielelana/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
@@ -46,5 +47,8 @@ Plug 'akinsho/bufferline.nvim'
 
 " Plug 'liuchengxu/vim-which-key'
 Plug 'folke/which-key.nvim'
+
+Plug 'ggandor/leap.nvim'
+Plug 'ggandor/leap.nvim'
 
 call plug#end()

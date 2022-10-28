@@ -29,7 +29,7 @@ local M = {}
 M.school = function ()
     builtin.find_files({
         prompt_title = "College Files",
-        cwd = "~/Desktop/College/Second Year/Second Semester",
+        cwd = "~/Desktop/College/Third Year/First Semester",
         telescope.setup{
             defaults = {
                 file_ignore_patterns = {

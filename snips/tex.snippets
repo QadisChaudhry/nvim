@@ -441,10 +441,10 @@ snippet __ "subscript" iA
 _{${1:${VISUAL:}}}
 endsnippet
 
-context "math()"
-snippet "([a-zA-Z])nn" "subscript n" riA
-`!p snip.rv=match.group(1)`_{${1:n}}
-endsnippet
+# context "math()"
+# snippet "([a-zA-Z])nn" "subscript n" riA
+# `!p snip.rv=match.group(1)`_{${1:n}}
+# endsnippet
 
 context "math()"
 snippet <= "leq" iA
@@ -584,7 +584,7 @@ snippet notin "not in " iA
 endsnippet
 
 context "math()"
-snippet inn "in " iA
+snippet inn "in" iA
 \in
 endsnippet
 
