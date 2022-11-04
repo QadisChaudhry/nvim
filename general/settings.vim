@@ -28,10 +28,12 @@ set ignorecase
 set smartcase
 set noruler
 set mouse=
+set autochdir
 
 au FileType tex setlocal spell wrap linebreak nolist
 au FileType markdown setlocal spell wrap linebreak nolist
 au BufEnter *.keymap set ft=c
+" au BufEnter * silent! lcd %:p:h
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 set termguicolors

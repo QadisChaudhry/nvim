@@ -1,6 +1,3 @@
 return {
-    root_dir = function ()
-        vim.cmd("silent! lcd %:p:h")
-        return vim.fn.getcwd()
-    end
+    root_dir = function () return vim.fn.expand("%:p:h") end
 }

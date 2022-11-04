@@ -119,7 +119,7 @@ nvim_tree.setup {
     prefer_startup_root = false,
     sync_root_with_cwd = false,
     reload_on_bufenter = false,
-    respect_buf_cwd = false,
+    respect_buf_cwd = true,
     on_attach = "disable",
     remove_keymaps = false,
     select_prompts = false,

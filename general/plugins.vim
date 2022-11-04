@@ -26,8 +26,10 @@ Plug 'AckslD/nvim-neoclip.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'mfussenegger/nvim-jdtls'
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -45,10 +47,8 @@ Plug 'akinsho/toggleterm.nvim'
 
 Plug 'akinsho/bufferline.nvim'
 
-" Plug 'liuchengxu/vim-which-key'
 Plug 'folke/which-key.nvim'
 
-Plug 'ggandor/leap.nvim'
 Plug 'ggandor/leap.nvim'
 
 call plug#end()
