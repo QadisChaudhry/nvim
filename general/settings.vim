@@ -44,6 +44,10 @@ set background=dark
 colorscheme everforest
 " hi Normal ctermbg=NONE guibg=NONE
 
+hi FloatBorder guibg=#2F383E
+hi NormalFloat guibg=#2F383E
+" guifg=#2F383E
+
 let g:netrw_banner = 0
 
 fun! TrimWhitespace()
