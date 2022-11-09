@@ -11,8 +11,8 @@ if not status3 then
     return
 end
 
--- mason.setup({ ui = { border = "rounded" } })
-mason.setup()
+mason.setup({ ui = { border = "rounded" } })
+-- mason.setup()
 masonlsp.setup()
 
 require("user.lsp.handlers").setup()
