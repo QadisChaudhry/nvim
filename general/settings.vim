@@ -46,7 +46,6 @@ colorscheme everforest
 
 hi FloatBorder guibg=#2F383E
 hi NormalFloat guibg=#2F383E
-" guifg=#2F383E
 
 let g:netrw_banner = 0
 

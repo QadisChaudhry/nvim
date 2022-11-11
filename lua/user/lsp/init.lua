@@ -12,7 +12,6 @@ if not status3 then
 end
 
 mason.setup({ ui = { border = "rounded" } })
--- mason.setup()
 masonlsp.setup()
 
 require("user.lsp.handlers").setup()
@@ -21,7 +20,10 @@ local servers = {
     "sumneko_lua",
     "pyright",
     "texlab",
+    -- "ltex",
 }
+
+local path = vim.fn.stdpath("config") .. "/lua/user/lsp"
 
 for _, server in pairs(servers) do
     local opts = {
@@ -29,8 +31,10 @@ for _, server in pairs(servers) do
         capabilities = require("user.lsp.handlers").capabilities,
     }
 
-    local server_opts = require(string.format("user.lsp.settings.%s", server))
-    opts = vim.tbl_deep_extend("force", server_opts, opts)
+    if io.open(string.format("%s/settings/%s.lua", path, server), "r") ~= nil then
+        local server_opts = require(string.format("user.lsp.settings.%s", server))
+        opts = vim.tbl_deep_extend("force", server_opts, opts)
+    end
 
     lsp[string.format('%s', server)].setup(opts)
 end

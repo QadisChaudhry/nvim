@@ -1,6 +1,6 @@
 local M = {}
 
-function M.lsp_progress(_)
+function M.lsp_progress()
   local Lsp = vim.lsp.util.get_progress_messages()[1]
 
   if Lsp then

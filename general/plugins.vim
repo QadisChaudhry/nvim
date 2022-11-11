@@ -25,6 +25,7 @@ Plug 'AckslD/nvim-neoclip.lua'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
+" Plug 'rebelot/heirline.nvim'
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
