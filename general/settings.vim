@@ -27,8 +27,8 @@ set cmdheight=1
 set ignorecase
 set smartcase
 set noruler
-set mouse=
 set autochdir
+set mouse=
 
 au FileType tex setlocal spell wrap linebreak nolist
 au FileType markdown setlocal spell wrap linebreak nolist

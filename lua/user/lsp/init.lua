@@ -20,7 +20,7 @@ local servers = {
     "sumneko_lua",
     "pyright",
     "texlab",
-    -- "ltex",
+    "ltex",
 }
 
 local path = vim.fn.stdpath("config") .. "/lua/user/lsp"
@@ -36,8 +36,10 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", server_opts, opts)
     end
 
-    lsp[string.format('%s', server)].setup(opts)
+    lsp[string.format("%s", server)].setup(opts)
 end
+
+require("lspconfig.ui.windows").default_options.border = "rounded"
 
 -- vim.cmd([[
 --     augroup jdtls_lsp

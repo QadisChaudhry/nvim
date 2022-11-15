@@ -73,6 +73,7 @@ local mappings = {
     ["e"] = { "Explorer" },
     ["c"] = { "Clipboard" },
     ["y"] = { "Copy to System" },
+    ["p"] = { "Print Code" },
 
     m = {
         name = "Markdown",
@@ -124,12 +125,12 @@ local mappings = {
         p = { "Projects" },
     },
 
-    b = {
-        name = "Buffers",
-        l = { "Next Buffer" },
-        h = { "Previous Buffer" },
-        q = { "Close Buffer" },
-    },
+    -- b = {
+    --     name = "Buffers",
+    --     l = { "Next Buffer" },
+    --     h = { "Previous Buffer" },
+    --     q = { "Close Buffer" },
+    -- },
 }
 
 which_key.setup(setup)

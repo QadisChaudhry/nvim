@@ -56,8 +56,10 @@ map("n", "<leader>sc", ":lua require('user.telescope').vrc()<cr>", opts)
 map("n", "<leader>sp", ":lua require('user.telescope').proj()<cr>", opts)
 
 -- Buffers
-map("n", "<leader>bl", ":bnext<cr>", opts)
-map("n", "<leader>bh", ":bprevious<cr>", opts)
+map("n", "<RIGHT>", ":bnext<cr>", opts)
+map("n", "<LEFT>", ":bprevious<cr>", opts)
+-- map("n", "<leader>bl", ":bnext<cr>", opts)
+-- map("n", "<leader>bh", ":bprevious<cr>", opts)
 map("n", "<leader>bq", ":bdelete!<cr>", opts)
 
 -- Clipboard
@@ -74,6 +76,7 @@ map("n", "<leader>,", ":Startify<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":source $MYVIMRC<cr>", opts)
 map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+map('v', '<Leader>p', ":lua require('silicon').visualise_cmdline({to_clip = false, show_buf = false})<cr>", opts)
 
 map("n", "Q", "@a", opts)
 -- map("n", "n", "nzz", opts)
@@ -87,6 +90,8 @@ map({ "n", "v" }, "<UP>", "gk", opts)
 map({ "n", "v" }, "<DOWN>", "gj", opts)
 
 map({ "i", "c" }, "<M-C-H>", "<c-w>", { noremap = true })
+map({ "i", "c" }, "<M-b>", "<s-left>", { noremap = true })
+map({ "i", "c" }, "<M-f>", "<s-right>", { noremap = true })
 
 -- map("x", "K", ':move '<-2<cr>gv-gv', opts)
 -- map("x", "J", ':move '>+1<cr>gv-gv', opts)

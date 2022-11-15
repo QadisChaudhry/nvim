@@ -25,7 +25,8 @@ Plug 'AckslD/nvim-neoclip.lua'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
-" Plug 'rebelot/heirline.nvim'
+Plug 'rebelot/heirline.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -52,5 +53,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'folke/which-key.nvim'
 
 Plug 'ggandor/leap.nvim'
+
+Plug 'narutoxy/silicon.lua'
 
 call plug#end()
