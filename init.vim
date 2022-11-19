@@ -23,6 +23,8 @@ require("user.lsp")
 
 -- Plugins
 require("user.treesitter")
+require("user.orgmode")
+
 require("user.telescope")
 require("user.neoclip")
 require("user.autopairs")

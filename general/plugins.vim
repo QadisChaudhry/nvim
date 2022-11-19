@@ -14,19 +14,24 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
 Plug 'gabrielelana/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
+Plug 'akinsho/org-bullets.nvim'
+
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'AckslD/nvim-neoclip.lua'
 
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'rebelot/heirline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -47,8 +52,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'akinsho/toggleterm.nvim'
 " Plug 'voldikss/vim-floaterm'
 Plug 'doums/oterm.nvim'
-
-Plug 'akinsho/bufferline.nvim'
 
 Plug 'folke/which-key.nvim'
 

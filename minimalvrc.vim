@@ -12,6 +12,7 @@ vim.keymap.set("n", "<esc>", ":wq<cr>", opts)
 vim.wo.fillchars='eob: '
 
 require("user.treesitter")
+require("user.orgmode")
 require("user.cmp")
 require("user.lsp")
 require("user.autopairs")

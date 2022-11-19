@@ -88,9 +88,9 @@ local ViMode = {
             V =  "cyan",
             ["\22"] =  "cyan",
             c =  "orange",
-            s =  "purple",
-            S =  "purple",
-            ["\19"] =  "purple",
+            s =  "cyan",
+            S =  "cyan",
+            ["\19"] =  "cyan",
             R =  "orange",
             r =  "orange",
             ["!"] =  "blue",
@@ -221,6 +221,9 @@ local GitName = {
 
     {
         provider = function(self)
+            if self.status_dict.head == "" then
+                return " master"
+            end
             return " " .. self.status_dict.head
         end,
         hl = { fg = "cyan" },

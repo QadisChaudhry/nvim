@@ -75,12 +75,6 @@ local mappings = {
     ["y"] = { "Copy to System" },
     ["p"] = { "Print Code" },
 
-    m = {
-        name = "Markdown",
-        s = { "Select" },
-        p = { "Preview" },
-    },
-
     l = {
         name = "Latex",
         c = { "Compile" },
@@ -123,6 +117,15 @@ local mappings = {
         s = { "School" },
         c = { "Vim Config" },
         p = { "Projects" },
+    },
+
+    o = {
+        name = "OrgMode",
+        a = { "Agenda Menu" },
+        c = { "Capture Menu" },
+        r = { "Refile" },
+        d = { "Set Deadline" },
+        t = { "Insert TODO" },
     },
 
     -- b = {

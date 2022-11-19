@@ -6,10 +6,6 @@ vim.g.mapleader = " "
 -- Comment Lines
 map({ "n", "v" }, "<leader>/", ":Commentary<cr>", opts)
 
--- Markdown
-map("n", "<leader>mp", ":<Plug>MarkdownPreviewToggle<cr>", opts)
-map("n", "<leader>ms", ":call markdown#SwitchStatus()<cr>", opts)
-
 -- Latex
 map("n", "<leader>lc", ":VimtexCompile<cr>", opts)
 map("n", "<leader>le", ":VimtexErrors<cr>", opts)

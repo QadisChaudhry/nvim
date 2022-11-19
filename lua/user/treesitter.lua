@@ -1,9 +1,9 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
+local status, treesitter_configs = pcall(require, "nvim-treesitter.configs")
+if not status then
     return
 end
 
-configs.setup {
+treesitter_configs.setup {
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = true,
