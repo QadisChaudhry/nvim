@@ -28,93 +28,94 @@ bufferline.setup({
 
     highlights = {
         background = {
-            guifg = { attribute = "fg", highlight = "BufferLineBackground" },
-            guibg = { attribute = "bg", highlight = "BufferLineBackground" },
+            fg = { attribute = "fg", highlight = "BufferLineBackground" },
+            bg = { attribute = "bg", highlight = "BufferLineBackground" },
         },
 
         -- Buffers
         buffer_selected = {
-            guifg = { attribute = "fg", highlight = "BufferLineBufferSelected" },
-            guibg = { attribute = "bg", highlight = "BufferLineBufferSelected" },
-            gui = "NONE",
+            fg = { attribute = "fg", highlight = "BufferLineBufferSelected" },
+            bg = { attribute = "bg", highlight = "BufferLineBufferSelected" },
+            -- gui = "NONE",
+            underline = false, undercurl = false, italic = false
         },
         buffer_visible = {
-            guifg = { attribute = "fg", highlight = "BufferLineBufferVisible" },
-            guibg = { attribute = "bg", highlight = "BufferLineBufferVisible" },
+            fg = { attribute = "fg", highlight = "BufferLineBufferVisible" },
+            bg = { attribute = "bg", highlight = "BufferLineBufferVisible" },
         },
 
         -- Diagnostics
         error = {
-            guifg = { attribute = "fg", highlight = "BufferLineError" },
-            guibg = { attribute = "bg", highlight = "BufferLineError" },
+            fg = { attribute = "fg", highlight = "BufferLineError" },
+            bg = { attribute = "bg", highlight = "BufferLineError" },
         },
         error_diagnostic = {
-            guifg = { attribute = "fg", highlight = "BufferLineErrorDiagnostic" },
-            guibg = { attribute = "bg", highlight = "BufferLineErrorDiagnostic" },
+            fg = { attribute = "fg", highlight = "BufferLineErrorDiagnostic" },
+            bg = { attribute = "bg", highlight = "BufferLineErrorDiagnostic" },
         },
 
         -- Close buttons
         close_button = {
-            guifg = { attribute = "fg", highlight = "BufferLineCloseButton" },
-            guibg = { attribute = "bg", highlight = "BufferLineCloseButton" },
+            fg = { attribute = "fg", highlight = "BufferLineCloseButton" },
+            bg = { attribute = "bg", highlight = "BufferLineCloseButton" },
         },
         close_button_visible = {
-            guifg = { attribute = "fg", highlight = "BufferLineCloseButtonVisible" },
-            guibg = { attribute = "bg", highlight = "BufferLineCloseButtonVisible" },
+            fg = { attribute = "fg", highlight = "BufferLineCloseButtonVisible" },
+            bg = { attribute = "bg", highlight = "BufferLineCloseButtonVisible" },
         },
         close_button_selected = {
-            guifg = { attribute = "fg", highlight = "BufferLineCloseButtonSelected" },
-            guibg = { attribute = "bg", highlight = "BufferLineCloseButtonSelected" },
+            fg = { attribute = "fg", highlight = "BufferLineCloseButtonSelected" },
+            bg = { attribute = "bg", highlight = "BufferLineCloseButtonSelected" },
         },
         fill = {
-            guifg = { attribute = "fg", highlight = "BufferLineFill" },
-            guibg = { attribute = "bg", highlight = "BufferLineFill" },
+            fg = { attribute = "fg", highlight = "BufferLineFill" },
+            bg = { attribute = "bg", highlight = "BufferLineFill" },
         },
         indicator_selected = {
-            guifg = { attribute = "fg", highlight = "BufferLineIndicatorSelected" },
-            guibg = { attribute = "bg", highlight = "BufferLineIndicatorSelected" },
+            fg = { attribute = "fg", highlight = "BufferLineIndicatorSelected" },
+            bg = { attribute = "bg", highlight = "BufferLineIndicatorSelected" },
         },
 
         -- Modified
         modified = {
-            guifg = { attribute = "fg", highlight = "BufferLineModified" },
-            guibg = { attribute = "bg", highlight = "BufferLineModified" },
+            fg = { attribute = "fg", highlight = "BufferLineModified" },
+            bg = { attribute = "bg", highlight = "BufferLineModified" },
         },
         modified_visible = {
-            guifg = { attribute = "fg", highlight = "BufferLineModifiedVisible" },
-            guibg = { attribute = "bg", highlight = "BufferLineModifiedVisible" },
+            fg = { attribute = "fg", highlight = "BufferLineModifiedVisible" },
+            bg = { attribute = "bg", highlight = "BufferLineModifiedVisible" },
         },
         modified_selected = {
-            guifg = { attribute = "fg", highlight = "BufferLineModifiedSelected" },
-            guibg = { attribute = "bg", highlight = "BufferLineModifiedSelected" },
+            fg = { attribute = "fg", highlight = "BufferLineModifiedSelected" },
+            bg = { attribute = "bg", highlight = "BufferLineModifiedSelected" },
         },
 
         -- Separators
         separator = {
-            guifg = { attribute = "fg", highlight = "BufferLineSeparator" },
-            guibg = { attribute = "bg", highlight = "BufferLineSeparator" },
+            fg = { attribute = "fg", highlight = "BufferLineSeparator" },
+            bg = { attribute = "bg", highlight = "BufferLineSeparator" },
         },
         separator_visible = {
-            guifg = { attribute = "fg", highlight = "BufferLineSeparatorVisible" },
-            guibg = { attribute = "bg", highlight = "BufferLineSeparatorVisible" },
+            fg = { attribute = "fg", highlight = "BufferLineSeparatorVisible" },
+            bg = { attribute = "bg", highlight = "BufferLineSeparatorVisible" },
         },
         separator_selected = {
-            guifg = { attribute = "fg", highlight = "BufferLineSeparatorSelected" },
-            guibg = { attribute = "bg", highlight = "BufferLineSeparatorSelected" },
+            fg = { attribute = "fg", highlight = "BufferLineSeparatorSelected" },
+            bg = { attribute = "bg", highlight = "BufferLineSeparatorSelected" },
         },
 
         -- Tabs
         tab = {
-            guifg = { attribute = "fg", highlight = "BufferLineTab" },
-            guibg = { attribute = "bg", highlight = "BufferLineTab" },
+            fg = { attribute = "fg", highlight = "BufferLineTab" },
+            bg = { attribute = "bg", highlight = "BufferLineTab" },
         },
         tab_selected = {
-            guifg = { attribute = "fg", highlight = "BufferLineTabSelected" },
-            guibg = { attribute = "bg", highlight = "BufferLineTabSelected" },
+            fg = { attribute = "fg", highlight = "BufferLineTabSelected" },
+            bg = { attribute = "bg", highlight = "BufferLineTabSelected" },
         },
         tab_close = {
-            guifg = { attribute = "fg", highlight = "BufferLineTabClose" },
-            guibg = { attribute = "bg", highlight = "BufferLineTabClose" },
+            fg = { attribute = "fg", highlight = "BufferLineTabClose" },
+            bg = { attribute = "bg", highlight = "BufferLineTabClose" },
         },
     },
 })
