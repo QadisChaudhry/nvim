@@ -34,6 +34,7 @@ set conceallevel=2
 au FileType tex setlocal spell wrap linebreak nolist
 au FileType markdown setlocal spell wrap linebreak nolist
 au FileType markdown nnoremap <silent> <buffer> <cr> :call markdown#SwitchStatus()<cr>
+au FileType org inoremap <silent> <buffer> <c-cr> <c-o>:lua require("orgmode").action("org_mappings.handle_return")<cr>
 au BufEnter *.keymap set ft=c
 " au BufEnter * silent! lcd %:p:h
 " au FileType tex setlocal spell textwidth=80 fo+=t

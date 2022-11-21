@@ -21,7 +21,7 @@ org.setup({
             org_capture_kill = "<c-c>",
         },
         org = {
-            org_meta_return = "<c-cr>",
+            -- org_meta_return = "<c-cr>",
             org_deadline = "<leader>od",
             org_schedule = "<leader>os",
             org_priority = "<leader>op",
