@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'navarasu/onedark.nvim'
-Plug 'sainnhe/everforest'
+Plug 'sainnhe/everforest', {'tag': 'v0.2.3'}
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 " Plug 'w0rp/ale'
@@ -31,7 +31,6 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'rebelot/heirline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'

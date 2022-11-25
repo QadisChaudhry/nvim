@@ -3,7 +3,7 @@ source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 
 " Plugins
-source $HOME/.config/nvim/plug-config/markdown-preview.vim
+" source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 " source $HOME/.config/nvim/plug-config/airline.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
