@@ -408,9 +408,9 @@ local TablineFileNameBlock = {
     end,
     hl = function(self)
         if self.is_active then
-            return
+            return { bold = false }
         else
-            return { fg = "none" }
+            return { fg = "none", bold = false }
         end
     end,
     on_click = {

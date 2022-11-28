@@ -109,11 +109,10 @@ cmp.setup {
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered()
-    }
-    -- documentation = {
-    --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    -- },
+    },
+    -- experimental = { ghost_text = true }
 }
+
 -- cmp.setup.filetype({ "tex" }, {
 --     sources = cmp.config.sources{
 --         { name = 'ultisnips' },
@@ -123,8 +122,8 @@ cmp.setup {
 --     }
 -- })
 
--- cmp.setup.cmdline('/', {
---     sources = {
---         { name = 'buffer' }
---     }
--- })
+cmp.setup.cmdline('/', {
+    sources = {
+        { name = 'buffer' }
+    }
+})

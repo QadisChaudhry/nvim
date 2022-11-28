@@ -27,13 +27,17 @@ require("user.orgmode")
 
 require("user.telescope")
 require("user.neoclip")
-require("user.autopairs")
+
 require("user.nvimtree")
+
 -- require("user.toggleterm")
 require("user.oterm")
+
 -- require("user.bufferline")
 -- require("user.lualine.lualine")
 require("user.heirline")
+
+require("user.autopairs")
 require("user.leap")
 require("user.silicon")
 EOF
