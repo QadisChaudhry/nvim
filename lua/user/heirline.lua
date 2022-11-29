@@ -340,8 +340,6 @@ local statusline = {
     hl = { bg = "grey" }
 }
 
-local winbar = {}
-
 local TablineFileFlags = {
     {
         condition = function(self)
@@ -472,11 +470,23 @@ local BufferLine = utils.make_buflist(
 )
 
 local tabline = {
-    condition = function()
-        return vim.bo.buftype ~= "terminal"
-    end,
-    TreeOffset,
-    BufferLine
+    {
+        condition = function()
+            return conditions.buffer_matches({ buftype = { "terminal" } })
+        end,
+        init = function()
+            vim.opt_local.winbar = nil
+        end
+    },
+    {
+        condition = function()
+            return not conditions.buffer_matches({ buftype = { "terminal" } })
+        end,
+        {
+            TreeOffset,
+            BufferLine
+        }
+    },
 }
 
 heirline.setup(statusline, tabline)

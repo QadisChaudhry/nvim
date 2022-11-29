@@ -7,7 +7,7 @@ local open = require("oterm").open
 
 local config = {
   command = nil,
-  name = "Termial",
+  name = "Terminal",
   layout = "center",
   keymaps = { exit = "<esc>" },
   terminal_hl = nil,
