@@ -3,13 +3,13 @@ if not status_ok then
     return
 end
 
-local actions = require('telescope.actions')
-local builtin = require('telescope.builtin')
-local sorters = require('telescope.sorters')
+local actions = require("telescope.actions")
+local builtin = require("telescope.builtin")
+local sorters = require("telescope.sorters")
 
 telescope.setup{
     defaults = {
-        layout_strategy = 'vertical',
+        layout_strategy = "vertical",
         layout_config = { preview_cutoff = 30 },
         file_sorter = sorters.get_fzy_sorter,
         mappings = {
@@ -19,17 +19,27 @@ telescope.setup{
         },
         -- path_display = { "smart" }
     },
-    extensions = {}
+    extensions = {
+        file_browser = {
+            -- theme = "ivy",
+            -- hijack_netrw = true,
+            mappings = {
+                ["i"] = {},
+                ["n"] = {}
+            }
+        }
+    }
 }
 
-telescope.load_extension('neoclip')
+telescope.load_extension("neoclip")
+telescope.load_extension("file_browser")
 
 local M = {}
 
 M.school = function ()
     builtin.find_files({
         prompt_title = "College Files",
-        cwd = "~/Desktop/College/Third Year/First Semester",
+        cwd = "~/Desktop/College/",
         telescope.setup{
             defaults = {
                 file_ignore_patterns = {

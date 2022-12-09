@@ -4,6 +4,7 @@ Plug 'ellisonleao/gruvbox.nvim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'sainnhe/everforest', {'tag': 'v0.2.3'}
+Plug 'rebelot/kanagawa.nvim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 " Plug 'w0rp/ale'
@@ -18,12 +19,13 @@ Plug 'tpope/vim-repeat'
 Plug 'gabrielelana/vim-markdown'
 
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-orgmode/orgmode'
-Plug 'akinsho/org-bullets.nvim'
+" Plug 'nvim-orgmode/orgmode'
+" Plug 'akinsho/org-bullets.nvim'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'AckslD/nvim-neoclip.lua'
 
 Plug 'kyazdani42/nvim-web-devicons'

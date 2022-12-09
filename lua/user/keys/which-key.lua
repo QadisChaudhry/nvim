@@ -117,6 +117,7 @@ local mappings = {
         s = { "School" },
         c = { "Vim Config" },
         p = { "Projects" },
+        f = { "File Explorer" },
     },
 
     o = {

@@ -18,6 +18,7 @@ local colors = {
     darkgrey = "#3c3836",
     -- cyan = "#008080",
     cyan = utils.get_highlight("Constant").fg,
+    -- cyan = utils.get_highlight("Statement").fg,
     green = "#b8bb26",
     orange = "#d79921",
     blue = "#458588",
@@ -25,9 +26,11 @@ local colors = {
     grey = "#404c51",
     none = "#7e8b83"
 }
+
 heirline.load_colors(colors)
 
 local block = { provider = "▊", hl = { fg = "blue" } }
+-- local block = { provider = "▊", hl = { fg = utils.get_highlight("Function").fg } }
 local separator = { provider = "  ", }
 local Align = { provider = "%=" }
 
@@ -304,7 +307,7 @@ local WordCount = {
     {separator}
 }
 
-local TS = {
+local TreeSitter = {
     provider = function()
         local b = vim.api.nvim_get_current_buf()
         local x = vim.treesitter.highlighter.active[b]
@@ -321,7 +324,8 @@ local TS = {
 
 local statusline = {
     condition = function()
-        return vim.bo.filetype ~= "startify" and vim.bo.filetype ~= "NvimTree"
+        -- return vim.bo.filetype ~= "startify" and vim.bo.filetype ~= "NvimTree"
+        return not conditions.buffer_matches({ filetype = { "startify", "NvimTree" } })
     end,
     {block, separator, ViMode, separator},
     {GitName},
@@ -334,10 +338,11 @@ local statusline = {
     {separator},
     {LSPActive},
     {separator},
-    {TS},
+    {TreeSitter},
     {separator},
     {Ruler, separator, ScrollBar, separator, block},
     hl = { bg = "grey" }
+    -- hl = { bg = "#2A2A37" }
 }
 
 local TablineFileFlags = {
@@ -447,7 +452,8 @@ local TreeOffset = {
         local title = self.title
         local width = vim.api.nvim_win_get_width(self.winid)
         local pad = math.ceil((width - #title) / 2)
-        return string.rep(" ", pad-1) .. title .. string.rep(" ", pad-1)
+        -- return string.rep(" ", pad-1) .. title .. string.rep(" ", pad-1)
+        return string.rep(" ", pad) .. title .. string.rep(" ", pad)
     end,
 
     hl = { fg = "none" }
@@ -459,7 +465,7 @@ local BufferLine = utils.make_buflist(
         condition = function()
             return vim.bo.filetype ~= "NvimTree"
         end,
-        provider = "", hl = { fg = "grey" }
+        provider = " ", hl = { fg = "grey" }
     },
     {
         condition = function()
@@ -470,23 +476,14 @@ local BufferLine = utils.make_buflist(
 )
 
 local tabline = {
-    {
-        condition = function()
-            return conditions.buffer_matches({ buftype = { "terminal" } })
-        end,
-        init = function()
-            vim.opt_local.winbar = nil
-        end
-    },
-    {
-        condition = function()
-            return not conditions.buffer_matches({ buftype = { "terminal" } })
-        end,
-        {
-            TreeOffset,
-            BufferLine
-        }
-    },
+    condition = function()
+        -- return vim.bo.filetype ~= "startify"
+        return not conditions.buffer_matches({ filetype = { "startify" } })
+    end,
+    { TreeOffset, BufferLine },
 }
 
-heirline.setup(statusline, tabline)
+vim.cmd[[hi TabLineFill guifg=NONE guibg=NONE]]
+vim.o.showtabline = 2
+
+heirline.setup(statusline, nil, tabline)
