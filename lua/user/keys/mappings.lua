@@ -69,6 +69,11 @@ map("v", "<leader>y", '"*y', opts)
 -- Spelling Correction
 map("i", "<c-l>", "<c-g>u<esc>[s1z=`]a<c-g>u", opts)
 
+-- ChatGPT
+map("n", "<leader>a", ":AI ", { noremap = true })
+map("v", "<leader>a", ":AI<cr>", opts)
+map("i", "<c-a>", "<esc>:AI<cr>a", opts)
+
 -- Miscellaneous
 map("n", "<leader>,", ":Startify<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)

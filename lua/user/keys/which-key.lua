@@ -74,6 +74,7 @@ local mappings = {
     ["c"] = { "Clipboard" },
     ["y"] = { "Copy to System" },
     ["p"] = { "Print Code" },
+    ["a"] = { "Ask AI" },
 
     l = {
         name = "Latex",
@@ -120,14 +121,14 @@ local mappings = {
         f = { "File Explorer" },
     },
 
-    o = {
-        name = "OrgMode",
-        a = { "Agenda Menu" },
-        c = { "Capture Menu" },
-        r = { "Refile" },
-        d = { "Set Deadline" },
-        t = { "Insert TODO" },
-    },
+    -- o = {
+    --     name = "OrgMode",
+    --     a = { "Agenda Menu" },
+    --     c = { "Capture Menu" },
+    --     r = { "Refile" },
+    --     d = { "Set Deadline" },
+    --     t = { "Insert TODO" },
+    -- },
 
     -- b = {
     --     name = "Buffers",

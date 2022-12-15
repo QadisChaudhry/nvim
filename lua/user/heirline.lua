@@ -131,7 +131,7 @@ local FileIcon = {
 local FileName = {
     provider = function()
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
-        if filename == "" then return "" end
+        if filename == "" then return "[No Name]" end
         return filename
     end,
 }
@@ -278,7 +278,10 @@ local GitChanges = {
 }
 
 local TexCompilation = {
-    condition = function() return conditions.buffer_matches({ filetype = { "tex" } }) end,
+    -- condition = function() return conditions.buffer_matches({ filetype = { "tex" } }) end,
+    condition = function()
+        return vim.bo.filetype == "tex"
+    end,
     provider = function()
         if vim.b.vimtex["compiler"]["status"] == -1 or vim.b.vimtex["compiler"]["status"] == 0 then
             return "{✗}"
@@ -299,7 +302,10 @@ local TexCompilation = {
 }
 
 local WordCount = {
-    condition = function() return conditions.buffer_matches({ filetype = { "tex" } }) end,
+    -- condition = function() return conditions.buffer_matches({ filetype = { "tex" } }) end,
+    condition = function()
+        return vim.bo.filetype == "tex"
+    end,
     provider = function()
         return "Words: " .. tostring(vim.fn.wordcount().words)
     end,
@@ -324,8 +330,7 @@ local TreeSitter = {
 
 local statusline = {
     condition = function()
-        -- return vim.bo.filetype ~= "startify" and vim.bo.filetype ~= "NvimTree"
-        return not conditions.buffer_matches({ filetype = { "startify", "NvimTree" } })
+        return vim.bo.filetype ~= "startify" and vim.bo.filetype ~= "NvimTree"
     end,
     {block, separator, ViMode, separator},
     {GitName},
@@ -477,8 +482,8 @@ local BufferLine = utils.make_buflist(
 
 local tabline = {
     condition = function()
-        -- return vim.bo.filetype ~= "startify"
-        return not conditions.buffer_matches({ filetype = { "startify" } })
+        return vim.bo.filetype ~= "startify" and vim.bo.buftype ~= "help"
+        -- return not conditions.buffer_matches({ filetype = { "startify", "help" } })
     end,
     { TreeOffset, BufferLine },
 }
