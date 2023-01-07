@@ -7,7 +7,7 @@ local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 local sorters = require("telescope.sorters")
 
-telescope.setup{
+telescope.setup({
     defaults = {
         layout_strategy = "vertical",
         layout_config = { preview_cutoff = 30 },
@@ -29,10 +29,11 @@ telescope.setup{
             }
         }
     }
-}
+})
 
 telescope.load_extension("neoclip")
 telescope.load_extension("file_browser")
+telescope.load_extension("undo")
 
 local M = {}
 
@@ -40,7 +41,7 @@ M.school = function ()
     builtin.find_files({
         prompt_title = "College Files",
         cwd = "~/Desktop/College/",
-        telescope.setup{
+        telescope.setup({
             defaults = {
                 file_ignore_patterns = {
                     "%.pdf",
@@ -53,7 +54,7 @@ M.school = function ()
                     "%.class"
                 }
             }
-        }
+        })
     })
 end
 

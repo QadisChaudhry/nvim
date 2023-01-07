@@ -20,7 +20,7 @@ local servers = {
     "sumneko_lua",
     "pyright",
     "texlab",
-    "ltex",
+    -- "ltex",
 }
 
 local path = vim.fn.stdpath("config") .. "/lua/user/lsp"

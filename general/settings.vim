@@ -36,18 +36,12 @@ au FileType tex setlocal spell wrap linebreak nolist
 au FileType markdown setlocal spell wrap linebreak nolist
 au FileType markdown nnoremap <silent> <buffer> <cr> :call markdown#SwitchStatus()<cr>
 au FileType markdown inoremap <silent> <buffer> ,, -- <c-r>=strftime("%m/%d 11:59 pm")<cr>
-" au FileType org inoremap <silent> <buffer> <c-cr> <c-o>:lua require("orgmode").action("org_mappings.handle_return")<cr>
-" au FileType org setlocal conceallevel=2
+au FileType alpha noremap <silent> <buffer> <esc> :bdelete!<cr>
 au BufEnter *.keymap set ft=c
 " au FileType tex setlocal spell textwidth=80 fo+=t
 
 set termguicolors
 set background=dark
-" colorscheme nord
-" colorscheme gruvbox
-" colorscheme onedark
-colorscheme everforest
-" colorscheme kanagawa
 " hi Normal ctermbg=NONE guibg=NONE
 
 lua << EOF

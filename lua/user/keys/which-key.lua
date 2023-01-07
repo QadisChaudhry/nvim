@@ -119,6 +119,7 @@ local mappings = {
         c = { "Vim Config" },
         p = { "Projects" },
         f = { "File Explorer" },
+        u = { "Undo Tree" },
     },
 
     -- o = {

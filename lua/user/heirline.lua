@@ -330,7 +330,7 @@ local TreeSitter = {
 
 local statusline = {
     condition = function()
-        return vim.bo.filetype ~= "startify" and vim.bo.filetype ~= "NvimTree"
+        return vim.bo.filetype ~= "alpha" and vim.bo.filetype ~= "NvimTree"
     end,
     {block, separator, ViMode, separator},
     {GitName},
@@ -482,8 +482,8 @@ local BufferLine = utils.make_buflist(
 
 local tabline = {
     condition = function()
-        return vim.bo.filetype ~= "startify" and vim.bo.buftype ~= "help"
-        -- return not conditions.buffer_matches({ filetype = { "startify", "help" } })
+        return vim.bo.filetype ~= "alpha" and vim.bo.buftype ~= "help"
+        -- return not conditions.buffer_matches({ filetype = { "alpha", "help" } })
     end,
     { TreeOffset, BufferLine },
 }
