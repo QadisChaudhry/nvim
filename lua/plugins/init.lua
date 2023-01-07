@@ -96,6 +96,7 @@ local plugins = {
 }
 
 local opts = {
+    lockfile = vim.fn.stdpath("config") .. "/lua/plugins/lazy-lock.json",
     ui = {
         border = "rounded"
     }

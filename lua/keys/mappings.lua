@@ -51,9 +51,9 @@ map("n", "<leader>sb", ":Telescope buffers<cr>", opts)
 map("n", "<leader>sv", ":Telescope lsp_document_symbols<cr>", opts)
 map("n", "<leader>sf", ":Telescope file_browser<cr>", opts)
 map("n", "<leader>su", ":Telescope undo<cr>", opts)
-map("n", "<leader>ss", ":lua require('user.telescope').school()<cr>", opts)
-map("n", "<leader>sc", ":lua require('user.telescope').vrc()<cr>", opts)
-map("n", "<leader>sp", ":lua require('user.telescope').proj()<cr>", opts)
+map("n", "<leader>ss", ":lua require('plugins.config.telescope').school()<cr>", opts)
+map("n", "<leader>sc", ":lua require('plugins.config.telescope').vrc()<cr>", opts)
+map("n", "<leader>sp", ":lua require('plugins.config.telescope').proj()<cr>", opts)
 
 -- Buffers
 map("n", "<RIGHT>", ":bnext<cr>", opts)

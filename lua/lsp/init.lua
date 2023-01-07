@@ -14,7 +14,7 @@ end
 mason.setup({ ui = { border = "rounded" } })
 masonlsp.setup()
 
-require("user.lsp.handlers").setup()
+require("lsp.handlers").setup()
 
 local servers = {
     "sumneko_lua",
@@ -23,16 +23,16 @@ local servers = {
     -- "ltex",
 }
 
-local path = vim.fn.stdpath("config") .. "/lua/user/lsp"
+local path = vim.fn.stdpath("config") .. "/lua/lsp"
 
 for _, server in pairs(servers) do
     local opts = {
-        on_attach = require("user.lsp.handlers").on_attach,
-        capabilities = require("user.lsp.handlers").capabilities,
+        on_attach = require("lsp.handlers").on_attach,
+        capabilities = require("lsp.handlers").capabilities,
     }
 
     if io.open(string.format("%s/settings/%s.lua", path, server), "r") ~= nil then
-        local server_opts = require(string.format("user.lsp.settings.%s", server))
+        local server_opts = require(string.format("lsp.settings.%s", server))
         opts = vim.tbl_deep_extend("force", server_opts, opts)
     end
 
@@ -44,6 +44,6 @@ require("lspconfig.ui.windows").default_options.border = "rounded"
 -- vim.cmd([[
 --     augroup jdtls_lsp
 --         autocmd!
---         autocmd FileType java lua require('user.lsp.jdtls')
+--         autocmd FileType java lua require('lsp.jdtls')
 --     augroup end
 -- ]])
