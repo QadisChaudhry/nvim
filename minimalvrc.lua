@@ -3,7 +3,7 @@ require("settings")
 
 require("plugins.config.vimtex")
 
-vim.o.laststatus=0
+vim.o.laststatus = 0
 vim.o.noshowcmd = true
 
 require("keys.mappings")

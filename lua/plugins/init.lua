@@ -20,6 +20,9 @@ local plugins = {
         end
     },
 
+    { "nvim-treesitter/nvim-treesitter" },
+    { "kyazdani42/nvim-web-devicons" },
+
     { "SirVer/ultisnips" },
 
     {
@@ -39,9 +42,6 @@ local plugins = {
     { "tpope/vim-commentary" },
     { "tpope/vim-surround" },
     { "tpope/vim-repeat" },
-
-    { "kyazdani42/nvim-web-devicons" },
-    { "nvim-treesitter/nvim-treesitter" },
 
     {
         "nvim-telescope/telescope.nvim",

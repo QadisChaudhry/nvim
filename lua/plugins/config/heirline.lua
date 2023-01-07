@@ -316,13 +316,9 @@ local WordCount = {
 local TreeSitter = {
     provider = function()
         local b = vim.api.nvim_get_current_buf()
-        local x = vim.treesitter.highlighter.active[b]
-        if x ~= nil then
-            if next(vim.treesitter.highlighter.active[b]) then
-                return "綠TS"
-            end
+        if vim.treesitter.highlighter.active[b] ~= nil then
+            return "綠TS"
         end
-        -- return ""
         return " TS"
     end,
     hl = { fg = "green" }
