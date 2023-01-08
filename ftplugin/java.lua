@@ -3,11 +3,11 @@ if not status then
     return
 end
 
-local workspace_dir = '/Users/qadischaudhry/workspace/' .. vim.fn.expand("%:p:h:t")
+local workspace_dir = vim.fn.expand("~") .. "/workspace/" .. vim.fn.expand("%:p:h:t")
 
 local config = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
+    on_attach = require("lsp.handlers").on_attach,
+    capabilities = require("lsp.handlers").capabilities,
 
     cmd = {
         'java',
@@ -30,7 +30,7 @@ local config = {
     },
 
     -- root_dir = vim.fn.expand("%:p:h"),
-    root_dir = vim.fs.dirname(vim.fs.find({ '.git' }, { upward = true })[1]),
+    root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
 
     settings = {
         java = {
@@ -41,4 +41,5 @@ local config = {
         bundles = {}
     },
 }
+
 jdtls.start_or_attach(config)
