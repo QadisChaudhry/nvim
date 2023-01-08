@@ -76,6 +76,11 @@ map("n", "<leader>a", ":ChatGPT<cr>", { noremap = true })
 map("v", "<leader>a", ":AI<cr>", opts)
 map("i", "<c-a>", "<esc>:AI<cr>a", opts)
 
+-- Undo Breakpoints
+map("i", ",", ",<c-g>u", opts)
+map("i", ".", ".<c-g>u", opts)
+map("i", ";", ";<c-g>u", opts)
+
 -- Miscellaneous
 map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
