@@ -6,8 +6,8 @@ if not cmp_status_ok then
 end
 
 local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+    local col = vim.fn.col "." - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
 --   פּ ﯟ   some other good icons
@@ -65,8 +65,8 @@ cmp.setup {
             end
         end,
         {
-          "i",
-          "s",
+            "i",
+            "s",
         }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -76,8 +76,8 @@ cmp.setup {
             end
         end,
         {
-          "i",
-          "s",
+            "i",
+            "s",
         }),
     },
     sources = cmp.config.sources {
@@ -99,7 +99,7 @@ cmp.setup {
                 path = "[Path]",
                 orgmode = "[Org]",
             })[entry.source.name]
-          return vim_item
+            return vim_item
         end,
     },
     confirm_opts = {
