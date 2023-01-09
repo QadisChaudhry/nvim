@@ -64,7 +64,7 @@ map("n", "<leader>bq", ":bdelete!<cr>", opts)
 
 -- Clipboard
 -- map("n", "<leader>c", ":lua require('telescope').extensions.neoclip.default({ on_complete = { function() vim.cmd('stopinsert') end } })<cr><cr>", opts)
-map({ "n", "v" }, "<leader>c", ":Telescope neoclip<cr>", opts)
+map("n", "<leader>c", ":Telescope neoclip<cr>", opts)
 map("n", "<leader>y", ":%w !pbcopy<cr><cr>", opts)
 map("v", "<leader>y", '"*y', opts)
 

@@ -10,9 +10,9 @@ vim.o.rnu = true
 vim.o.nu = true
 vim.o.hidden = true
 vim.o.hlsearch = false
-vim.o.nowrap = true
-vim.o.noswapfile = true
-vim.o.nobackup = true
+vim.o.wrap = false
+vim.o.swapfile = false
+vim.o.backup = false
 vim.o.undodir = vim.fn.expand("~") .. "/.config/nvim/undodir"
 vim.o.undofile = true
 vim.o.incsearch = true
@@ -25,31 +25,74 @@ vim.o.updatetime = 50
 vim.o.cmdheight = 1
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.noruler = true
+vim.o.ruler = false
 vim.o.autochdir = true
 vim.o.mouse = ""
 
 vim.g.netrw_banner = 0
 
-vim.cmd[[
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-]]
+-- vim.cmd[[
+-- fun! TrimWhitespace()
+--     let l:save = winsaveview()
+--     keeppatterns %s/\s\+$//e
+--     call winrestview(l:save)
+-- endfun
+-- ]]
 
-vim.cmd[[
-au FileType tex setlocal spell wrap linebreak nolist
-au FileType markdown setlocal spell wrap linebreak nolist
-au FileType markdown nnoremap <silent> <buffer> <cr> :call markdown#SwitchStatus()<cr>
-au FileType markdown inoremap <silent> <buffer> ,, -- <c-r>=strftime("%m/%d 11:59 pm")<cr>
-au FileType alpha noremap <silent> <buffer> <esc> :bdelete!<cr>
-au BufEnter *.keymap set ft=c
-" au FileType tex setlocal spell textwidth=80 fo+=t
-" hi Normal ctermbg=NONE guibg=NONE
-au BufWritePre * call TrimWhitespace()
-]]
+-- vim.cmd[[
+-- " au FileType tex setlocal spell wrap linebreak nolist
+-- " au FileType markdown setlocal spell wrap linebreak nolist
+-- " au FileType markdown nnoremap <silent> <buffer> <cr> :call markdown#SwitchStatus()<cr>
+-- " au FileType markdown inoremap <silent> <buffer> ,, -- <c-r>=strftime("%m/%d 11:59 pm")<cr>
+-- " au FileType alpha noremap <silent> <buffer> <esc> :bdelete!<cr>
+-- " au BufEnter *.keymap set ft=c
+-- " au FileType tex setlocal spell textwidth=80 fo+=t
+-- " hi Normal ctermbg=NONE guibg=NONE
+-- au BufWritePre * call TrimWhitespace()
+-- ]]
+
+local au = vim.api.nvim_create_autocmd
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true, buffer = true }
+
+au("Filetype", {
+    pattern = { "tex", "markdown" },
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true
+        vim.opt_local.list = false
+        if vim.bo.filetype == "markdown" then
+            map("n", "<cr>", ":call markdown#SwitchStatus()<cr>", opts)
+            map("i", ",,", "-- <c-r>=strftime('%m/%d 11:59 pm')<cr>", opts)
+        end
+    end
+})
+
+au("Filetype", {
+    pattern = "alpha",
+    callback = function()
+        map("n", "<esc>", ":bdelete!<cr>", opts)
+    end
+})
+
+au("BufEnter", {
+    pattern = "*.keymap",
+    callback = function()
+        vim.o.ft = "c"
+    end,
+})
+
+au("BufWritePre", {
+    pattern = "*",
+    command = [[%s/\s\+$//e]]
+})
+
+au("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
 
 vim.o.termguicolors = true
 vim.o.background = "dark"
