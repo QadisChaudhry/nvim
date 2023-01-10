@@ -48,8 +48,16 @@ dashboard.section.buttons.val = {
     dashboard.button( "q", "  Quit NVIM", ":qa<cr>"),
 }
 
-dashboard.section.footer.opts.hl = dashboard.section.header.opts.hl
+local h = dashboard.section.header.opts.hl
+dashboard.section.header.opts.hl = dashboard.section.footer.opts.hl
+dashboard.section.footer.opts.hl = h
 
-vim.cmd[[au Filetype alpha setlocal fillchars=eob:\ ]]
+-- vim.cmd[[au Filetype alpha setlocal fillchars=eob:\ ]]
+vim.api.nvim_create_autocmd("Filetype", {
+    pattern = "alpha",
+    callback = function()
+        vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+    end
+})
 
 alpha.setup(dashboard.config)

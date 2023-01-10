@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-vim.opt.timeoutlen = 250
+vim.opt.timeoutlen = 300
 
 local setup = {
     plugins = {

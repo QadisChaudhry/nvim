@@ -24,12 +24,13 @@ local colors = {
     blue = "#458588",
     red = "#cc241d",
     grey = "#404c51",
-    none = "#7e8b83"
+    none = "#7e8b83",
+    bg = utils.get_highlight("Folded").bg,
 }
 
 heirline.load_colors(colors)
 
-local block = { provider = "▊", hl = { fg = "blue" } }
+local block = { provider = "▊", hl = { fg = "cyan" } }
 -- local block = { provider = "▊", hl = { fg = utils.get_highlight("Function").fg } }
 local separator = { provider = "  ", }
 local Align = { provider = "%=" }
@@ -342,8 +343,9 @@ local statusline = {
     {TreeSitter},
     {separator},
     {Ruler, separator, ScrollBar, separator, block},
-    hl = { bg = "grey" }
+    -- hl = { bg = "grey" }
     -- hl = { bg = "#2A2A37" }
+    hl = { bg = "bg" }
 }
 
 local TablineFileFlags = {

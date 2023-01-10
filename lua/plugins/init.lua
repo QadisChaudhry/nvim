@@ -15,12 +15,45 @@ local plugins = {
     {
         "sainnhe/everforest",
         tag = "v0.2.3",
+        -- config = function()
+        --     vim.cmd[[colorscheme everforest]]
+        -- end
+    },
+
+    {
+        "rmehri01/onenord.nvim",
+        -- config = true
+    },
+
+    {
+        "rose-pine/neovim",
+        -- opts = { dark_variant = "moon" },
+        -- config = function(_, opts)
+        --     require("rose-pine").setup(opts)
+        --     vim.cmd[[colorscheme rose-pine]]
+        -- end
+    },
+
+    {
+        "rebelot/kanagawa.nvim",
         config = function()
-            vim.cmd[[colorscheme everforest]]
+            vim.cmd[[colorscheme kanagawa]]
         end
     },
 
-    { "nvim-treesitter/nvim-treesitter" },
+    {
+        "navarasu/onedark.nvim",
+        -- config = function()
+        --     require("onedark").load()
+        -- end
+    },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        event = "BufReadPost"
+    },
+
     { "kyazdani42/nvim-web-devicons" },
 
     { "SirVer/ultisnips" },

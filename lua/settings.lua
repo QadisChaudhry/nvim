@@ -69,10 +69,13 @@ au("Filetype", {
     end
 })
 
-au("Filetype", {
-    pattern = "alpha",
+au("BufWritePre", {
+    pattern = "*",
+    -- command = [[ mark ` | %s/\s\+$//e | normal `` ]]
     callback = function()
-        map("n", "<esc>", ":bdelete!<cr>", opts)
+        local l = vim.fn.winsaveview()
+        vim.cmd[[keeppatterns %s/\s\+$//e]]
+        vim.fn.winrestview(l)
     end
 })
 
@@ -81,11 +84,6 @@ au("BufEnter", {
     callback = function()
         vim.o.ft = "c"
     end,
-})
-
-au("BufWritePre", {
-    pattern = "*",
-    command = [[%s/\s\+$//e]]
 })
 
 au("TextYankPost", {
