@@ -31,25 +31,16 @@ vim.o.mouse = ""
 
 vim.g.netrw_banner = 0
 
--- vim.cmd[[
--- fun! TrimWhitespace()
---     let l:save = winsaveview()
---     keeppatterns %s/\s\+$//e
---     call winrestview(l:save)
--- endfun
--- ]]
+vim.o.termguicolors = true
+vim.o.background = "dark"
 
--- vim.cmd[[
--- " au FileType tex setlocal spell wrap linebreak nolist
--- " au FileType markdown setlocal spell wrap linebreak nolist
--- " au FileType markdown nnoremap <silent> <buffer> <cr> :call markdown#SwitchStatus()<cr>
--- " au FileType markdown inoremap <silent> <buffer> ,, -- <c-r>=strftime("%m/%d 11:59 pm")<cr>
--- " au FileType alpha noremap <silent> <buffer> <esc> :bdelete!<cr>
--- " au BufEnter *.keymap set ft=c
--- " au FileType tex setlocal spell textwidth=80 fo+=t
--- " hi Normal ctermbg=NONE guibg=NONE
--- au BufWritePre * call TrimWhitespace()
--- ]]
+if vim.g.colors_name == "everforest" then
+    vim.cmd[[hi FloatBorder guibg=#2F383E]]
+    vim.cmd[[hi NormalFloat guibg=#2F383E]]
+elseif vim.g.colors_name == "kanagawa" then
+    vim.cmd[[hi FloatBorder guibg=#1F1F28]]
+    vim.cmd[[hi NormalFloat guibg=#1F1F28]]
+end
 
 local au = vim.api.nvim_create_autocmd
 local map = vim.keymap.set
@@ -91,14 +82,3 @@ au("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
-
-vim.o.termguicolors = true
-vim.o.background = "dark"
-
-if vim.g.colors_name == "everforest" then
-    vim.cmd[[hi FloatBorder guibg=#2F383E]]
-    vim.cmd[[hi NormalFloat guibg=#2F383E]]
-elseif vim.g.colors_name == "kanagawa" then
-    vim.cmd[[hi FloatBorder guibg=#1F1F28]]
-    vim.cmd[[hi NormalFloat guibg=#1F1F28]]
-end

@@ -343,8 +343,6 @@ local statusline = {
     {TreeSitter},
     {separator},
     {Ruler, separator, ScrollBar, separator, block},
-    -- hl = { bg = "grey" }
-    -- hl = { bg = "#2A2A37" }
     hl = { bg = "bg" }
 }
 
