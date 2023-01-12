@@ -481,10 +481,15 @@ local tabline = {
         return vim.bo.filetype ~= "alpha" and vim.bo.buftype ~= "help"
         -- return not conditions.buffer_matches({ filetype = { "alpha", "help" } })
     end,
-    { TreeOffset, BufferLine },
+    { TreeOffset, BufferLine }
 }
 
 vim.cmd[[hi TabLineFill guifg=NONE guibg=NONE]]
 vim.o.showtabline = 2
 
-heirline.setup(statusline, nil, tabline)
+heirline.setup({
+    statusline = statusline,
+    winbar = nil,
+    tabline = tabline,
+    statuscolumn = nil
+})

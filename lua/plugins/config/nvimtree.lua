@@ -102,6 +102,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 --         tree_width = 30,
 --     },
 -- }
+
 nvim_tree.setup {
     auto_reload_on_write = true,
     create_in_closed_folder = false,
@@ -126,8 +127,8 @@ nvim_tree.setup {
     view = {
         adaptive_size = false,
         centralize_selection = false,
-        width = 30,
-        hide_root_folder = false,
+        width = 40,
+        hide_root_folder = true,
         side = "left",
         preserve_window_proportions = false,
         number = false,
@@ -137,6 +138,7 @@ nvim_tree.setup {
             custom_only = false,
             list = {
                 { key = { "<CR>", "o" }, cb = tree_cb "edit" },
+                { key = { "r" }, cb = tree_cb "full_rename" },
             },
         },
         float = {
@@ -161,7 +163,7 @@ nvim_tree.setup {
         root_folder_modifier = ":~",
         indent_width = 2,
         indent_markers = {
-            enable = false,
+            enable = true,
             inline_arrows = true,
             icons = {
                 corner = "└",

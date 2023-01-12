@@ -9,7 +9,7 @@ vim.o.noshowcmd = true
 require("keys.mappings")
 vim.keymap.set({ "i", "c" }, "<M-BS>", "<c-w>")
 vim.keymap.set("n", "<esc>", ":wq<cr>", { silent = true })
-vim.wo.fillchars='eob: '
+vim.wo.fillchars = "eob: "
 
 require("lsp")
 require("plugins.config.cmp")

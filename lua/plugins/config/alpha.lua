@@ -52,10 +52,10 @@ local h = dashboard.section.header.opts.hl
 dashboard.section.header.opts.hl = dashboard.section.footer.opts.hl
 dashboard.section.footer.opts.hl = h
 
--- vim.cmd[[au Filetype alpha setlocal fillchars=eob:\ ]]
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "alpha",
     callback = function()
+        vim.wo.fillchars = "eob: "
         vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
     end
 })
