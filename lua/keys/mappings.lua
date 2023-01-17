@@ -44,7 +44,8 @@ map("n", "<leader>iw", ":lua _THOKR_TOGGLE()<cr>", opts)
 
 -- Search
 -- map("n", "<leader>sr", ":Telescope oldfiles path_display={'truncate'}<cr>", opts)
-map("n", "<leader>sr", ":Telescope oldfiles<cr>", opts)
+-- map("n", "<leader>sr", ":Telescope oldfiles<cr>", opts)
+map("n", "<leader>sr", ":Telescope frecency<cr>", opts)
 map("n", "<leader>sw", ":Telescope live_grep<cr>", opts)
 map("n", "<leader>sh", ":Telescope help_tags<cr>", opts)
 map("n", "<leader>sb", ":Telescope buffers<cr>", opts)
@@ -73,8 +74,8 @@ map("i", "<c-l>", "<c-g>u<esc>[s1z=`]a<c-g>u", opts)
 
 -- ChatGPT
 map("n", "<leader>a", ":ChatGPT<cr>", { noremap = true })
-map("v", "<leader>a", ":AI<cr>", opts)
-map("i", "<c-a>", "<esc>:AI<cr>a", opts)
+-- map("v", "<leader>a", ":AI<cr>", opts)
+-- map("i", "<c-a>", "<esc>:AI<cr>a", opts)
 
 -- Undo Breakpoints
 map("i", ",", ",<c-g>u", opts)
@@ -98,8 +99,6 @@ map("n", "E", "ge", opts)
 map("n", ">", "<s-v>><esc>", opts)
 map("n", "<", "<s-v><<esc>", opts)
 
--- map({ "n", "v" }, "<UP>", "gk", opts)
--- map({ "n", "v" }, "<DOWN>", "gj", opts)
 map({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
 map({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 map({ "n", "v" }, "<DOWN>", "v:count == 0 ? 'gj' : 'j'", { expr = true })
@@ -109,6 +108,9 @@ map({ "i", "c" }, "<M-C-H>", "<c-w>", { noremap = true })
 map({ "i", "c" }, "<M-b>", "<s-left>", { noremap = true })
 map({ "i", "c" }, "<M-f>", "<s-right>", { noremap = true })
 
--- map("x", "K", ':move '<-2<cr>gv-gv', opts)
--- map("x", "J", ':move '>+1<cr>gv-gv', opts)
+map("x", "<s-UP>", ":move '<-2<cr>gv-gv", opts)
+map("x", "<s-DOWN>", ":move '>+1<cr>gv-gv", opts)
+
+map({ "n", "i" }, "<esc>", "<cmd>noh<cr><esc>", opts)
+
 -- map("n", "<c-h>", ":execute 'help ' . expand('<cword>')<cr>", opts)

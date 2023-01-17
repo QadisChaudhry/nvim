@@ -82,6 +82,8 @@ local plugins = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzy-native.nvim",
             "nvim-telescope/telescope-file-browser.nvim",
+            "nvim-telescope/telescope-frecency.nvim",
+            "kkharji/sqlite.lua",
             "AckslD/nvim-neoclip.lua",
             "debugloop/telescope-undo.nvim"
         }
@@ -119,7 +121,7 @@ local plugins = {
     { "ggandor/leap.nvim" },
     { "narutoxy/silicon.lua" },
 
-    { "aduros/ai.vim" },
+    -- { "aduros/ai.vim" },
     {
         "jackMort/ChatGPT.nvim",
         dependencies = {
