@@ -26,6 +26,13 @@ local plugins = {
     },
 
     {
+        "shaunsingh/nord.nvim",
+        config = function()
+            vim.cmd[[colorscheme nord]]
+        end
+    },
+
+    {
         "rose-pine/neovim",
         -- opts = { dark_variant = "moon" },
         -- config = function(_, opts)
@@ -36,9 +43,9 @@ local plugins = {
 
     {
         "rebelot/kanagawa.nvim",
-        config = function()
-            vim.cmd[[colorscheme kanagawa]]
-        end
+        -- config = function()
+        --     vim.cmd[[colorscheme kanagawa]]
+        -- end
     },
 
     {
