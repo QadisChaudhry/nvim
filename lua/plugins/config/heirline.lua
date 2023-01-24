@@ -370,20 +370,20 @@ local TablineFileFlags = {
             name = "heirline_tabline_close_buffer_callback",
         },
     },
-    {
-        condition = function(self)
-            return not vim.api.nvim_buf_get_option(self.bufnr, "modifiable")
-                or vim.api.nvim_buf_get_option(self.bufnr, "readonly")
-        end,
-        provider = function(self)
-            if vim.api.nvim_buf_get_option(self.bufnr, "buftype") == "terminal" then
-                return "  "
-            else
-                return "    "
-            end
-        end,
-        hl = { fg = "cyan" },
-    },
+    -- {
+    --     condition = function(self)
+    --         return not vim.api.nvim_buf_get_option(self.bufnr, "modifiable")
+    --             or vim.api.nvim_buf_get_option(self.bufnr, "readonly")
+    --     end,
+    --     provider = function(self)
+    --         if vim.api.nvim_buf_get_option(self.bufnr, "buftype") == "terminal" then
+    --             return "  "
+    --         else
+    --             return "  "
+    --         end
+    --     end,
+    --     hl = { fg = "cyan" },
+    -- },
 }
 
 local TablineFileIcon = {
@@ -409,6 +409,9 @@ local TablineFileNameBlock = {
         self.filename = vim.api.nvim_buf_get_name(self.bufnr)
         local extension = vim.fn.fnamemodify(self.filename, ":e")
         self.fileicon, self.icon_color = require("nvim-web-devicons").get_icon_color(self.filename, extension, { default = true })
+    end,
+    condition = function(self)
+        return vim.api.nvim_buf_get_option(self.bufnr, "modifiable")
     end,
     hl = function(self)
         if self.is_active then
@@ -453,7 +456,6 @@ local TreeOffset = {
         local title = self.title
         local width = vim.api.nvim_win_get_width(self.winid)
         local pad = math.ceil((width - #title) / 2)
-        -- return string.rep(" ", pad-1) .. title .. string.rep(" ", pad-1)
         return string.rep(" ", pad) .. title .. string.rep(" ", pad)
     end,
 

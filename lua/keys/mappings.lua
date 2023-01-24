@@ -111,6 +111,6 @@ map({ "i", "c" }, "<M-f>", "<s-right>", { noremap = true })
 map("x", "<s-UP>", ":move '<-2<cr>gv-gv", opts)
 map("x", "<s-DOWN>", ":move '>+1<cr>gv-gv", opts)
 
-map({ "n", "i" }, "<esc>", "<cmd>noh<cr><esc>", opts)
+map("n", "<esc>", ":noh<cr><esc>", opts)
 
 -- map("n", "<c-h>", ":execute 'help ' . expand('<cword>')<cr>", opts)
