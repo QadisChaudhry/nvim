@@ -89,7 +89,6 @@ local plugins = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzy-native.nvim",
             "nvim-telescope/telescope-file-browser.nvim",
-            "nvim-telescope/telescope-frecency.nvim",
             "kkharji/sqlite.lua",
             "AckslD/nvim-neoclip.lua",
             "debugloop/telescope-undo.nvim"
