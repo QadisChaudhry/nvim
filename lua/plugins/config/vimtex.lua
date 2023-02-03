@@ -23,7 +23,7 @@ function! UpdateSkim(status)
 endfunction
 ]]
 
-vim.g.vimtex_mappings_enabled = 0
+vim.g.vimtex_mappings_enabled = 1
 vim.g.vimtex_imaps_enabled = 0
 
 vim.g.tex_flavor = "latex"
