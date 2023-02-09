@@ -40,6 +40,9 @@ if vim.g.colors_name == "everforest" then
 elseif vim.g.colors_name == "kanagawa" then
     vim.cmd[[hi FloatBorder guibg=#1F1F28]]
     vim.cmd[[hi NormalFloat guibg=#1F1F28]]
+elseif vim.g.colors_name == "gruvbox" then
+    vim.cmd[[hi FloatBorder guibg=#282828]]
+    vim.cmd[[hi NormalFloat guibg=#282828]]
 end
 
 local au = vim.api.nvim_create_autocmd
