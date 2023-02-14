@@ -84,7 +84,6 @@ cmp.setup {
         { name = 'ultisnips' },
         { name = 'nvim_lsp' },
         { name = 'path' },
-        { name = 'orgmode' },
         { name = 'buffer', option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } },
     },
     formatting = {
@@ -97,7 +96,6 @@ cmp.setup {
                 buffer = "[Buffer]",
                 ultisnips = "[Snippet]",
                 path = "[Path]",
-                orgmode = "[Org]",
             })[entry.source.name]
             return vim_item
         end,
