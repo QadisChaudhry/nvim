@@ -17,7 +17,7 @@ masonlsp.setup()
 require("lsp.handlers").setup()
 
 local servers = {
-    "sumneko_lua",
+    "lua_ls",
     "pyright",
     "texlab",
     -- "ltex",

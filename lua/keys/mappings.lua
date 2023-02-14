@@ -86,7 +86,7 @@ map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":source $MYVIMRC<cr>", opts)
 map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-map('v', '<Leader>p', ":lua require('silicon').visualise_cmdline({to_clip = false, show_buf = false})<cr>", opts)
+map("v", "<leader>p", ":lua require('silicon').visualise_cmdline({to_clip = false, show_buf = false})<cr>", opts)
 
 map("n", "Q", "@a", opts)
 -- map("n", "n", "nzz", opts)

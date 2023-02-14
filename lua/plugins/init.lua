@@ -14,17 +14,17 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     {
         "ellisonleao/gruvbox.nvim",
-        config = function()
-            vim.cmd[[colorscheme gruvbox]]
-        end
+        -- config = function()
+        --     vim.cmd[[colorscheme gruvbox]]
+        -- end
     },
 
     {
         "sainnhe/everforest",
         tag = "v0.2.3",
-        -- config = function()
-        --     vim.cmd[[colorscheme everforest]]
-        -- end
+        config = function()
+            vim.cmd[[colorscheme everforest]]
+        end
     },
 
     {
@@ -140,7 +140,7 @@ local plugins = {
         dependencies = {
             "MunifTanjim/nui.nvim"
         }
-    }
+    },
 }
 
 local opts = {
