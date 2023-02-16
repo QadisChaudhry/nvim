@@ -59,9 +59,9 @@ au("Filetype", {
         if vim.bo.filetype == "markdown" then
             map("n", "<cr>", ":call markdown#SwitchStatus()<cr>", opts)
             map("i", ",,", "-- <c-r>=strftime('%m/%d 11:59 pm')<cr>", opts)
-            map("i", "<c-enter>", "<enter>[ ] ", opts)
+            map("i", "<s-cr>", "<cr>[ ] ", opts)
         else
-            map("i", "<c-enter>", "<enter>\\item[--] ", opts)
+            map("i", "<s-cr>", "<cr>\\item[--] ", opts)
         end
     end
 })
