@@ -23,6 +23,7 @@ local servers = {
     -- "ltex",
     "clangd",
     "tsserver",
+    "html",
 }
 
 local path = vim.fn.stdpath("config") .. "/lua/lsp"
