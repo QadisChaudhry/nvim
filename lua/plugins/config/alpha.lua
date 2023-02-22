@@ -41,10 +41,11 @@ dashboard.section.footer.val = {
 dashboard.section.buttons.val = {
     dashboard.button( "a", "  TODO", ":e ~/Desktop/College/TODO.md<cr>"),
     dashboard.button( "b", "  Latex Snippets", ":e ~/.config/nvim/snips/tex.snippets<cr>"),
-    dashboard.button( "l", "  Last File", ":e#<1<cr>"),
+    dashboard.button( "e", "  Last File", ":e#<1<cr>"),
     dashboard.button( "SPC sr", "  Recent Files"),
     dashboard.button( "SPC sc", "  Config Files"),
-    dashboard.button( "n", "  New File", ":ene <bar> startinsert <cr>"),
+    dashboard.button( "l", " Lazy", ":Lazy<cr>"),
+    dashboard.button( "n", "  New File", ":ene <bar> startinsert<cr>"),
     dashboard.button( "q", "  Quit NVIM", ":qa<cr>"),
 }
 
