@@ -105,6 +105,7 @@ local mappings = {
         p = { "Python" },
         r = { "Ranger" },
         w = { "Typing Test" },
+        a = { "Ask AI" },
         -- k = { "Kill Terminal" },
     },
 

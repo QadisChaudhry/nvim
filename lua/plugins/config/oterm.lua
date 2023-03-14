@@ -24,6 +24,7 @@ oterm.setup(config)
 function _OPEN_TERM() open() end
 
 function _LAZYGIT_TOGGLE() open({name = "Github", command = "lazygit"}) end
+function _AI_TOGGLE() open({name = "AskAI", command = "gogpt"}) end
 function _PYTHON_TOGGLE() open({name = "Python", layout = "hsplit", command = "ipython"}) end
 function _RANGER_TOGGLE() open({name = "File Explorer", layout = "vsplit", command = "ranger"}) end
 function _THOKR_TOGGLE() open({name = "Typing Test", layout = "hsplit", command = "thokr"}) end
