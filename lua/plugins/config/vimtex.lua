@@ -36,7 +36,6 @@ vim.g.vimtex_quickfix_ignore_filters = {
     "csquotes Warning: No multilingual support",
 }
 
-vim.g.UltiSnipsExpandTrigger = "<c-space>"
 vim.g.UltiSnipsJumpForwardTrigger = ",n"
 
 vim.g.UltiSnipsSnippetDirectories = {
