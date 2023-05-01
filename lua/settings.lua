@@ -28,6 +28,7 @@ vim.o.smartcase = true
 vim.o.ruler = false
 vim.o.autochdir = true
 vim.o.mouse = ""
+vim.o.spell = true
 
 vim.g.netrw_banner = 0
 
@@ -49,17 +50,25 @@ local au = vim.api.nvim_create_autocmd
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true, buffer = true }
 
+au("FileType", {
+    pattern = "*",
+    callback = function()
+        if vim.bo.filetype ~= "tex" and vim.bo.filetype ~= "markdown" then
+            vim.opt_local.textwidth = 120
+            vim.opt_local.fo:append("t")
+        end
+    end
+})
+
 au("Filetype", {
     pattern = { "tex", "markdown" },
     callback = function()
-        vim.opt_local.spell = true
         vim.opt_local.wrap = true
         vim.opt_local.linebreak = true
         vim.opt_local.list = false
         if vim.bo.filetype == "markdown" then
             map("n", "<cr>", ":call markdown#SwitchStatus()<cr>", opts)
             map("i", ",,", "-- <c-r>=strftime('%m/%d 11:59 pm')<cr>", opts)
-            map("i", "<s-cr>", "<cr>[ ] ", opts)
         else
             map("i", "<s-cr>", "<cr>\\item[--] ", opts)
         end
