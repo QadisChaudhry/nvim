@@ -60,16 +60,24 @@ au("FileType", {
     end
 })
 
+au("BufEnter", {
+    pattern = "*",
+    callback = function()
+        if vim.fn.expand("%:t") == "TODO.md" then
+            map("n", "<cr>", ":call markdown#SwitchStatus()<cr>", opts)
+            map("i", ",,", "-- <c-r>=strftime('%m/%d 11:59 pm')<cr>", opts)
+            map("n", "<leader>t", "<cmd>g/\\[ \\]/p<cr>", { noremap = true, buffer = true })
+        end
+    end
+})
+
 au("Filetype", {
     pattern = { "tex", "markdown" },
     callback = function()
         vim.opt_local.wrap = true
         vim.opt_local.linebreak = true
         vim.opt_local.list = false
-        if vim.bo.filetype == "markdown" then
-            map("n", "<cr>", ":call markdown#SwitchStatus()<cr>", opts)
-            map("i", ",,", "-- <c-r>=strftime('%m/%d 11:59 pm')<cr>", opts)
-        else
+        if vim.bo.filetype == "tex" then
             map("i", "<s-cr>", "<cr>\\item[--] ", opts)
         end
     end
