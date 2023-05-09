@@ -28,7 +28,6 @@ vim.o.smartcase = true
 vim.o.ruler = false
 vim.o.autochdir = true
 vim.o.mouse = ""
-vim.o.spell = true
 
 vim.g.netrw_banner = 0
 
@@ -74,6 +73,7 @@ au("BufEnter", {
 au("Filetype", {
     pattern = { "tex", "markdown" },
     callback = function()
+        vim.o.spell = true
         vim.opt_local.wrap = true
         vim.opt_local.linebreak = true
         vim.opt_local.list = false
