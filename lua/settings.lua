@@ -52,7 +52,7 @@ local opts = { noremap = true, silent = true, buffer = true }
 au("FileType", {
     pattern = "*",
     callback = function()
-        if vim.bo.filetype ~= "tex" and vim.bo.filetype ~= "markdown" then
+        if vim.bo.filetype ~= "tex" and vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "json" then
             vim.opt_local.textwidth = 120
             vim.opt_local.fo:append("t")
         end
