@@ -71,7 +71,7 @@ au("BufEnter", {
 })
 
 au("Filetype", {
-    pattern = { "tex", "markdown" },
+    pattern = { "tex", "markdown", "json" },
     callback = function()
         vim.o.spell = true
         vim.opt_local.wrap = true
