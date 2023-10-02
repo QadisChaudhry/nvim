@@ -39,7 +39,7 @@ dashboard.section.footer.val = {
 }
 
 dashboard.section.buttons.val = {
-    dashboard.button( "a", "  TODO", ":e ~/Desktop/College/TODO.md<cr>"),
+    dashboard.button( "a", "  TODO", ":e ~/Documents/College/TODO.md<cr>"),
     dashboard.button( "b", "  Latex Snippets", ":e ~/.config/nvim/snips/tex.snippets<cr>"),
     dashboard.button( "e", "  Last File", ":e#<1<cr>"),
     dashboard.button( "SPC sr", "  Recent Files"),

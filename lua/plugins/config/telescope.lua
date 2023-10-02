@@ -40,7 +40,7 @@ local M = {}
 M.school = function ()
     builtin.find_files({
         prompt_title = "College Files",
-        cwd = "~/Desktop/College/",
+        cwd = "~/Documents/College/",
         telescope.setup({
             defaults = {
                 file_ignore_patterns = {
