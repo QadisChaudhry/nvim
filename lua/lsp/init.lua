@@ -25,7 +25,7 @@ local servers = {
     "tsserver",
     "html",
     "jsonls",
-    "svlangserver",
+    "svls",
 }
 
 local path = vim.fn.stdpath("config") .. "/lua/lsp"
