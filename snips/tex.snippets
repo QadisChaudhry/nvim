@@ -194,11 +194,18 @@ snippet hfig "Horizontal figure" b
 endsnippet
 
 snippet vfig "Vertical figure" b
-\begin{center}
-	\objects
-		{\includegraphics[width=0.8\textwidth]{./$1}}
-		{\includegraphics[width=0.8\textwidth]{./$2}}
-\end{center}
+\begin{figure}[H]
+	\centering
+	\leavevmode\vbox{
+		\nointerlineskip\hbox{
+			\includegraphics[width=0.8\textwidth]{./$1}
+		}
+		\nointerlineskip\hbox{
+			\includegraphics[width=0.8\textwidth]{./$2}
+		}
+	}
+	\caption{$3}
+\end{figure}
 endsnippet
 
 snippet enum "Enumerate" bA
@@ -356,13 +363,8 @@ snippet floor "floor" iA
 endsnippet
 
 context "math()"
-snippet "(p|b|v)mat" "matrices" riA
+snippet "(|p|b|v)mat" "matrices" riA
 \begin{`!p snip.rv=match.group(1)`matrix} $1 \end{`!p snip.rv=match.group(1)`matrix} $0
-endsnippet
-
-context "math()"
-snippet "mat" "matrix" rA
-\begin{matrix} $1 \end{matrix} $0
 endsnippet
 
 context "math()"
