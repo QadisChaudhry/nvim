@@ -45,7 +45,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "SPC sr", "  Recent Files"),
     dashboard.button( "SPC sc", "  Config Files"),
     dashboard.button( "l", " Lazy", ":Lazy<cr>"),
-    dashboard.button( "n", "  New File", ":ene <bar> startinsert<cr>"),
+    dashboard.button( "n", "  New File", ":ene<cr>"),
     dashboard.button( "q", "  Quit NVIM", ":qa<cr>"),
 }
 
@@ -53,11 +53,18 @@ local h = dashboard.section.header.opts.hl
 dashboard.section.header.opts.hl = dashboard.section.footer.opts.hl
 dashboard.section.footer.opts.hl = h
 
+
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "alpha",
     callback = function()
         vim.wo.fillchars = "eob: "
-        vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+        -- local bcount = vim.cmd([[echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))]])
+        local buflisted = vim.fn.buflisted
+        local buffers = vim.fn.getbufinfo({buflisted = 1})
+        local listed_buffers = vim.tbl_filter(function(buf) return buflisted(buf.bufnr) end, buffers)
+        if #listed_buffers > 0 then
+            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+        end
     end
 })
 

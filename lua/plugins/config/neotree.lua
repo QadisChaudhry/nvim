@@ -49,7 +49,7 @@ neotree.setup {
     sort_case_insensitive = false, -- used when sorting files and directories in the tree
     sort_function = nil,           -- uses a custom function for sorting files and directories in the tree
     use_popups_for_input = true,   -- If false, inputs will use vim.ui.input() instead of custom floats.
-    use_default_mappings = true,
+    use_default_mappings = false,
     -- source_selector provides clickable tabs to switch between sources.
     source_selector = {
         winbar = false,                        -- toggle to show selector on winbar
@@ -614,7 +614,7 @@ neotree.setup {
         window = {
             mappings = {
                 ["<cr>"] = "jump_to_symbol",
-                ["o"] = "jump_to_symbol",
+                ["s"] = "jump_to_symbol",
                 ["A"] = "noop", -- also accepts the config.show_path and config.insert_as options.
                 ["d"] = "noop",
                 ["y"] = "noop",

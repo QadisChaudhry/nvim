@@ -65,10 +65,14 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        event = "BufReadPost"
+        -- event = "VimEnter"
+        lazy = false
     },
 
-    { "nvim-tree/nvim-web-devicons" },
+    {
+        "nvim-tree/nvim-web-devicons",
+        commit = "b34362b20a4942b3245f958e73ebe1b09b020ad1"
+    },
 
     { "SirVer/ultisnips" },
 
