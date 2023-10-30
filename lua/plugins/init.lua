@@ -68,7 +68,7 @@ local plugins = {
         event = "BufReadPost"
     },
 
-    { "kyazdani42/nvim-web-devicons" },
+    { "nvim-tree/nvim-web-devicons" },
 
     { "SirVer/ultisnips" },
 
@@ -129,18 +129,17 @@ local plugins = {
     { "doums/oterm.nvim" },
 
     { "windwp/nvim-autopairs" },
-    { "kyazdani42/nvim-tree.lua" },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+        }
+    },
     { "folke/which-key.nvim" },
     { "ggandor/leap.nvim" },
     { "narutoxy/silicon.lua" },
-
-    -- { "aduros/ai.vim" },
-    {
-        "jackMort/ChatGPT.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim"
-        }
-    },
 }
 
 local opts = {

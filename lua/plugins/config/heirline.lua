@@ -327,7 +327,7 @@ local TreeSitter = {
 
 local statusline = {
     condition = function()
-        return vim.bo.filetype ~= "alpha" and vim.bo.filetype ~= "NvimTree"
+        return vim.bo.filetype ~= "alpha" and vim.bo.filetype ~= "neo-tree"
     end,
     {block, separator, ViMode, separator},
     {GitName},
@@ -446,10 +446,10 @@ local TreeOffset = {
         local bufnr = vim.api.nvim_win_get_buf(win)
         self.winid = win
 
-        if vim.bo[bufnr].filetype == "NvimTree" then
+        if vim.bo[bufnr].filetype == "neo-tree" then
             self.title = "File Explorer"
         end
-        return vim.bo.filetype == "NvimTree"
+        return vim.bo.filetype == "neo-tree"
     end,
 
     provider = function(self)
@@ -466,13 +466,13 @@ local BufferLine = utils.make_buflist(
     TablineFileNameBlock,
     {
         condition = function()
-            return vim.bo.filetype ~= "NvimTree"
+            return vim.bo.filetype ~= "neo-tree"
         end,
         provider = " ", hl = { fg = "grey" }
     },
     {
         condition = function()
-            return vim.bo.filetype ~= "NvimTree"
+            return vim.bo.filetype ~= "neo-tree"
         end,
         provider = "", hl = { fg = "grey" }
     }

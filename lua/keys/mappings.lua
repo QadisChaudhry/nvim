@@ -72,11 +72,6 @@ map("v", "<leader>y", '"*y', opts)
 -- Spelling Correction
 map("i", "<c-l>", "<c-g>u<esc>[s1z=`]a<c-g>u", opts)
 
--- ChatGPT
-map("n", "<leader>a", ":ChatGPT<cr>", { noremap = true })
--- map("v", "<leader>a", ":AI<cr>", opts)
--- map("i", "<c-a>", "<esc>:AI<cr>a", opts)
-
 -- Undo Breakpoints
 map("i", ",", ",<c-g>u", opts)
 map("i", ".", ".<c-g>u", opts)
@@ -86,7 +81,7 @@ map("i", ";", ";<c-g>u", opts)
 map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":source $MYVIMRC<cr>", opts)
-map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+map("n", "<leader>e", ":Neotree toggle<cr>", opts)
 map("v", "<leader>p", ":lua require('silicon').visualise_cmdline({to_clip = false, show_buf = false})<cr>", opts)
 
 map("n", "Q", "@a", opts)

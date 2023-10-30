@@ -74,7 +74,6 @@ local mappings = {
     ["c"] = { "Clipboard" },
     ["y"] = { "Copy to System" },
     ["p"] = { "Print Code" },
-    ["a"] = { "Ask AI" },
 
     l = {
         name = "Latex",
