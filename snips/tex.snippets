@@ -205,11 +205,12 @@ snippet vfig "Vertical figure" b
 		\nointerlineskip\hbox{
 			\includegraphics[width=0.8\textwidth]{./$1}
 		}
+		\vspace{${2:0mm}}
 		\nointerlineskip\hbox{
-			\includegraphics[width=0.8\textwidth]{./$2}
+			\includegraphics[width=0.8\textwidth]{./$3}
 		}
 	}
-	\caption{$3}
+	\caption{$0}
 \end{figure}
 endsnippet
 
