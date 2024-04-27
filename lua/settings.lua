@@ -105,3 +105,19 @@ au("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+au({ "BufNewFile", "BufReadPre" }, {
+    pattern = { "*" },
+    callback = function(ev)
+        local filename = vim.api.nvim_buf_get_name(ev.buf)
+        -- do not log .git files, and buffers opened by plugins (which often contain some ':')
+        if not (string.find(filename, "/.git") or string.find(filename, ":")) then
+            local cmd = "jumper -f ${__JUMPER_FILES} -a '" .. filename .. "'"
+            os.execute(cmd)
+        end
+    end
+})
+-- vim.cmd[[
+-- command! -nargs=+ Z :cd `jumper -f ${__JUMPER_FOLDERS} -n 1 '<args>'`
+-- command! -nargs=+ Zf :edit `jumper -f ${__JUMPER_FILES} -n 1 '<args>'`
+-- ]]

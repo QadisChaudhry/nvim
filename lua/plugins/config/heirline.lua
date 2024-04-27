@@ -111,9 +111,7 @@ local ViMode = {
         return { fg = self.mode_colors[mode], bold = true, }
     end,
 
-    update = {
-        "ModeChanged",
-    },
+    update = { "ModeChanged" },
 }
 
 local FileIcon = {
@@ -190,6 +188,7 @@ local LSPActive = {
     },
     {
         condition = function() return conditions.lsp_attached() end,
+        update = { "LspAttach", "LspDetach" },
         provider = function()
             local names = {}
             for _, server in pairs(vim.lsp.buf_get_clients(0)) do
@@ -200,6 +199,7 @@ local LSPActive = {
     },
     {
         condition = function() return not conditions.lsp_attached() end,
+        update = { "LspAttach", "LspDetach" },
         provider = function()
             return "Inactive"
         end,
@@ -238,6 +238,7 @@ local GitName = {
 
 local GitChanges = {
     condition = conditions.is_git_repo,
+    update = { "CursorHold" },
 
     init = function(self)
         self.status_dict = vim.b.gitsigns_status_dict
@@ -316,8 +317,12 @@ local WordCount = {
 
 local TreeSitter = {
     provider = function()
+        local s = vim.api.nvim_get_runtime_file('parser/' .. vim.bo.filetype .. '.so', true)
         local b = vim.api.nvim_get_current_buf()
-        if vim.treesitter.highlighter.active[b] ~= nil then
+        if vim.inspect(s) == "{}" then
+            return " TS"
+        end
+        if vim.treesitter.highlighter.active[b] then
             return "綠TS"
         end
         return " TS"
