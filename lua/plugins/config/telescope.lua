@@ -26,7 +26,8 @@ telescope.setup({
             mappings = {
                 ["i"] = {},
                 ["n"] = {}
-            }
+            },
+            hidden = true
         }
     }
 })
@@ -46,6 +47,7 @@ M.school = function ()
                 file_ignore_patterns = {
                     "%.pdf",
                     "%.png",
+                    "%.jpg",
                     "%.log",
                     "%.aux",
                     "%.gz",
