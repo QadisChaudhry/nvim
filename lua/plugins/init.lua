@@ -143,7 +143,12 @@ local plugins = {
     },
     { "folke/which-key.nvim" },
     { "ggandor/leap.nvim" },
-    { "narutoxy/silicon.lua" },
+    -- { "narutoxy/silicon.lua" },
+    {
+        "michaelrommel/nvim-silicon",
+        lazy = true,
+        cmd = "Silicon",
+    },
 }
 
 local opts = {

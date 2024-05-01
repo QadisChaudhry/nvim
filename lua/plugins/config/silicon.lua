@@ -7,27 +7,34 @@ end
 -- local time = string.format("%s.%s.%s %s", os.date("%I"), os.date("%M"), os.date("%S"), os.date("%p"):upper())
 
 local config = {
-    theme = "auto",
-    -- output = string.format("%s/Documents/Screenshots/Code %s at %s.png", vim.fn.expand("~"), date, time),
-    output = string.format("%s/Documents/Screenshots/Code.png", vim.fn.expand("~")),
-    -- bgColor = vim.g.terminal_color_5,
-    bgColor = "#c7c7c7",
-    bgImage = "", -- path to image, must be png
-    roundCorner = true,
-    windowControls = true,
-    lineNumber = false,
-    -- font = "JetBrainsMono Nerd Font",
+    disable_defaults = false,
+    debug = false,
     font = "Iosevka Nerd Font",
-    lineOffset = 1, -- from where to start line number
-    linePad = 2, -- padding between lines
-    padHoriz = 80, -- Horizontal padding
-    padVert = 100, -- vertical padding
-    shadowBlurRadius = 10,
-    shadowColor = "#555555",
-    shadowOffsetX = 8,
-    shadowOffsetY = 8,
-    gobble = false, -- enable lsautogobble like feature
-    debug = false, -- enable debug output
+    theme = "everforest_dark",
+    background = "#c7c7c7",
+    background_image = nil,
+    pad_horiz = 80,
+    pad_vert = 100,
+    no_round_corner = false,
+    no_window_controls = false,
+    no_line_number = true,
+    line_offset = 1,
+    line_pad = 2,
+    tab_width = 4,
+    language = function()
+    	return vim.bo.filetype
+    end,
+    shadow_blur_radius = 10,
+    shadow_offset_x = 8,
+    shadow_offset_y = 8,
+    shadow_color = "#555555",
+    gobble = true,
+    num_separator = nil,
+    to_clipboard = false,
+    command = "silicon",
+    output = function()
+    	return vim.fn.expand("~") .. "/Documents/Screenshots/Code.png"
+    end,
 }
 
 silicon.setup(config)
