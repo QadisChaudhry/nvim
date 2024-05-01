@@ -23,7 +23,7 @@ map("n", "<leader>lt3", "itemplate3", opts)
 -- Terminal
 map("n", "<leader>it", ":lua _OPEN_TERM()<cr>", opts)
 map("n", "<leader>ig", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
-map("n", "<leader>ia", ":lua _AI_TOGGLE()<cr>", opts)
+-- map("n", "<leader>ia", ":lua _AI_TOGGLE()<cr>", opts)
 map("n", "<leader>ip", ":lua _PYTHON_TOGGLE()<cr>", opts)
 map("n", "<leader>ir", ":lua _RANGER_TOGGLE()<cr>", opts)
 map("n", "<leader>iw", ":lua _THOKR_TOGGLE()<cr>", opts)

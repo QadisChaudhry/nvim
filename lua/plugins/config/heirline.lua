@@ -238,7 +238,7 @@ local GitName = {
 
 local GitChanges = {
     condition = conditions.is_git_repo,
-    update = { "CursorHold" },
+    update = { "BufEnter", "BufWritePost" },
 
     init = function(self)
         self.status_dict = vim.b.gitsigns_status_dict
