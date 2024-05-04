@@ -104,7 +104,6 @@ local mappings = {
         p = { "Python" },
         r = { "Ranger" },
         w = { "Typing Test" },
-        -- a = { "Ask AI" },
         -- k = { "Kill Terminal" },
     },
 
@@ -121,22 +120,6 @@ local mappings = {
         f = { "File Explorer" },
         u = { "Undo Tree" },
     },
-
-    -- o = {
-    --     name = "OrgMode",
-    --     a = { "Agenda Menu" },
-    --     c = { "Capture Menu" },
-    --     r = { "Refile" },
-    --     d = { "Set Deadline" },
-    --     t = { "Insert TODO" },
-    -- },
-
-    -- b = {
-    --     name = "Buffers",
-    --     l = { "Next Buffer" },
-    --     h = { "Previous Buffer" },
-    --     q = { "Close Buffer" },
-    -- },
 }
 
 which_key.setup(setup)

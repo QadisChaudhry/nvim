@@ -133,6 +133,7 @@ local plugins = {
     { "doums/oterm.nvim" },
 
     { "windwp/nvim-autopairs" },
+
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -141,9 +142,11 @@ local plugins = {
             "MunifTanjim/nui.nvim",
         }
     },
+
     { "folke/which-key.nvim" },
+
     { "ggandor/leap.nvim" },
-    -- { "narutoxy/silicon.lua" },
+
     {
         "michaelrommel/nvim-silicon",
         lazy = true,

@@ -23,25 +23,9 @@ map("n", "<leader>lt3", "itemplate3", opts)
 -- Terminal
 map("n", "<leader>it", ":lua _OPEN_TERM()<cr>", opts)
 map("n", "<leader>ig", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
--- map("n", "<leader>ia", ":lua _AI_TOGGLE()<cr>", opts)
 map("n", "<leader>ip", ":lua _PYTHON_TOGGLE()<cr>", opts)
 map("n", "<leader>ir", ":lua _RANGER_TOGGLE()<cr>", opts)
 map("n", "<leader>iw", ":lua _THOKR_TOGGLE()<cr>", opts)
-
--- map("n", "<leader>it", ":ToggleTerm<cr>", opts)
--- map("n", "<leader>ig", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
--- map("n", "<leader>ip", ":lua _PYTHON_TOGGLE()<cr>", opts)
--- map("n", "<leader>ir", ":lua _RANGER_TOGGLE()<cr>", opts)
--- map("n", "<leader>iw", ":lua _THOKR_TOGGLE()<cr>", opts)
--- map("t", "<C-k>", "<C-\\><C-n>:ToggleTerm<cr>", opts)
-
--- map("n", "<leader>it", ":FloatermToggle<cr>", opts)
--- map("n", "<leader>ig", ":FloatermNew lazygit<cr>", opts)
--- map("n", "<leader>ip", ":FloatermNew ipython<cr>", opts)
--- map("n", "<leader>ir", ":FloatermNew ranger<cr>", opts)
--- map("n", "<leader>iw", ":FloatermNew thokr<cr>", opts)
--- map("n", "<leader>ik", ":FloatermKill<cr>", opts)
--- map("t", "<C-k>", "<C-\\><C-n>:FloatermToggle<cr>", opts)
 
 -- Search
 -- map("n", "<leader>sr", ":Telescope oldfiles path_display={'truncate'}<cr>", opts)
@@ -82,7 +66,6 @@ map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":source $MYVIMRC<cr>", opts)
 map("n", "<leader>e", ":Neotree toggle<cr>", opts)
--- map("v", "<leader>p", ":lua require('silicon').visualise_cmdline({to_clip = false, show_buf = false})<cr>", opts)
 map("v", "<leader>p", ":Silicon<cr>", opts)
 
 map("n", "Q", "@a", opts)
