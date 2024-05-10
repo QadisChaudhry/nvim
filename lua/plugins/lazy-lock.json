@@ -26,6 +26,7 @@
   "nvim-silicon": { "branch": "main", "commit": "ab664633e5090809da7470288404fe5b8735a8c8" },
   "nvim-treesitter": { "branch": "master", "commit": "a8c14d68b024ffc20baec92d1acc91796bcfb485" },
   "nvim-web-devicons": { "branch": "master", "commit": "b34362b20a4942b3245f958e73ebe1b09b020ad1" },
+  "oil.nvim": { "branch": "master", "commit": "010b44a79d497c697686e2727049d3dd215bbbd6" },
   "onedark.nvim": { "branch": "master", "commit": "b9acd92ded2ba155867ca5af9d618e933d96e3b0" },
   "onenord.nvim": { "branch": "main", "commit": "3679fb93aaf473c1dd63222ac88577a909f6b41c" },
   "oterm.nvim": { "branch": "main", "commit": "eb1d044a35f952a0a75df5939b78f1601cd39f86" },

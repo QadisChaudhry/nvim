@@ -53,19 +53,4 @@ local h = dashboard.section.header.opts.hl
 dashboard.section.header.opts.hl = dashboard.section.footer.opts.hl
 dashboard.section.footer.opts.hl = h
 
-
-vim.api.nvim_create_autocmd("Filetype", {
-    pattern = "alpha",
-    callback = function()
-        vim.wo.fillchars = "eob: "
-        -- local bcount = vim.cmd([[echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))]])
-        local buflisted = vim.fn.buflisted
-        local buffers = vim.fn.getbufinfo({buflisted = 1})
-        local listed_buffers = vim.tbl_filter(function(buf) return buflisted(buf.bufnr) end, buffers)
-        if #listed_buffers > 0 then
-            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
-        end
-    end
-})
-
 alpha.setup(dashboard.config)

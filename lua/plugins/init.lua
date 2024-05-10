@@ -152,6 +152,12 @@ local plugins = {
         lazy = true,
         cmd = "Silicon",
     },
+
+    {
+       "stevearc/oil.nvim",
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    }
 }
 
 local opts = {

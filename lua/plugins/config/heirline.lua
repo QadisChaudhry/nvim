@@ -492,11 +492,13 @@ local tabline = {
 }
 
 vim.cmd[[hi TabLineFill guifg=NONE guibg=NONE]]
-vim.o.showtabline = 2
+-- vim.o.showtabline = 2
+vim.o.showtabline = 0
 
 heirline.setup({
     statusline = statusline,
     winbar = nil,
-    tabline = tabline,
+    -- tabline = tabline,
+    tabline = nil,
     statuscolumn = nil
 })

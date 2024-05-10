@@ -27,7 +27,8 @@ telescope.setup({
                 ["i"] = {},
                 ["n"] = {}
             },
-            hidden = true
+            hidden = true,
+            git_status = false
         }
     }
 })
@@ -38,27 +39,27 @@ telescope.load_extension("undo")
 
 local M = {}
 
-M.school = function ()
-    builtin.find_files({
-        prompt_title = "College Files",
-        cwd = "~/Documents/College/",
-        telescope.setup({
-            defaults = {
-                file_ignore_patterns = {
-                    "%.pdf",
-                    "%.png",
-                    "%.jpg",
-                    "%.log",
-                    "%.aux",
-                    "%.gz",
-                    "%.fdb_latexmk",
-                    "%.fls",
-                    "%.class"
-                }
-            }
-        })
-    })
-end
+-- M.school = function ()
+--     builtin.find_files({
+--         prompt_title = "College Files",
+--         cwd = "~/Documents/College/",
+--         telescope.setup({
+--             defaults = {
+--                 file_ignore_patterns = {
+--                     "%.pdf",
+--                     "%.png",
+--                     "%.jpg",
+--                     "%.log",
+--                     "%.aux",
+--                     "%.gz",
+--                     "%.fdb_latexmk",
+--                     "%.fls",
+--                     "%.class"
+--                 }
+--             }
+--         })
+--     })
+-- end
 
 M.vrc = function ()
     builtin.find_files({
@@ -76,19 +77,19 @@ M.vrc = function ()
     })
 end
 
-M.proj = function ()
-    builtin.find_files({
-        prompt_title = "Projects",
-        cwd = "~/Projects/",
-        telescope.setup{
-            defaults = {
-                file_ignore_patterns = {
-                    "%.DS_Store",
-                    "%/__pycache__"
-                }
-            }
-        }
-    })
-end
+-- M.proj = function ()
+--     builtin.find_files({
+--         prompt_title = "Projects",
+--         cwd = "~/Projects/",
+--         telescope.setup{
+--             defaults = {
+--                 file_ignore_patterns = {
+--                     "%.DS_Store",
+--                     "%/__pycache__"
+--                 }
+--             }
+--         }
+--     })
+-- end
 
 return M

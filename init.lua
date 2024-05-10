@@ -1,6 +1,7 @@
 -- General
 require("plugins")
 require("settings")
+require("autocmds")
 
 -- Keymaps
 require("keys.mappings")
@@ -22,3 +23,4 @@ require("plugins.config.heirline")
 require("plugins.config.autopairs")
 require("plugins.config.leap")
 require("plugins.config.silicon")
+require("plugins.config.oil")
