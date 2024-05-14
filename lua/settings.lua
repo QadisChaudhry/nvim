@@ -16,6 +16,7 @@ vim.o.backup = false
 vim.o.undodir = vim.fn.expand("~") .. "/.config/nvim/undodir"
 vim.o.undofile = true
 vim.o.incsearch = true
+vim.o.inccommand = "split"
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
 vim.o.cursorline = true

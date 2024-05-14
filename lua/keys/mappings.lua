@@ -40,13 +40,14 @@ map("n", "<leader>iw", ":lua _THOKR_TOGGLE()<cr>", opts)
 map("n", "<leader>sr", ":Telescope oldfiles<cr>", opts)
 map("n", "<leader>sw", ":Telescope live_grep<cr>", opts)
 map("n", "<leader>sh", ":Telescope help_tags<cr>", opts)
-map("n", "<leader>ss", ":Telescope buffers<cr>", opts)
+-- map("n", "<leader>ss", ":Telescope buffers<cr>", opts)
 map("n", "<leader>sv", ":Telescope lsp_document_symbols<cr>", opts)
 map("n", "<leader>sf", ":Telescope file_browser<cr>", opts)
 map("n", "<leader>sa", ":Telescope file_browser path=~<cr>", opts)
 map("n", "<leader>su", ":Telescope undo<cr>", opts)
 map("n", "<leader>sc", ":lua require('plugins.config.telescope').vrc()<cr>", opts)
 map("n", "<leader>sz", ":lua require('plugins.config.telescope').ztlk()<cr>", opts)
+map("n", "<leader><space>", ":Telescope buffers<cr>", opts)
 
 -- Buffers
 map("n", "<RIGHT>", ":bnext<cr>", opts)
@@ -54,7 +55,7 @@ map("n", "<LEFT>", ":bprevious<cr>", opts)
 map("n", "<leader>q", ":bdelete!<cr>", opts)
 
 -- Clipboard
-map("n", "<leader>c", ":Telescope neoclip<cr>", opts)
+map("n", "<leader>c", ":Telescope neoclip initial_mode=normal<cr>", opts)
 map("n", "<leader>y", ":%w !pbcopy<cr><cr>", opts)
 map("v", "<leader>y", '"*y', opts)
 
@@ -74,7 +75,7 @@ map("x", "<s-DOWN>", ":move '>+1<cr>gv-gv", opts)
 -- Miscellaneous
 map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
-map("n", "<leader>r", ":source $MYVIMRC<cr>", opts)
+map("n", "<leader>r", ":so %<cr>", opts)
 -- map("n", "<leader>e", ":Neotree toggle<cr>", opts)
 map("n", "-", ":lua MiniFiles.open()<cr>", opts)
 map("v", "<leader>p", ":Silicon<cr>", opts)

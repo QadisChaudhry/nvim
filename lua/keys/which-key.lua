@@ -75,6 +75,7 @@ local mappings = {
     ["c"] = { "Clipboard" },
     ["y"] = { "Copy to System" },
     ["p"] = { "Print Code" },
+    ["<space>"] = { "Switch Buffers" },
 
     l = {
         name = "Latex",
@@ -124,7 +125,7 @@ local mappings = {
         r = { "Recent Files" },
         w = { "Find Word" },
         h = { "Help Tags" },
-        s = { "Switch Buffers" },
+        -- s = { "Switch Buffers" },
         v = { "Variables" },
         -- s = { "School" },
         c = { "Vim Config" },
