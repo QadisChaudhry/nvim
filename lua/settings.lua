@@ -44,3 +44,25 @@ elseif vim.g.colors_name == "gruvbox" then
     vim.cmd[[hi FloatBorder guibg=#282828]]
     vim.cmd[[hi NormalFloat guibg=#282828]]
 end
+
+function SPAWN_NOTE_WINDOW(path)
+    local buf = vim.api.nvim_create_buf(false, true)
+    local ui = vim.api.nvim_list_uis()[1]
+    local width = vim.fn.ceil(ui.width/2)
+    local height = vim.fn.ceil(ui.height/2)
+    local opts = {
+        relative = "editor",
+        width = width,
+        height = height,
+        col = (ui.width - width)/2,
+        row = (ui.height - height)/2,
+        anchor = "NW",
+        style = "minimal",
+        border = "rounded",
+    }
+    vim.api.nvim_open_win(buf, true, opts)
+    vim.cmd("e " .. path)
+    if vim.fn.expand("%:t") ~= "TODO.md" then
+        vim.cmd("norm G")
+    end
+end

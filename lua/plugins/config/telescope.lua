@@ -28,7 +28,8 @@ telescope.setup({
                 ["n"] = {}
             },
             hidden = true,
-            git_status = false
+            git_status = false,
+            grouped = true
         }
     }
 })
@@ -38,6 +39,37 @@ telescope.load_extension("file_browser")
 telescope.load_extension("undo")
 
 local M = {}
+
+M.vrc = function ()
+    builtin.find_files({
+        prompt_title = "Vim Config",
+        cwd = "~/.config/nvim/",
+        telescope.setup {
+            defaults = {
+                file_ignore_patterns = {
+                    "plugged",
+                    "undodir",
+                    "autoload"
+                }
+            }
+        }
+    })
+end
+
+M.ztlk = function ()
+    builtin.find_files({
+        prompt_title = "Zettelkasten",
+        cwd = "~/zettelkasten/",
+        layout_strategy = "horizontal",
+        telescope.setup {
+            defaults = {
+                file_ignore_patterns = {
+                    "!(*.md)"
+                }
+            }
+        }
+    })
+end
 
 -- M.school = function ()
 --     builtin.find_files({
@@ -61,27 +93,11 @@ local M = {}
 --     })
 -- end
 
-M.vrc = function ()
-    builtin.find_files({
-        prompt_title = "Vim Config",
-        cwd = "~/.config/nvim/",
-        telescope.setup{
-            defaults = {
-                file_ignore_patterns = {
-                    "plugged",
-                    "undodir",
-                    "autoload"
-                }
-            }
-        }
-    })
-end
-
 -- M.proj = function ()
 --     builtin.find_files({
 --         prompt_title = "Projects",
 --         cwd = "~/Projects/",
---         telescope.setup{
+--         telescope.setup {
 --             defaults = {
 --                 file_ignore_patterns = {
 --                     "%.DS_Store",

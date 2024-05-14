@@ -7,7 +7,7 @@ vim.g.mapleader = " "
 map({ "n", "v" }, "<leader>/", ":Commentary<cr>", opts)
 
 -- Oil
-map("n", "-", ":lua require('oil').open_float()<cr>", opts)
+-- map("n", "-", ":lua require('oil').open_float()<cr>", opts)
 
 -- Spelling Correction
 map("i", "<c-l>", "<c-g>u<esc>[s1z=`]a<c-g>u", opts)
@@ -21,6 +21,13 @@ map("n", "<leader>ltm", "imaster", opts)
 map("n", "<leader>lt1", "itemplate1", opts)
 map("n", "<leader>lt2", "itemplate2", opts)
 map("n", "<leader>lt3", "itemplate3", opts)
+
+-- Markdown
+map("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", opts)
+
+-- Notes
+map("n", "<leader>on", ":lua SPAWN_NOTE_WINDOW('~/zettelkasten/dump.md')<cr>", opts)
+map("n", "<leader>ot", ":lua SPAWN_NOTE_WINDOW('~/Documents/College/TODO.md')<cr>", opts)
 
 -- Terminal
 map("n", "<leader>it", ":lua _OPEN_TERM()<cr>", opts)
@@ -36,8 +43,10 @@ map("n", "<leader>sh", ":Telescope help_tags<cr>", opts)
 map("n", "<leader>ss", ":Telescope buffers<cr>", opts)
 map("n", "<leader>sv", ":Telescope lsp_document_symbols<cr>", opts)
 map("n", "<leader>sf", ":Telescope file_browser<cr>", opts)
+map("n", "<leader>sa", ":Telescope file_browser path=~<cr>", opts)
 map("n", "<leader>su", ":Telescope undo<cr>", opts)
 map("n", "<leader>sc", ":lua require('plugins.config.telescope').vrc()<cr>", opts)
+map("n", "<leader>sz", ":lua require('plugins.config.telescope').ztlk()<cr>", opts)
 
 -- Buffers
 map("n", "<RIGHT>", ":bnext<cr>", opts)
@@ -55,8 +64,8 @@ map("i", ".", ".<c-g>u", opts)
 map("i", ";", ";<c-g>u", opts)
 
 -- Better <C-u> and <C-d> Scrolling
-map("n", "<c-u>", "(line('.') > (line('$') - 20)) ? '<c-u>' : '<c-u>zz'", { expr = true })
-map("n", "<c-d>", "(line('.') > 20) ? '<c-d>' : '<c-d>zz'", { expr = true })
+map("n", "<c-u>", "(line('.') > (line('$') - 50)) ? '<c-u>' : '<c-u>zz'", { expr = true })
+map("n", "<c-d>", "(line('.') > 50) ? '<c-d>' : '<c-d>zz'", { expr = true })
 
 -- Move Lines
 map("x", "<s-UP>", ":move '<-2<cr>gv-gv", opts)
@@ -66,7 +75,8 @@ map("x", "<s-DOWN>", ":move '>+1<cr>gv-gv", opts)
 map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":source $MYVIMRC<cr>", opts)
-map("n", "<leader>e", ":Neotree toggle<cr>", opts)
+-- map("n", "<leader>e", ":Neotree toggle<cr>", opts)
+map("n", "-", ":lua MiniFiles.open()<cr>", opts)
 map("v", "<leader>p", ":Silicon<cr>", opts)
 
 map("n", "Q", "@a", opts)
@@ -81,6 +91,7 @@ map({ "n", "v" }, "<DOWN>", "v:count == 0 ? 'gj' : 'j'", { expr = true })
 map({ "n", "v" }, "<UP>", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 
 map({ "i", "c" }, "<M-C-H>", "<c-w>", { noremap = true })
+map({ "i", "c" }, "<M-BS>", "<c-w>", { noremap = true })
 map({ "i", "c" }, "<M-b>", "<s-left>", { noremap = true })
 map({ "i", "c" }, "<M-f>", "<s-right>", { noremap = true })
 

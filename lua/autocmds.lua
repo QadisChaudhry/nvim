@@ -2,6 +2,10 @@ local au = vim.api.nvim_create_autocmd
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true, buffer = true }
 
+local buflisted = vim.fn.buflisted
+local buffers = vim.fn.getbufinfo({buflisted = 1})
+local listed_buffers = vim.tbl_filter(function(buf) return buflisted(buf.bufnr) end, buffers)
+
 au("FileType", {
     pattern = "*",
     callback = function()
@@ -22,6 +26,25 @@ au("Filetype", {
         if vim.bo.filetype == "tex" then
             map("i", "<s-cr>", "<cr>\\item[--] ", opts)
         end
+        if vim.bo.filetype == "markdown" and vim.api.nvim_win_get_config(0).relative ~= '' then
+            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+        end
+    end
+})
+
+au("Filetype", {
+    pattern = { "oil", "alpha"},
+    callback = function()
+        vim.wo.fillchars = "eob: "
+        if vim.bo.filetype == "oil" then
+            vim.wo.nu = false
+            vim.wo.rnu = false
+            if #listed_buffers > 0 then
+                vim.keymap.set("n", "<esc>", ":q!<cr>", { silent = true, buffer = true })
+            end
+        elseif #listed_buffers > 0 then
+            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+        end
     end
 })
 
@@ -34,6 +57,13 @@ au("BufEnter", {
             map("n", "<leader>t", "<cmd>g/\\[ \\]/p<cr>", { noremap = true, buffer = true })
         end
     end
+})
+
+au("BufEnter", {
+    pattern = "*.keymap",
+    callback = function()
+        vim.o.ft = "c"
+    end,
 })
 
 au("BufWritePre", {
@@ -50,31 +80,6 @@ au("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
     end,
-})
-
-au("BufEnter", {
-    pattern = "*.keymap",
-    callback = function()
-        vim.o.ft = "c"
-    end,
-})
-
-au("Filetype", {
-    pattern = { "alpha", "oil" },
-    callback = function()
-        vim.wo.fillchars = "eob: "
-        if vim.bo.filetype == "oil" then
-            vim.wo.nu = false
-            vim.wo.rnu = false
-        end
-        -- local bcount = vim.cmd([[echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))]])
-        local buflisted = vim.fn.buflisted
-        local buffers = vim.fn.getbufinfo({buflisted = 1})
-        local listed_buffers = vim.tbl_filter(function(buf) return buflisted(buf.bufnr) end, buffers)
-        if #listed_buffers > 0 then
-            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
-        end
-    end
 })
 
 au({ "BufNewFile", "BufReadPre" }, {

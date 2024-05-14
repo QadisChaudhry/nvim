@@ -21,10 +21,10 @@ local plugins = {
 
     {
         "sainnhe/everforest",
-        tag = "v0.2.3",
-        config = function()
-            vim.cmd[[colorscheme everforest]]
-        end
+        -- tag = "v0.2.3",
+        -- config = function()
+        --     vim.cmd[[colorscheme everforest]]
+        -- end
     },
 
     {
@@ -33,34 +33,21 @@ local plugins = {
     },
 
     {
-        "shaunsingh/nord.nvim",
-        -- config = function()
-        --     vim.cmd[[colorscheme nord]]
-        -- end
-    },
-
-    {
-        "rose-pine/neovim",
-        -- opts = { dark_variant = "moon" },
-        -- config = function(_, opts)
-        --     require("rose-pine").setup(opts)
-        --     vim.cmd[[colorscheme rose-pine]]
-        -- end
-    },
-
-    {
         "rebelot/kanagawa.nvim",
-        -- config = function()
-        --     vim.cmd[[colorscheme kanagawa]]
-        -- end
+        config = function()
+            vim.cmd[[colorscheme kanagawa]]
+        end
     },
 
-    {
-        "navarasu/onedark.nvim",
-        -- config = function()
-        --     require("onedark").load()
-        -- end
-    },
+    -- {
+    --     "HoNamDuong/hybrid.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    --     config = function()
+    --         vim.cmd[[colorscheme hybrid]]
+    --     end
+    -- },
 
     {
         "nvim-treesitter/nvim-treesitter",
@@ -89,6 +76,15 @@ local plugins = {
         end
     },
 
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = "markdown",
+        build = function()
+            vim.fn["mkdp#util#install"]()
+        end,
+    },
+
     { "goolord/alpha-nvim" },
     { "tpope/vim-commentary" },
     { "tpope/vim-surround" },
@@ -100,7 +96,7 @@ local plugins = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzy-native.nvim",
             "nvim-telescope/telescope-file-browser.nvim",
-            "kkharji/sqlite.lua",
+            {"kkharji/sqlite.lua", module = "sqlite"},
             "AckslD/nvim-neoclip.lua",
             "debugloop/telescope-undo.nvim"
         }
@@ -134,14 +130,14 @@ local plugins = {
 
     { "windwp/nvim-autopairs" },
 
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-        }
-    },
+    -- {
+    --     "nvim-neo-tree/neo-tree.nvim",
+    --     branch = "v3.x",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "MunifTanjim/nui.nvim",
+    --     }
+    -- },
 
     { "folke/which-key.nvim" },
 
@@ -153,11 +149,16 @@ local plugins = {
         cmd = "Silicon",
     },
 
+    -- {
+    --    "stevearc/oil.nvim",
+    --     opts = {},
+    --     dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- },
+
     {
-       "stevearc/oil.nvim",
-        opts = {},
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    }
+        "echasnovski/mini.files",
+        version = '*',
+    },
 }
 
 local opts = {

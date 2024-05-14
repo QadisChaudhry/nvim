@@ -71,7 +71,7 @@ local mappings = {
     ["w"] = { "Write File" },
     ["q"] = { "Quit Buffer" },
     ["r"] = { "Reload Config" },
-    ["e"] = { "Explorer" },
+    -- ["e"] = { "Explorer" },
     ["c"] = { "Clipboard" },
     ["y"] = { "Copy to System" },
     ["p"] = { "Print Code" },
@@ -98,6 +98,17 @@ local mappings = {
         },
     },
 
+    m = {
+        name = "Markdown",
+        p = { "Preview" },
+    },
+
+    o = {
+        name = "Open",
+        n = { "Note" },
+        t = { "TODO" },
+    },
+
     i = {
         name = "Terminal",
         t = { "Terminal" },
@@ -109,6 +120,7 @@ local mappings = {
 
     s = {
         name = "Search",
+        a = { "Home Directory" },
         r = { "Recent Files" },
         w = { "Find Word" },
         h = { "Help Tags" },
@@ -119,6 +131,7 @@ local mappings = {
         -- p = { "Projects" },
         f = { "File Explorer" },
         u = { "Undo Tree" },
+        z = { "Zettelkasten" },
     },
 }
 

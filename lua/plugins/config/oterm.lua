@@ -6,17 +6,17 @@ end
 local open = require("oterm").open
 
 local config = {
-  command = nil,
-  name = "Terminal",
-  layout = "center",
-  keymaps = { exit = "<esc>" },
-  terminal_hl = nil,
-  split_hl = nil,
-  width = 0.8,
-  height = 0.8,
-  row = 0,
-  col = 0,
-  win_api = { style = "minimal", relative = "editor", border = "rounded" },
+    command = nil,
+    name = "Terminal",
+    layout = "center",
+    keymaps = { exit = "<esc>" },
+    terminal_hl = nil,
+    split_hl = nil,
+    width = 0.8,
+    height = 0.8,
+    row = 0,
+    col = 0,
+    win_api = { style = "minimal", relative = "editor", border = "rounded" },
 }
 
 oterm.setup(config)
