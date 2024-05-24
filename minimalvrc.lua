@@ -5,6 +5,8 @@ require("plugins.config.vimtex")
 
 vim.o.laststatus = 0
 vim.o.showcmd = false
+vim.o.nu = false
+vim.o.rnu = false
 
 require("keys.mappings")
 vim.keymap.set({ "i", "c" }, "<M-BS>", "<c-w>")

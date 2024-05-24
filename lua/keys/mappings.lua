@@ -6,9 +6,6 @@ vim.g.mapleader = " "
 -- Comment Lines
 map({ "n", "v" }, "<leader>/", ":Commentary<cr>", opts)
 
--- Oil
--- map("n", "-", ":lua require('oil').open_float()<cr>", opts)
-
 -- Spelling Correction
 map("i", "<c-l>", "<c-g>u<esc>[s1z=`]a<c-g>u", opts)
 
@@ -40,7 +37,6 @@ map("n", "<leader>iw", ":lua _THOKR_TOGGLE()<cr>", opts)
 map("n", "<leader>sr", ":Telescope oldfiles<cr>", opts)
 map("n", "<leader>sw", ":Telescope live_grep<cr>", opts)
 map("n", "<leader>sh", ":Telescope help_tags<cr>", opts)
--- map("n", "<leader>ss", ":Telescope buffers<cr>", opts)
 map("n", "<leader>sv", ":Telescope lsp_document_symbols<cr>", opts)
 map("n", "<leader>sf", ":Telescope file_browser<cr>", opts)
 map("n", "<leader>sa", ":Telescope file_browser path=~<cr>", opts)
@@ -55,7 +51,8 @@ map("n", "<LEFT>", ":bprevious<cr>", opts)
 map("n", "<leader>q", ":bdelete!<cr>", opts)
 
 -- Clipboard
-map("n", "<leader>c", ":Telescope neoclip initial_mode=normal<cr>", opts)
+-- map("n", "<leader>c", ":Telescope neoclip initial_mode=normal<cr>", opts)
+map("n", "<leader>c", ":Telescope neoclip<cr>", opts)
 map("n", "<leader>y", ":%w !pbcopy<cr><cr>", opts)
 map("v", "<leader>y", '"*y', opts)
 
@@ -65,8 +62,10 @@ map("i", ".", ".<c-g>u", opts)
 map("i", ";", ";<c-g>u", opts)
 
 -- Better <C-u> and <C-d> Scrolling
-map("n", "<c-u>", "(line('.') > (line('$') - 50)) ? '<c-u>' : '<c-u>zz'", { expr = true })
-map("n", "<c-d>", "(line('.') > 50) ? '<c-d>' : '<c-d>zz'", { expr = true })
+map("n", "<c-u>", "(line('.') > (line('$') - 30)) ? '<c-u>' : '<c-u>zz'", { expr = true, noremap = true })
+map("n", "<c-d>", "(line('.') > 30) ? '<c-d>' : '<c-d>zz'", { expr = true, noremap = true })
+-- map("n", "<c-u>", "<c-u>zz", opts)
+-- map("n", "<c-d>", "<c-d>zz", opts)
 
 -- Move Lines
 map("x", "<s-UP>", ":move '<-2<cr>gv-gv", opts)
@@ -76,7 +75,6 @@ map("x", "<s-DOWN>", ":move '>+1<cr>gv-gv", opts)
 map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":so %<cr>", opts)
--- map("n", "<leader>e", ":Neotree toggle<cr>", opts)
 map("n", "-", ":lua MiniFiles.open()<cr>", opts)
 map("v", "<leader>p", ":Silicon<cr>", opts)
 
@@ -85,11 +83,6 @@ map("n", "Y", "y$", opts)
 map("n", "E", "ge", opts)
 map("n", ">", "<s-v>><esc>", opts)
 map("n", "<", "<s-v><<esc>", opts)
-
-map({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
-map({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
-map({ "n", "v" }, "<DOWN>", "v:count == 0 ? 'gj' : 'j'", { expr = true })
-map({ "n", "v" }, "<UP>", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 
 map({ "i", "c" }, "<M-C-H>", "<c-w>", { noremap = true })
 map({ "i", "c" }, "<M-BS>", "<c-w>", { noremap = true })

@@ -23,27 +23,25 @@ au("Filetype", {
         vim.opt_local.wrap = true
         vim.opt_local.linebreak = true
         vim.opt_local.list = false
+        map({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, buffer = true })
+        map({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, buffer = true })
+        map({ "n", "v" }, "<DOWN>", "v:count == 0 ? 'gj' : 'j'", { expr = true, buffer = true })
+        map({ "n", "v" }, "<UP>", "v:count == 0 ? 'gk' : 'k'", { expr = true, buffer = true })
         if vim.bo.filetype == "tex" then
             map("i", "<s-cr>", "<cr>\\item[--] ", opts)
         end
         if vim.bo.filetype == "markdown" and vim.api.nvim_win_get_config(0).relative ~= '' then
-            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+            map("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
         end
     end
 })
 
 au("Filetype", {
-    pattern = { "oil", "alpha"},
+    pattern = "alpha",
     callback = function()
         vim.wo.fillchars = "eob: "
-        if vim.bo.filetype == "oil" then
-            vim.wo.nu = false
-            vim.wo.rnu = false
-            if #listed_buffers > 0 then
-                vim.keymap.set("n", "<esc>", ":q!<cr>", { silent = true, buffer = true })
-            end
-        elseif #listed_buffers > 0 then
-            vim.keymap.set("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
+        if #listed_buffers > 0 then
+            map("n", "<esc>", ":bdelete!<cr>", { silent = true, buffer = true })
         end
     end
 })
@@ -68,7 +66,6 @@ au("BufEnter", {
 
 au("BufWritePre", {
     pattern = "*",
-    -- command = [[ mark ` | %s/\s\+$//e | normal `` ]]
     callback = function()
         local l = vim.fn.winsaveview()
         vim.cmd[[keeppatterns %s/\s\+$//e]]
@@ -82,11 +79,11 @@ au("TextYankPost", {
     end,
 })
 
+-- Jumper
 au({ "BufNewFile", "BufReadPre" }, {
     pattern = { "*" },
     callback = function(ev)
         local filename = vim.api.nvim_buf_get_name(ev.buf)
-        -- do not log .git files, and buffers opened by plugins (which often contain some ':')
         if not (string.find(filename, "/.git") or string.find(filename, ":")) then
             local cmd = "jumper -f ${__JUMPER_FILES} -a '" .. filename .. "'"
             os.execute(cmd)

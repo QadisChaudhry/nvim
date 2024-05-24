@@ -9,7 +9,7 @@ local config = {
     command = nil,
     name = "Terminal",
     layout = "center",
-    keymaps = { exit = "<esc>" },
+    keymaps = { exit = "<c-c>" },
     terminal_hl = nil,
     split_hl = nil,
     width = 0.8,

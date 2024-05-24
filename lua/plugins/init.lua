@@ -12,32 +12,32 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    {
-        "ellisonleao/gruvbox.nvim",
-        -- config = function()
-        --     vim.cmd[[colorscheme gruvbox]]
-        -- end
-    },
+    -- {
+    --     "ellisonleao/gruvbox.nvim",
+    --     config = function()
+    --         vim.cmd[[colorscheme gruvbox]]
+    --     end
+    -- },
 
-    {
-        "sainnhe/everforest",
-        -- tag = "v0.2.3",
-        -- config = function()
-        --     vim.cmd[[colorscheme everforest]]
-        -- end
-    },
+    -- {
+    --     "sainnhe/everforest",
+    --     tag = "v0.2.3",
+    --     config = function()
+    --         vim.cmd[[colorscheme everforest]]
+    --     end
+    -- },
 
-    {
-        "rmehri01/onenord.nvim",
-        -- config = true
-    },
+    -- {
+    --     "rmehri01/onenord.nvim",
+    --     config = true
+    -- },
 
-    {
-        "rebelot/kanagawa.nvim",
-        config = function()
-            vim.cmd[[colorscheme kanagawa]]
-        end
-    },
+    -- {
+    --     "rebelot/kanagawa.nvim",
+    --     config = function()
+    --         vim.cmd[[colorscheme kanagawa]]
+    --     end
+    -- },
 
     -- {
     --     "HoNamDuong/hybrid.nvim",
@@ -50,9 +50,23 @@ local plugins = {
     -- },
 
     {
+        "cdmill/neomodern.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("neomodern").setup({
+                style = "darkforest",
+                -- ui = {
+                --     telescope = "bordered"
+                -- }
+            })
+            require("neomodern").load()
+        end,
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        -- event = "VimEnter"
         lazy = false
     },
 
@@ -130,15 +144,6 @@ local plugins = {
 
     { "windwp/nvim-autopairs" },
 
-    -- {
-    --     "nvim-neo-tree/neo-tree.nvim",
-    --     branch = "v3.x",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         "MunifTanjim/nui.nvim",
-    --     }
-    -- },
-
     { "folke/which-key.nvim" },
 
     { "ggandor/leap.nvim" },
@@ -149,6 +154,20 @@ local plugins = {
         cmd = "Silicon",
     },
 
+    {
+        "echasnovski/mini.files",
+        version = '*',
+    },
+
+    -- {
+    --     "nvim-neo-tree/neo-tree.nvim",
+    --     branch = "v3.x",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "MunifTanjim/nui.nvim",
+    --     }
+    -- },
+
     -- {
     --    "stevearc/oil.nvim",
     --     opts = {},
@@ -156,8 +175,9 @@ local plugins = {
     -- },
 
     {
-        "echasnovski/mini.files",
-        version = '*',
+        "brenoprata10/nvim-highlight-colors",
+        event = "VeryLazy",
+        config = true
     },
 }
 

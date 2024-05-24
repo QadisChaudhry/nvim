@@ -30,8 +30,8 @@ local colors = {
 
 heirline.load_colors(colors)
 
-local block = { provider = "▊", hl = { fg = "cyan" } }
--- local block = { provider = "▊", hl = { fg = utils.get_highlight("Function").fg } }
+-- local block = { provider = "▊", hl = { fg = "cyan" } }
+local block = { provider = "▊", hl = { fg = utils.get_highlight("Function").fg } }
 local separator = { provider = "  ", }
 local Align = { provider = "%=" }
 

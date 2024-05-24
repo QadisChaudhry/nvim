@@ -44,7 +44,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "e", "  Last File", ":e#<1<cr>"),
     dashboard.button( "SPC sr", "  Recent Files"),
     dashboard.button( "SPC sc", "  Config Files"),
-    dashboard.button( "l", " Lazy", ":Lazy<cr>"),
+    dashboard.button( "l", "  Lazy", ":Lazy<cr>"),
     dashboard.button( "n", "  New File", ":ene<cr>"),
     dashboard.button( "q", "  Quit NVIM", ":qa<cr>"),
 }

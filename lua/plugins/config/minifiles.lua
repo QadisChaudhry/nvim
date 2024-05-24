@@ -31,10 +31,10 @@ local config = {
 
     windows = {
         max_number = math.huge,
-        preview = false,
+        preview = true,
         width_focus = 50,
         width_nofocus = 30,
-        width_preview = 25,
+        width_preview = 50,
     },
 }
 
