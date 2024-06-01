@@ -3,8 +3,6 @@ if not status then
     return
 end
 
-local open = require("oterm").open
-
 local config = {
     command = nil,
     name = "Terminal",
@@ -21,9 +19,9 @@ local config = {
 
 oterm.setup(config)
 
-function _OPEN_TERM() open() end
+function _OPEN_TERM() oterm.open({keymaps = { exit = "<esc>", normal = "<esc>" }}) end
 
-function _LAZYGIT_TOGGLE() open({name = "Github", command = "lazygit"}) end
-function _PYTHON_TOGGLE() open({name = "Python", layout = "hsplit", command = "ipython"}) end
-function _RANGER_TOGGLE() open({name = "File Explorer", layout = "vsplit", command = "ranger"}) end
-function _THOKR_TOGGLE() open({name = "Typing Test", layout = "hsplit", command = "thokr"}) end
+function _LAZYGIT_TOGGLE() oterm.open({name = "Github", command = "lazygit"}) end
+function _PYTHON_TOGGLE() oterm.open({name = "Python", command = "ipython", keymaps = { exit = "<esc>", normal = "<esc>" }}) end
+function _RANGER_TOGGLE() oterm.open({name = "File Explorer", layout = "vsplit", command = "ranger"}) end
+function _THOKR_TOGGLE() oterm.open({name = "Typing Test", layout = "hsplit", command = "thokr"}) end

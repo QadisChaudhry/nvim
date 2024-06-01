@@ -19,7 +19,7 @@ au("FileType", {
 au("Filetype", {
     pattern = { "tex", "markdown", "json" },
     callback = function()
-        vim.o.spell = true
+        vim.opt_local.spell = true
         vim.opt_local.wrap = true
         vim.opt_local.linebreak = true
         vim.opt_local.list = false

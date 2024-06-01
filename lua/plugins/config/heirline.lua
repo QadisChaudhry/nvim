@@ -332,7 +332,7 @@ local TreeSitter = {
 
 local statusline = {
     condition = function()
-        return vim.bo.filetype ~= "alpha" and vim.bo.filetype ~= "neo-tree"
+        return vim.bo.filetype ~= "alpha" and vim.bo.buftype ~= "terminal"
     end,
     {block, separator, ViMode, separator},
     {GitName},
