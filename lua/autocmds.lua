@@ -37,7 +37,7 @@ au("Filetype", {
 })
 
 au("Filetype", {
-    pattern = "alpha",
+    pattern = {"alpha", "oil"},
     callback = function()
         vim.wo.fillchars = "eob: "
         if #listed_buffers > 0 then
@@ -46,13 +46,18 @@ au("Filetype", {
     end
 })
 
-au("BufEnter", {
+au({"BufEnter", "TermOpen"}, {
     pattern = "*",
     callback = function()
         if vim.fn.expand("%:t") == "TODO.md" then
             map("n", "<cr>", ":call markdown#SwitchStatus()<cr>", opts)
             map("i", ",,", "-- <c-r>=strftime('%m/%d 11:59 pm')<cr>", opts)
             map("n", "<leader>t", "<cmd>g/\\[ \\]/p<cr>", { noremap = true, buffer = true })
+        end
+        if vim.fn.expand("%:t") == "zsh" then
+            map("t", "<esc>", "<c-\\><c-n>", opts)
+            vim.opt_local.nu = false
+            vim.opt_local.rnu = false
         end
     end
 })

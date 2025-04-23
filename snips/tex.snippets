@@ -18,11 +18,11 @@ snippet master "master" bA
 \begin{document}
 	\begin{titlepage}
 		\begin{center}
-			\textbf{Qadis Chaudhry} \\\
+			\textbf{Qadis Chaudhry 202001055} \\\
 			\vspace{0.2cm}
-			Rutgers University, ECE Major \\\
+			Rutgers University, ECE Graduate \\\
 			\vfill
-			\textbf{Lecture Notes} \\\
+			\textbf{${2:Lecture Notes}} \\\
 			\vfill
 			${3:Course Name and Code} \\\
 			\vspace{0.2cm}
@@ -430,7 +430,7 @@ endsnippet
 
 context "math()"
 snippet del "d/dx" wA
-\frac{\partial $1}{\partial ${2:x}} $0
+\frac{\partial $1}{\partial ${2:x}}$0
 endsnippet
 
 context "math()"
@@ -580,7 +580,7 @@ snippet ";(l|L)" "lambda" riA
 endsnippet
 
 context "math()"
-snippet "(pi|phi|tau|eta|mu)" "letters" riA
+snippet "(pi|chi|psi|phi|tau|eta|mu)" "letters" riA
 \\`!p snip.rv=match.group(1)`$0
 endsnippet
 
@@ -672,7 +672,7 @@ snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 endsnippet
 
 context "math()"
-snippet ph "phasor" wA
+snippet pha "phasor" wA
 \tilde{${1:${VISUAL:}}}
 endsnippet
 

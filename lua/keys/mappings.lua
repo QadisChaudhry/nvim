@@ -27,6 +27,8 @@ map("n", "<leader>on", ":lua SPAWN_NOTE_WINDOW('~/zettelkasten/dump.md')<cr>", o
 map("n", "<leader>ot", ":lua SPAWN_NOTE_WINDOW('~/Documents/College/TODO.md')<cr>", opts)
 
 -- Terminal
+map("n", "<leader>ii", ":terminal<cr>iclear<cr>", opts)
+map("n", "<leader>io", ":!{open .}<cr><cr>", opts)
 map("n", "<leader>it", ":lua _OPEN_TERM()<cr>", opts)
 map("n", "<leader>ig", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
 map("n", "<leader>ip", ":lua _PYTHON_TOGGLE()<cr>", opts)
@@ -62,8 +64,8 @@ map("i", ".", ".<c-g>u", opts)
 map("i", ";", ";<c-g>u", opts)
 
 -- Better <C-u> and <C-d> Scrolling
-map("n", "<c-u>", "(line('.') > (line('$') - 30)) ? '<c-u>' : '<c-u>zz'", { expr = true, noremap = true })
-map("n", "<c-d>", "(line('.') > 30) ? '<c-d>' : '<c-d>zz'", { expr = true, noremap = true })
+-- map("n", "<c-u>", "(line('.') > (line('$') - 30)) ? '<c-u>' : '<c-u>zz'", { expr = true, noremap = true })
+-- map("n", "<c-d>", "(line('.') > 30) ? '<c-d>' : '<c-d>zz'", { expr = true, noremap = true })
 -- map("n", "<c-u>", "<c-u>zz", opts)
 -- map("n", "<c-d>", "<c-d>zz", opts)
 
@@ -75,7 +77,8 @@ map("x", "<s-DOWN>", ":move '>+1<cr>gv-gv", opts)
 map("n", "<leader>,", ":Alpha<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>r", ":so %<cr>", opts)
-map("n", "-", ":lua MiniFiles.open()<cr>", opts)
+-- map("n", "-", ":lua MiniFiles.open()<cr>", opts)
+map("n", "-", ":Oil<cr>", opts)
 map("v", "<leader>p", ":Silicon<cr>", opts)
 
 map("n", "Q", "@a", opts)

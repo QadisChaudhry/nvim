@@ -1,5 +1,6 @@
 require("plugins")
 require("settings")
+require("autocmds")
 
 require("plugins.config.vimtex")
 

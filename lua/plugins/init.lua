@@ -146,7 +146,7 @@ local plugins = {
 
     { "folke/which-key.nvim" },
 
-    { "ggandor/leap.nvim" },
+    -- { "ggandor/leap.nvim" },
 
     {
         "michaelrommel/nvim-silicon",
@@ -154,10 +154,10 @@ local plugins = {
         cmd = "Silicon",
     },
 
-    {
-        "echasnovski/mini.files",
-        version = '*',
-    },
+    -- {
+    --     "echasnovski/mini.files",
+    --     version = '*',
+    -- },
 
     -- {
     --     "nvim-neo-tree/neo-tree.nvim",
@@ -168,11 +168,11 @@ local plugins = {
     --     }
     -- },
 
-    -- {
-    --    "stevearc/oil.nvim",
-    --     opts = {},
-    --     dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- },
+    {
+       "stevearc/oil.nvim",
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
 
     {
         "brenoprata10/nvim-highlight-colors",

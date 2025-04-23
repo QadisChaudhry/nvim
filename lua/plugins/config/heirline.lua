@@ -129,6 +129,7 @@ local FileIcon = {
 
 local FileName = {
     provider = function()
+        if vim.bo.filetype == "oil" then return "File Explorer" end
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
         if filename == "" then return "[No Name]" end
         return filename
@@ -332,7 +333,8 @@ local TreeSitter = {
 
 local statusline = {
     condition = function()
-        return vim.bo.filetype ~= "alpha" and vim.bo.buftype ~= "terminal"
+        -- return vim.bo.filetype ~= "alpha" and vim.bo.buftype ~= "terminal"
+        return vim.bo.filetype ~= "alpha"
     end,
     {block, separator, ViMode, separator},
     {GitName},

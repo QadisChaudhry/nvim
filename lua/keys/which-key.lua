@@ -112,11 +112,13 @@ local mappings = {
 
     i = {
         name = "Terminal",
-        t = { "Terminal" },
+        i = { "Buffer Terminal" },
+        t = { "Floating Terminal" },
         g = { "Git" },
         p = { "Python" },
         r = { "Ranger" },
         w = { "Typing Test" },
+        o = { "Open in Finder" },
     },
 
     s = {
